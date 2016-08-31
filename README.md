@@ -10,7 +10,7 @@ Installation of the library through ``npm`` in the normal way:
 npm install punchcardjs
 ```
 
-- For the demo website, go [here](http://nlesc-sherlock.github.io/punchcardjs/demo/), but see also [#51](https://github.com/nlesc-sherlock/punchcardjs/issues/51) and [#47](https://github.com/nlesc-sherlock/punchcardjs/issues/47);
+- For a demo website, go [here](http://github.com/nlesc-sherlock/punchcardjs-demo), but see also [#51](https://github.com/nlesc-sherlock/punchcardjs/issues/51) and [#47](https://github.com/nlesc-sherlock/punchcardjs/issues/47);
 - For the code coverage report, go [here](http://nlesc-sherlock.github.io/punchcardjs/coverage/remapped/src/index.html), but see also [#55](https://github.com/nlesc-sherlock/punchcardjs/issues/55);
 - For TypeDoc documentation of the code, go [here](http://nlesc-sherlock.github.io/punchcardjs/tsdoc/), but see also [#5](https://github.com/nlesc-sherlock/punchcardjs/issues/5) and [#7](https://github.com/nlesc-sherlock/punchcardjs/issues/7);
 
@@ -68,17 +68,6 @@ npm run dist
 # run the unit tests against the distributable
 npm run test
 
-# do the above steps plus some other things to get a demo website...
-npm run demo
-
-# change directory to the demo site
-cd sites/demo/
-
-# start a webserver in that directory that serves the
-# webpage at localhost:8089
-python3 -m http.server 8089
-
-# you should be able to debug the TypeScript code from the browser (uses source maps)
 ```
 
 ## some other useful tasks
@@ -117,14 +106,7 @@ npm run cover
 ├── LICENSE                            # describes the license for dissemination and use of this software
 ├── package.json                       # the Node package manager configuration file
 ├── README.md                          # this file
-├── sites                              # there are a few websites associated with this repository:
-│   └── demo                           # the demo website serves as an illustration of the punchcards library
-│       ├── controls.ts                # adds controls for minimizing/restoring widgets in the demo page
-│       ├── dataloader.ts              # script that helps load the data for the demo website
-│       ├── fonts                      # required directory for bootstrap (contents added by an npm run task)
-│       ├── index.html                 # the demo website's main file
-│       ├── main-script.ts             # the demo website's main script
-│       └── README.md                  #
+├── sites                              # there are a few websites associated with this repository; their content will be generated here
 ├── src                                # this directory contains all the sources (css, ts) for the punchcards library
 │   ├── base.css                       # the CSS for the Base class
 │   ├── base.ts                        # the TypeScript for the Base class
