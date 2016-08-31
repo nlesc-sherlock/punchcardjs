@@ -30,6 +30,8 @@ npm install
 npm run tsdoc
 npm run cover
 
+# check that the right content has been generated
+
 # remove any .gitignores from under sites/
 git rm `find ./sites/ -name '.gitignore' -type f`
 
