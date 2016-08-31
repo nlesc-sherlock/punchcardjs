@@ -20,11 +20,13 @@ git branch gh-pages
 # ...and switch to it
 git checkout gh-pages
 
+# clean downloaded files and clean generated files
+npm run purge
+
 # install npm dependencies (if you don't have them already)
 npm install
 
 # generate content for gh-pages...
-npm run demo
 npm run tsdoc
 npm run cover
 
@@ -32,10 +34,10 @@ npm run cover
 git rm `find ./sites/ -name '.gitignore' -type f`
 
 # tell git about all the content we added as well as what we removed
-git add --all sites/demo sites/coverage sites/tsdoc
+git add --all sites/coverage sites/tsdoc
 
 # commit to local gh-pages branch
-git commit -m "gh-pages content: demo site, code coverage, tsdoc"
+git commit -m "gh-pages content: code coverage, tsdoc"
 
 # push the 'sites' directory to github using the subtree command
 git subtree push --prefix sites origin gh-pages
