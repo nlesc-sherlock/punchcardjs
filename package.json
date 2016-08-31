@@ -47,7 +47,6 @@
     "url": "https://github.com/nlesc-sherlock/punchcardjs.git"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.7",
     "browserify": "^13.1.0",
     "browserify-shim": "^3.8.12",
     "csslint": "^1.0.2",
