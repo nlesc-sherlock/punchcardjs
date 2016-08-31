@@ -18,7 +18,7 @@ npm install <path to your package's top directory>
 # check that there are no errors
 # check that you have a /tmp/node_modules/ containing your package
 
-# add a .npmignore
+# in package.json, specify the files that you want to ship in your package (preferred) OR add a .npmignore
 
 # make an account on npm: https://www.npmjs.com/signup
 
