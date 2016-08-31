@@ -19,7 +19,7 @@
     "jshint": "jshint test/*.js",
     "jslint": "jslint test/*.js",
     "lint": "npm run tslint && npm run jshint && npm run jslint && npm run csslint",
-    "postdist": "npm run exorcist && npm run uglify",
+    "postdist": "npm run exorcist && npm run uglify && cp src/*.css dist",
     "postinstall": "typings install",
     "postversion": "git log --pretty=oneline --max-count 10",
     "precover": "trash sites/coverage/ && npm run lint && npm run dist",
@@ -93,14 +93,20 @@
     ]
   },
   "files": [
+    "CHANGELOG",
+    "dist/base.css",
+    "dist/date-circle.css",
+    "dist/date-rect.css",
+    "dist/legend.css",
     "dist/punchcards.js",
     "dist/punchcards.js.map",
     "dist/punchcards.min.js",
     "dist/punchcards.min.js.map",
-    "typings.json",
-    "package.json",
+    "dist/weekday-circle.css",
+    "dist/weekday-rect.css",
     "LICENSE",
+    "package.json",
     "README",
-    "CHANGELOG"
+    "typings.json"
   ]
 }
