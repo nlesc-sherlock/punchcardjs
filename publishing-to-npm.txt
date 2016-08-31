@@ -24,4 +24,8 @@ npm install <path to your package's top directory>
 
 # verify your e-mail address
 
+# bump the version part you want (here: prerelease)
+npm version prerelease
 
+# publish to online PUBLIC repo https://www.npmjs.com/package/<yourpackage>
+npm publish
