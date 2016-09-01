@@ -13,8 +13,8 @@ div.punchcard-date-circle svg {
 /* the axes */
 div.punchcard-date-circle path.domain {
   fill: none;
-  stroke: black;
   shape-rendering: crispEdges;
+  stroke: black;
 }
 
 /* the axes/chart's background  */
@@ -26,14 +26,14 @@ div.punchcard-date-circle rect.chartbody {
 /* the box around the chart background is a separate rect, this is its style */
 div.punchcard-date-circle rect.chartbody-box {
     fill: none;
-    stroke: black;
     shape-rendering: crispEdges;
+    stroke: black;
 }
 
 /* the symbols that are the main content of the plot */
 div.punchcard-date-circle circle.symbol {
-    stroke: #000000;
     stroke-width: 1px;
+    stroke: #000000;
 }
 
 /* the xlabel text */
@@ -57,8 +57,8 @@ div.punchcard-date-circle text.title {
 /* the tick marks */
 div.punchcard-date-circle .tick line {
     fill: none;
-    stroke: black;
     shape-rendering: crispEdges;
+    stroke: black;
 }
 
 /* the ticks text */

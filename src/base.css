@@ -1,30 +1,30 @@
 div.punchcard-common {
-    width: 90%;
     background-color: #fff;
-    border: thin;
-    border-style: solid;
     border-color: #5f6a70;
     border-radius: 0;
+    border-style: solid;
+    border: thin;
+    box-shadow: 5px 5px 5px #99b3bf;
+    float: left;
     margin: 10px;
     padding: 0;
-    float: left;
-    box-shadow: 5px 5px 5px #99b3bf;
     position: relative;
+    width: 90%;
 }
 
 
 div.controls {
+    background-color: none;
     position: absolute;
     right: 0;
     top: 0;
-    background-color: none;
 }
 
 div.controls button {
     margin-bottom: 4px;
+    margin-left: 0;
     margin-right: 4px;
     margin-top: 4px;
-    margin-left: 0;
 }
 
 div.hidden {
