@@ -32,8 +32,8 @@ div.punchcard-weekday-circle rect.chartbody-box {
 
 /* the symbols that are the main content of the plot */
 div.punchcard-weekday-circle circle.symbol {
-    stroke-width: 1px;
     stroke: black;
+    stroke-width: 1px;
 }
 
 /* the xlabel text */

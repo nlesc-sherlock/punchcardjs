@@ -22,8 +22,8 @@ div.punchcard-common svg g.punchcard-legend rect.legend.legendbody-box {
 /* the symbols that are the main content of the legend */
 div.punchcard-common svg g.punchcard-legend rect.symbol {
     shape-rendering: crispEdges;
-    stroke-width: 0;
     stroke: none;
+    stroke-width: 0;
 }
 
 /* the xlabel text */

@@ -1,9 +1,9 @@
 div.punchcard-common {
     background-color: #fff;
+    border: thin;
     border-color: #5f6a70;
     border-radius: 0;
     border-style: solid;
-    border: thin;
     box-shadow: 5px 5px 5px #99b3bf;
     float: left;
     margin: 10px;
@@ -14,7 +14,7 @@ div.punchcard-common {
 
 
 div.controls {
-    background-color: none;
+    background-color: transparent;
     position: absolute;
     right: 0;
     top: 0;

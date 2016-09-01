@@ -32,8 +32,8 @@ div.punchcard-date-circle rect.chartbody-box {
 
 /* the symbols that are the main content of the plot */
 div.punchcard-date-circle circle.symbol {
-    stroke-width: 1px;
     stroke: #000000;
+    stroke-width: 1px;
 }
 
 /* the xlabel text */
