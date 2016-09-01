@@ -28,7 +28,7 @@ Here are some examples of the type of visualizations you can make with this libr
 
 ## Code snippet
 
-```javascript
+```html
 <html>
   <head>
     <!-- these style sheets are part of the punchcardjs distribution -->
