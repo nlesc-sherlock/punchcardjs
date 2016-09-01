@@ -104,7 +104,6 @@
     "dist/weekday-rect.css",
     "LICENSE",
     "package.json",
-    "README",
-    "typings.json"
+    "README"
   ]
 }
