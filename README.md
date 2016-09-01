@@ -52,8 +52,9 @@ our code, and `typings` needs to get the typescript annotations for those. You c
 do all of these in one go using:
 
 ```bash
-# run npm install and typings install through one command
-npm install
+# Assuming you already have ``npm`` and ``typings`` installed globally
+# on your system, install with:
+npm install && typings install
 ```
 
 Next, the software needs to be built. We use `npm` for that as well. We've defined a few build tasks under `scripts` in `packages.json`.

@@ -20,7 +20,6 @@
     "jslint": "jslint test/*.js",
     "lint": "npm run tslint && npm run jshint && npm run jslint && npm run csslint",
     "postdist": "npm run exorcist && npm run uglify && cp src/*.css dist",
-    "postinstall": "typings install",
     "postversion": "git log --pretty=oneline --max-count 10",
     "precover": "trash sites/coverage/ && npm run jslint && npm run jshint && npm run dist",
     "predist": "trash build/ && mkdirp build && trash dist/ && mkdirp dist && npm run tslint && npm run csslint",
@@ -74,8 +73,7 @@
   "dependencies": {
     "crossfilter": "^1.3.12",
     "d3": "^3.5.17",
-    "moment": "^2.14.1",
-    "typings": "^1.0.4"
+    "moment": "^2.14.1"
   },
   "browser": {
     "crossfilter": "node_modules/crossfilter/crossfilter.js",
