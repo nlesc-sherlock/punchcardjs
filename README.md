@@ -60,9 +60,6 @@ npm install && typings install
 Next, the software needs to be built. We use `npm` for that as well. We've defined a few build tasks under `scripts` in `packages.json`.
 
 ```bash
-# lint the typescript code
-npm run tslint
-
 # make a distributable js file, punchcards.js
 npm run dist
 
