@@ -1,6 +1,6 @@
 {
   "name": "punchcardjs",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Punchcard visualization using TypeScript and D3.js",
   "main": "./dist/punchcards.min.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "precover": "trash sites/coverage/ && npm run jslint && npm run jshint && npm run dist",
     "predist": "trash build/ && mkdirp build && trash dist/ && mkdirp dist && npm run tslint && npm run csslint",
     "pretsdoc": "npm run clean-tsdoc && mkdirp sites/tsdoc",
-    "preversion": "npm run purge && npm install && npm run dist && npm run test",
+    "preversion": "npm run purge && npm install && typings install && npm run dist && npm run test",
     "purge": "npm run clean & npm run clean-downloaded",
     "remap-istanbul-html": "remap-istanbul --input sites/coverage/coverage-remapped.json --output sites/coverage/remapped --type html --exclude node_modules",
     "remap-istanbul-json": "remap-istanbul --input sites/coverage/coverage.json --output sites/coverage/coverage-remapped.json",
