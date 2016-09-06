@@ -280,9 +280,11 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
             // <circle class="symbol" cx="104" cy="-125.66666666666667" r="120.43" fill="rgb(0,127,255)"></circle>
             // <circle class="symbol" cx="104" cy="-125.66666666666667" r=".4" fill="rgb(0,127,255)"></circle>
             // <circle class="symbol" cx="104" cy="-125.66666666666667" r=".48982" fill="rgb(0,127,255)"></circle>
+            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="489." fill="rgb(0,127,255)"></circle>
             //
             // but not
             //
+            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="." fill="rgb(0,127,255)"></circle>
             // <circle class="symbol" cx="104" cy="-125.66666666666667" r="NaN" fill="rgb(0,127,255)"></circle>
 
             var actual, weekdaycircle, symbols, re;
@@ -293,7 +295,7 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
             weekdaycircle.drawVerticalAxis();
             weekdaycircle.drawSymbols();
             symbols = weekdaycircle.svg.select('g.symbol').selectAll('circle.symbol')[0];
-            re = new RegExp('^<circle.*r="(\d{1,}|\d{0,}\.\d{1,})".*><\/circle>$');
+            re = new RegExp('^<circle.*r="([\\d\\.]{2,}|[\\d]{1,})".*><\/circle>$');
             actual = re.test(symbols[0]);
             expect(actual).toEqual(true);
         });
