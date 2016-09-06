@@ -11,6 +11,8 @@ nvm --version
 # current latest stable LTS is 4.5.0
 nvm install 4.5.0
 
+# in package.json, specify the files that you want to ship in your package (preferred) OR add a .npmignore
+
 # cd to the /tmp directory
 cd /tmp
 # see if your package installs (locally)
@@ -18,7 +20,6 @@ npm install <path to your package's top directory>
 # check that there are no errors
 # check that you have a /tmp/node_modules/ containing your package
 
-# in package.json, specify the files that you want to ship in your package (preferred) OR add a .npmignore
 
 # make an account on npm: https://www.npmjs.com/signup
 
