@@ -26,6 +26,10 @@ npm run purge
 # install npm dependencies (if you don't have them already)
 npm install
 
+# install type definitions (needs typings package installed, you don't get this
+# from the previous step)
+typings install
+
 # generate content for gh-pages...
 npm run tsdoc
 npm run cover
