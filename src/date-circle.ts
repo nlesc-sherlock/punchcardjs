@@ -67,7 +67,7 @@ export class DateCircle extends DateRect {
         this.colormap.cLimHigh = highest;
 
 
-        // draw the rects
+        // draw the circles
         this.svg
             .append('g')
             .attr('class', 'symbol')
