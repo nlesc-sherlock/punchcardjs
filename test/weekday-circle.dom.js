@@ -272,20 +272,19 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
         'SVG g element of class "symbol" with 1 SVG circle of class ' +
         '"symbol" attached to it, whose radius should be a positive number', function () {
 
-            // matches the following
+            // matches the following radiuses
             //
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="0" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="120" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="0" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="120.43" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r=".4" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r=".48982" fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="489." fill="rgb(0,127,255)"></circle>
+            // 0
+            // 120
+            // 120.43
+            // .4
+            // .48982
+            // 489.
             //
             // but not
             //
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="." fill="rgb(0,127,255)"></circle>
-            // <circle class="symbol" cx="104" cy="-125.66666666666667" r="NaN" fill="rgb(0,127,255)"></circle>
+            // .
+            // NaN
 
             var actual, weekdaycircle, symbols, re;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
@@ -295,9 +294,9 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
             weekdaycircle.drawVerticalAxis();
             weekdaycircle.drawSymbols();
             symbols = weekdaycircle.svg.select('g.symbol').selectAll('circle.symbol')[0];
-            re = new RegExp('^<circle.*r="([\\d\\.]{2,}|[\\d]{1,})".*><\/circle>$');
-            actual = re.test(symbols[0]);
-            expect(actual).toEqual(true);
+            re = new RegExp('^([\\d\\.]{2,}|[\\d]{1,})$');
+            actual = re.test(symbols[0].getAttribute('r'));
+            expect(actual).toBe(true);
         });
 
 
