@@ -26,6 +26,56 @@ Here are some examples of the type of visualizations you can make with this libr
 
 ![example-weekday-rect.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/example-weekday-rect.png "example-weekday-rect.png")
 
+## Code snippet
+
+```html
+<html>
+  <head>
+    <!-- these style sheets are part of the punchcardjs distribution -->
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="legend.css">
+    <link rel="stylesheet" type="text/css" href="weekday-circle.css">
+
+    <!-- include dependencies of punchcardjs -->
+    <script type="text/javascript" src="crossfilter.min.js"></script>
+    <script type="text/javascript" src="d3.min.js"></script>
+    <script type="text/javascript" src="moment.min.js"></script>
+
+    <!-- include punchcardjs library itself-->
+    <script type="text/javascript" src="punchcards.js"></script>
+  </head>
+
+  <body style="background-color: #b5d3e2">
+
+        <div id="punchcarddiv" class="punchcard-common punchcard-weekday-circle"></div>
+
+        <script>
+
+            var data, cf, weekdayCircle;
+
+            data = [{
+                    "datestr": "2014-06-12T09:54:00"
+                }, {
+                    "datestr": "2014-06-15T11:10:00"
+                }, {
+                    "datestr": "2014-06-15T11:23:00"
+            }];
+
+            cf = crossfilter(data);
+
+            <!-- draw a punchcard WeekdayCircle using svg circle elements -->
+            weekdayCircle = new punchcards.WeekdayCircle(cf, 'punchcarddiv');
+            weekdayCircle.defineDimensions();
+            weekdayCircle.draw();
+
+        </script>
+
+  </body>
+</html>
+
+```
+
+
 
 # Documentation for developers
 
@@ -52,16 +102,14 @@ our code, and `typings` needs to get the typescript annotations for those. You c
 do all of these in one go using:
 
 ```bash
-# run npm install and typings install through one command
-npm install
+# Assuming you already have ``npm`` and ``typings`` installed globally
+# on your system, install with:
+npm install && typings install
 ```
 
 Next, the software needs to be built. We use `npm` for that as well. We've defined a few build tasks under `scripts` in `packages.json`.
 
 ```bash
-# lint the typescript code
-npm run tslint
-
 # make a distributable js file, punchcards.js
 npm run dist
 

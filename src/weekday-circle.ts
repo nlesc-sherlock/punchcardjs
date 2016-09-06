@@ -70,7 +70,7 @@ export class WeekdayCircle extends WeekdayRect {
         this.colormap.cLimHigh = highest;
 
 
-        // draw the rects
+        // draw the circles
         this.svg
             .append('g')
             .attr('class', 'symbol')
@@ -87,7 +87,13 @@ export class WeekdayCircle extends WeekdayRect {
                         return that.todScale(d.key['hourOfDay']) + symbolHeight / 2 + symbolMargin.top;
                     })
                     .attr('r', function(d:any){
-                        return Math.max(r * (d.value - that.colormap.cLimLow) / (that.colormap.cLimHigh - that.colormap.cLimLow), 1);
+                        let numer:number = d.value - that.colormap.cLimLow;
+                        let denom:number = that.colormap.cLimHigh - that.colormap.cLimLow;
+                        if (denom === 0) {
+                            return Math.max(r, 1);
+                        } else {
+                            return Math.max(r * numer / denom, 1);
+                        }
                     })
                     .attr('fill', function(d:any){
                         return that.colormap.getColorRGB(d.value);

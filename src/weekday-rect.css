@@ -13,8 +13,8 @@ div.punchcard-weekday-rect svg {
 /* the axes */
 div.punchcard-weekday-rect path.domain {
     fill: none;
-    stroke: black;
     shape-rendering: crispEdges;
+    stroke: black;
 }
 
 /* the axes/chart's background  */
@@ -26,15 +26,15 @@ div.punchcard-weekday-rect rect.chartbody {
 /* the box around the chart background is a separate rect, this is its style */
 div.punchcard-weekday-rect rect.chartbody-box {
     fill: none;
-    stroke: black;
     shape-rendering: crispEdges;
+    stroke: black;
 }
 
 /* the symbols that are the main content of the plot */
 div.punchcard-weekday-rect rect.symbol {
-    stroke: none;
-    stroke-width: 0px;
     shape-rendering: crispEdges;
+    stroke: none;
+    stroke-width: 0;
 }
 
 /* the xlabel text */
@@ -58,6 +58,6 @@ div.punchcard-weekday-rect text.title {
 /* the tick marks */
 div.punchcard-weekday-rect .tick line {
     fill: none;
-    stroke: black;
     shape-rendering: crispEdges;
+    stroke: black;
 }

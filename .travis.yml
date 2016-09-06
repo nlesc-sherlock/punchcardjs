@@ -10,5 +10,9 @@ env:
 language: node_js
 node_js:
   - "4.5.0"
+before_script:
+  - "npm install"
+  - "npm install typings --global"
+  - "typings install"
 script:
   - "npm run everything"
