@@ -304,3 +304,119 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
 });
 
 
+
+
+describe('punchcards WeekdayCircle class with test/simple-n1-custom-datekey.fixture.json...', function () {
+
+    'use strict';
+
+    var fixtures, cf;
+
+    beforeEach(function () {
+
+        var data;
+
+        // set the base directory for loading of fixtures
+        fixture.setBase('test');
+
+        // load the html and json fixtures
+        fixtures = fixture.load('weekday-circle.fixture.html',
+            'simple-n1-custom-datekey.fixture.json');
+
+        data = fixtures[1];
+        cf = crossfilter(data);
+
+    });
+
+
+
+    afterEach(function () {
+        // clean up the DOM
+        fixture.cleanup();
+        cf = undefined;
+    });
+
+
+
+    it('...html fixture should have loaded correctly', function () {
+        var actual, expected;
+        actual = fixtures[0][0].outerHTML;
+        expected = '<div id="punchcard-weekday-circle"></div>';
+        expect(actual).toEqual(expected);
+    });
+
+
+
+    it('...json fixture should have loaded correctly', function () {
+        var actual, expected;
+        actual = Object.keys(fixtures[1][0]).sort();
+        expected = ["my-custom-datekey"];
+        expect(actual).toEqual(expected);
+    });
+
+
+
+    it('...json fixture should have just 1 record', function () {
+        var actual, expected;
+        actual = cf.size();
+        expected = 1;
+        expect(actual).toEqual(expected);
+    });
+
+
+
+    it('...after calling .drawSymbols(), the chart should have an ' +
+        'SVG g element of class "symbol" with 1 SVG circle of class ' +
+        '"symbol" attached to it', function () {
+            var actual, weekdaycircle, symbols;
+            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
+            weekdaycircle.datekey = 'my-custom-datekey';
+            weekdaycircle.defineDimensions();
+            weekdaycircle.drawSvg();
+            weekdaycircle.drawHorizontalAxis();
+            weekdaycircle.drawVerticalAxis();
+            weekdaycircle.drawSymbols();
+            symbols = weekdaycircle.svg.select('g.symbol').selectAll('circle.symbol')[0];
+            actual = symbols.length;
+            expect(actual).toEqual(1);
+        });
+
+
+
+    it('...after calling .drawSymbols(), the chart should have an ' +
+        'SVG g element of class "symbol" with 1 SVG circle of class ' +
+        '"symbol" attached to it, whose radius should be a positive number', function () {
+
+            // matches the following radiuses
+            //
+            // 0
+            // 120
+            // 120.43
+            // .4
+            // .48982
+            // 489.
+            //
+            // but not
+            //
+            // .
+            // NaN
+
+            var actual, weekdaycircle, symbols, re;
+            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
+            weekdaycircle.datekey = 'my-custom-datekey';
+            weekdaycircle.defineDimensions();
+            weekdaycircle.drawSvg();
+            weekdaycircle.drawHorizontalAxis();
+            weekdaycircle.drawVerticalAxis();
+            weekdaycircle.drawSymbols();
+            symbols = weekdaycircle.svg.select('g.symbol').selectAll('circle.symbol')[0];
+            re = new RegExp('^([\\d\\.]{2,}|[\\d]{1,})$');
+            actual = re.test(symbols[0].getAttribute('r'));
+            expect(actual).toBe(true);
+        });
+
+
+
+});
+
+
