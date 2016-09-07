@@ -65,6 +65,8 @@ Here are some examples of the type of visualizations you can make with this libr
 
             <!-- draw a punchcard WeekdayCircle using svg circle elements -->
             weekdayCircle = new punchcards.WeekdayCircle(cf, 'punchcarddiv');
+            <!-- define the name of the key from your data holding the datetime information -->
+            weekdayCircle.datekey = 'datestr';
             weekdayCircle.defineDimensions();
             weekdayCircle.draw();
 
