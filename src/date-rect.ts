@@ -3,7 +3,6 @@ import 'd3';
 import 'moment';
 
 
-import {IDataRow} from './idatarow';
 import {Base} from './base';
 import {ColorMap} from './colormap';
 
@@ -17,12 +16,12 @@ export class DateRect extends Base {
 
     /**
      * Constructor method for DateRect
-     * @param  {CrossFilter.CrossFilter<IDataRow>} cf Crossfilter object
+     * @param  {CrossFilter.CrossFilter<any>} cf Crossfilter object
      * containing the data.
      * @param  {string} domElemId name of the DOM element to draw in.
      * @return {[type]} A reference to an instance of DateRect.
      */
-    constructor (cf: CrossFilter.CrossFilter<IDataRow>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
 
         super(cf, domElemId);
 
@@ -41,10 +40,13 @@ export class DateRect extends Base {
      */
     public defineDimensions():Base {
 
+        // store a reference to the instance
+        let that:DateRect = this;
+
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
         this.dim.dateAndHourOfDay = this.cf.dimension(function (d:any) {
-            let m:moment.Moment = moment(d.datestr);
+            let m:moment.Moment = moment(d[that.datekey]);
             //stringify() and later, parse() to get keyed objects
             return JSON.stringify({
                 datestr: m.format('YYYY-MM-DD'),
@@ -110,10 +112,10 @@ export class DateRect extends Base {
         let dx:number = this.marginLeft;
         let dy:number = this.domElem.clientHeight - this.marginBottom;
 
-        let firstResultDate = new Date(this.dim.dateAndHourOfDay.bottom(1)[0].datestr);
+        let firstResultDate = new Date(this.dim.dateAndHourOfDay.bottom(1)[0][this.datekey]);
         this.dateFrom = new Date(firstResultDate.getFullYear(), firstResultDate.getMonth(), firstResultDate.getDate(), 0, 0, 0, 0);
 
-        let lastResultDate = new Date(this.dim.dateAndHourOfDay.top(1)[0].datestr);
+        let lastResultDate = new Date(this.dim.dateAndHourOfDay.top(1)[0][this.datekey]);
         this.dateTo = new Date(lastResultDate.getFullYear(), lastResultDate.getMonth(), lastResultDate.getDate(), 23, 59, 59, 999);
 
         let tickFormat:d3.time.Format;
@@ -218,7 +220,7 @@ export class DateRect extends Base {
                 .append('rect')
                     .attr('class', 'symbol')
                     .attr('x', function(d:any){
-                        return that.dateScale(new Date(d.key.datestr));
+                        return that.dateScale(new Date(d.key[that.datekey]));
                         })
                     .attr('y', function(d:any){
                         return that.todScale(parseInt(d.key.hourOfDay, 10));

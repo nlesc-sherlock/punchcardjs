@@ -3,7 +3,6 @@ import 'd3';
 import 'moment';
 
 
-import {IDataRow} from './idatarow';
 import {ColorMap} from './colormap';
 import {DateRect} from './date-rect';
 
@@ -12,7 +11,7 @@ import {DateRect} from './date-rect';
 export class DateCircle extends DateRect {
 
 
-    constructor (cf: CrossFilter.CrossFilter<IDataRow>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
 
         super(cf, domElemId);
 
@@ -78,7 +77,7 @@ export class DateCircle extends DateRect {
                 .append('circle')
                     .attr('class', 'symbol')
                     .attr('cx', function(d:any){
-                        return that.dateScale(new Date(d.key.datestr));
+                        return that.dateScale(new Date(d.key[that.datekey]));
                         })
                     .attr('cy', function(d:any){
                         return that.todScale(parseInt(d.key.hourOfDay, 10)) + symbolMargin.top + symbolHeight / 2;

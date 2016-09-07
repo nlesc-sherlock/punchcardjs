@@ -2,7 +2,6 @@ import 'crossfilter';
 import 'd3';
 
 
-import {IDataRow} from './idatarow';
 import {ColorMap} from './colormap';
 import {Legend} from './legend';
 
@@ -17,9 +16,9 @@ export class Base {
 
     /**
      * The crossfilter that contains the data which needs to be visualized.
-     * @type {CrossFilter.CrossFilter<IDataRow>}
+     * @type {CrossFilter.CrossFilter<any>}
      */
-    private _cf: CrossFilter.CrossFilter<IDataRow>;
+    private _cf: CrossFilter.CrossFilter<any>;
     /**
      * The colormap: i.e. the element that determines what color is used to
      * display a certain value.
@@ -108,16 +107,21 @@ export class Base {
     private _canDraw: boolean;
 
 
+
+    private _datekey:string;
+
+
+
     /**
      * Constructs an instance of Base when given a crossfilter object and the
      * name of a DOM element to draw in.
-     * @param  {CrossFilter.CrossFilter<IDataRow>} cf Crossfilter object
+     * @param  {CrossFilter.CrossFilter<any>} cf Crossfilter object
      * containing the data
      * @param  {string} domElemId DOM element identifier for the div in which to
      * draw the punchcard graph
      * @return {[type]} Returns an instance of Base class
      */
-    constructor (cf: CrossFilter.CrossFilter<IDataRow>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
 
         // the crossfilter object
         this.cf = cf;
@@ -145,7 +149,9 @@ export class Base {
         this.ylabel = 'Time of day';
         this.title = '';
 
+        this.datekey = 'datestr';
         this.colormap = new ColorMap();
+
 
         // beware: JavaScript magic happens here
         let that:Base = this;
@@ -440,10 +446,10 @@ export class Base {
 
     /**
      * [cf description]
-     * @param  {CrossFilter.CrossFilter<IDataRow>}    cf [description]
+     * @param  {CrossFilter.CrossFilter<any>}    cf [description]
      * @return {[type]}    [description]
      */
-    protected set cf(cf:CrossFilter.CrossFilter<IDataRow>) {
+    protected set cf(cf:CrossFilter.CrossFilter<any>) {
         this._cf = cf;
     }
 
@@ -451,7 +457,7 @@ export class Base {
      * [cf description]
      * @return {any} [description]
      */
-    protected get cf():CrossFilter.CrossFilter<IDataRow> {
+    protected get cf():CrossFilter.CrossFilter<any> {
         return this._cf;
     }
 
@@ -730,6 +736,14 @@ export class Base {
      */
     public get canDraw():boolean {
         return this._canDraw;
+    }
+
+    public set datekey(datekey:string) {
+        this._datekey = datekey;
+    }
+
+    public get datekey():string {
+        return this._datekey;
     }
 
 }
