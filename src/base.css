@@ -1,4 +1,4 @@
-div.punchcard-common {
+.punchcard-common {
     background-color: #fff;
     border: thin;
     border-color: #5f6a70;
@@ -12,6 +12,6 @@ div.punchcard-common {
     width: 90%;
 }
 
-div.hidden {
+.hidden {
     display: none;
 }
