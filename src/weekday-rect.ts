@@ -3,7 +3,6 @@ import 'crossfilter';
 import 'd3';
 import 'moment';
 
-import {IDataRow} from './idatarow';
 import {Base} from './base';
 import {ColorMap} from './colormap';
 
@@ -19,12 +18,12 @@ export class WeekdayRect extends Base {
      * week on the horizontal axis, and hour of day on the vertical axis, using
      * rectangular symbols to represent how many rows from the input data fall
      * within the area covered by each rectangle.
-     * @param  {CrossFilter.CrossFilter<IDataRow>} cf Crossfilter object
+     * @param  {CrossFilter.CrossFilter<any>} cf Crossfilter object
      * containing the data.
      * @param  {string} domElemId Name of the DOM element in which to draw.
      * @return {[type]} A reference to the instance of WeekdayRect.
      */
-    constructor (cf: CrossFilter.CrossFilter<IDataRow>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
 
         super(cf, domElemId);
 
@@ -44,12 +43,15 @@ export class WeekdayRect extends Base {
      */
     public defineDimensions():WeekdayRect {
 
+        // store a reference to the instance
+        let that:WeekdayRect = this;
+
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
 
         this.dim.weekdayAndHourOfDay = this.cf.dimension(function (d:any) {
             //stringify() and later, parse() to get keyed objects
-            let m:moment.Moment = moment(d.datestr);
+            let m:moment.Moment = moment(d[that.datekey]);
             return JSON.stringify({
                 weekday: m.format('ddd'),
                 hourOfDay: m.hour()
