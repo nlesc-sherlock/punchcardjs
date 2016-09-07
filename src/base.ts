@@ -105,9 +105,12 @@ export class Base {
      * @type {boolean}
      */
     private _canDraw: boolean;
-
-
-
+    /**
+     * Defines which key of your input data contains the datetime information
+     * based on which you want to create the symbols in the punchcard's body.
+     * The default value is 'datestr'
+     * @type {string}
+     */
     private _datekey:string;
 
 
@@ -738,10 +741,19 @@ export class Base {
         return this._canDraw;
     }
 
+    /**
+     * [datekey description]
+     * @param  {string} datekey [description]
+     * @return {[type]}         [description]
+     */
     public set datekey(datekey:string) {
         this._datekey = datekey;
     }
 
+    /**
+     * [datekey description]
+     * @return {string} [description]
+     */
     public get datekey():string {
         return this._datekey;
     }
