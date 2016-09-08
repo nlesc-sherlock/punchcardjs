@@ -5,6 +5,7 @@
     border-radius: 0;
     border-style: solid;
     box-shadow: 5px 5px 5px #99b3bf;
+    box-sizing: border-box;
     float: left;
     margin: 10px;
     padding: 0;
