@@ -32,9 +32,7 @@ Here are some examples of the type of visualizations you can make with this libr
 <html>
   <head>
     <!-- these style sheets are part of the punchcardjs distribution -->
-    <link rel="stylesheet" type="text/css" href="base.css">
-    <link rel="stylesheet" type="text/css" href="legend.css">
-    <link rel="stylesheet" type="text/css" href="weekday-circle.css">
+    <link rel="stylesheet" type="text/css" href="punchcards.min.css">
 
     <!-- include dependencies of punchcardjs -->
     <script type="text/javascript" src="crossfilter.min.js"></script>
@@ -42,7 +40,7 @@ Here are some examples of the type of visualizations you can make with this libr
     <script type="text/javascript" src="moment.min.js"></script>
 
     <!-- include punchcardjs library itself-->
-    <script type="text/javascript" src="punchcards.js"></script>
+    <script type="text/javascript" src="punchcards.min.js"></script>
   </head>
 
   <body style="background-color: #b5d3e2">
