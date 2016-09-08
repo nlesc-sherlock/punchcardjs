@@ -19,7 +19,7 @@
     "jshint": "jshint test/*.js",
     "jslint": "jslint test/*.js",
     "lint": "npm run tslint && npm run jshint && npm run jslint && npm run csslint",
-    "postdist": "npm run exorcist && npm run uglify && cp src/*.css dist",
+    "postdist": "npm run exorcist && npm run uglifyjs && npm run uglifycss",
     "postversion": "git log --pretty=oneline --max-count 10",
     "precover": "trash sites/coverage/ && npm run jslint && npm run jshint && npm run dist",
     "predist": "trash build/ && mkdirp build && trash dist/ && mkdirp dist && npm run tslint && npm run csslint",
@@ -31,7 +31,8 @@
     "test": "karma start karma.conf.js",
     "tsdoc": "typedoc --out sites/tsdoc/ .",
     "tslint": "tslint --config tslint.json ./src/**/*.ts",
-    "uglify": "uglifyjs dist/punchcards.js --output dist/punchcards.min.js --source-map dist/punchcards.min.js.map --screw-ie8 --in-source-map dist/punchcards.js.map --source-map-url punchcards.min.js.map"
+    "uglifycss":"uglifycss dist/punchcards.css > dist/punchcards.min.css",
+    "uglifyjs": "uglifyjs dist/punchcards.js --output dist/punchcards.min.js --source-map dist/punchcards.min.js.map --screw-ie8 --in-source-map dist/punchcards.js.map --source-map-url punchcards.min.js.map"
   },
   "keywords": [
     "typescript",
@@ -68,7 +69,8 @@
     "tslint": "^3.9.0",
     "typedoc": "^0.4.1",
     "typescript": "^1.8.10",
-    "uglify-js": "^2.7.3"
+    "uglify-js": "^2.7.3",
+    "uglifycss": "0.0.21"
   },
   "dependencies": {
     "crossfilter": "^1.3.12",
