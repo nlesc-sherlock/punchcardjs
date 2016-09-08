@@ -1,6 +1,6 @@
 {
   "name": "punchcardjs",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "Punchcard visualization using TypeScript and D3.js",
   "main": "./dist/punchcards.min.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "test": "karma start karma.conf.js",
     "tsdoc": "typedoc --out sites/tsdoc/ .",
     "tslint": "tslint --config tslint.json ./src/**/*.ts",
-    "uglifycss":"uglifycss dist/punchcards.css > dist/punchcards.min.css",
+    "uglifycss": "uglifycss dist/punchcards.css > dist/punchcards.min.css",
     "uglifyjs": "uglifyjs dist/punchcards.js --output dist/punchcards.min.js --source-map dist/punchcards.min.js.map --screw-ie8 --in-source-map dist/punchcards.js.map --source-map-url punchcards.min.js.map"
   },
   "keywords": [
