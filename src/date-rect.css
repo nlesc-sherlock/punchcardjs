@@ -11,46 +11,46 @@ div.punchcard-date-rect svg {
 }
 
 /* the axes */
-div.punchcard-date-rect path.domain {
+div.punchcard-date-rect .domain {
   fill: none;
   shape-rendering: crispEdges;
   stroke: black;
 }
 
 /* the axes/chart's background  */
-div.punchcard-date-rect rect.chartbody {
+div.punchcard-date-rect .chartbody {
     fill: #d8d8d8;
     shape-rendering: crispEdges;
 }
 
 /* the box around the chart background is a separate rect, this is its style */
-div.punchcard-date-rect rect.chartbody-box {
+div.punchcard-date-rect .chartbody-box {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the symbols that are the main content of the plot */
-div.punchcard-date-rect rect.symbol {
+div.punchcard-date-rect .symbol {
     shape-rendering: crispEdges;
     stroke: none;
     stroke-width: 0;
 }
 
 /* the xlabel text */
-div.punchcard-date-rect text.horizontal-axis-label {
+div.punchcard-date-rect .horizontal-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the ylabel text */
-div.punchcard-date-rect text.vertical-axis-label {
+div.punchcard-date-rect .vertical-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the title text */
-div.punchcard-date-rect text.title {
+div.punchcard-date-rect .title {
     text-align: center;
     text-anchor: middle;
 }

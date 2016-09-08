@@ -11,45 +11,45 @@ div.punchcard-weekday-circle svg {
 }
 
 /* the axes */
-div.punchcard-weekday-circle path.domain {
+div.punchcard-weekday-circle .domain {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the axes/chart's background  */
-div.punchcard-weekday-circle rect.chartbody {
+div.punchcard-weekday-circle .chartbody {
     fill: #d8d8d8;
     shape-rendering: crispEdges;
 }
 
 /* the box around the chart background is a separate rect, this is its style */
-div.punchcard-weekday-circle rect.chartbody-box {
+div.punchcard-weekday-circle .chartbody-box {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the symbols that are the main content of the plot */
-div.punchcard-weekday-circle circle.symbol {
+div.punchcard-weekday-circle .symbol {
     stroke: black;
     stroke-width: 1px;
 }
 
 /* the xlabel text */
-div.punchcard-weekday-circle text.horizontal-axis-label {
+div.punchcard-weekday-circle .horizontal-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the ylabel text */
-div.punchcard-weekday-circle text.vertical-axis-label {
+div.punchcard-weekday-circle .vertical-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the title text */
-div.punchcard-weekday-circle text.title {
+div.punchcard-weekday-circle .title {
     text-align: center;
     text-anchor: middle;
 }
