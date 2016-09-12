@@ -11,8 +11,8 @@ npm install punchcardjs
 ```
 
 - For a demo website, go [here](http://github.com/nlesc-sherlock/punchcardjs-demo), but see also [#51](https://github.com/nlesc-sherlock/punchcardjs/issues/51) and [#47](https://github.com/nlesc-sherlock/punchcardjs/issues/47);
-- For the code coverage report, go [here](http://nlesc-sherlock.github.io/punchcardjs/coverage/remapped/src/index.html), but see also [#55](https://github.com/nlesc-sherlock/punchcardjs/issues/55);
-- For TypeDoc documentation of the code, go [here](http://nlesc-sherlock.github.io/punchcardjs/tsdoc/), but see also [#5](https://github.com/nlesc-sherlock/punchcardjs/issues/5) and [#7](https://github.com/nlesc-sherlock/punchcardjs/issues/7);
+- For the code coverage report, go [here](http://nlesc-sherlock.github.io/punchcardjs/sites/coverage/remapped/src/index.html), but see also [#55](https://github.com/nlesc-sherlock/punchcardjs/issues/55);
+- For TypeDoc documentation of the code, go [here](http://nlesc-sherlock.github.io/punchcardjs/sites/tsdoc/), but see also [#5](https://github.com/nlesc-sherlock/punchcardjs/issues/5) and [#7](https://github.com/nlesc-sherlock/punchcardjs/issues/7);
 
 ## Examples
 
