@@ -148,13 +148,15 @@ npm run cover
 │   ├── example-weekday-circle.png     # example image of WeekdayCircle class
 │   ├── example-weekday-rect.png       # example image of WeekdayRect class
 │   ├── installing-node.md             # some notes on how to install nodejs
+│   ├── sites                          # generated content, e.g.
+│   │   ├── coverage                   # code coverage report
+│   │   └── tsdoc                      # typedoc documentation
 │   ├── visual-description-of-setup.png# PNG rendering of the corresponding SVG image
 │   └── visual-description-of-setup.svg# SVG image that explains the build setup
 ├── karma.conf.js                      # configuration file for Karma, the test runner
 ├── LICENSE                            # describes the license for dissemination and use of this software
 ├── package.json                       # the Node package manager configuration file
 ├── README.md                          # this file
-├── sites                              # there are a few websites associated with this repository; their content will be generated here
 ├── src                                # this directory contains all the sources (css, ts) for the punchcards library
 │   ├── base.css                       # the CSS for the Base class
 │   ├── base.ts                        # the TypeScript for the Base class
