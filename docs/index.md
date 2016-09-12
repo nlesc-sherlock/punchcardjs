@@ -1,0 +1,2 @@
+- For the code coverage report, go [here](http://nlesc-sherlock.github.io/punchcardjs/sites/coverage/remapped/src/index.html).
+- For the TypeDoc documentation, go [here](http://nlesc-sherlock.github.io/punchcardjs/sites/tsdoc/).
