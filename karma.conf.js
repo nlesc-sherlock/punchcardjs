@@ -47,7 +47,7 @@ module.exports = function(config) {
     // This is also a custom property AFAICT.
     coverageReporter: {
       // specify a common output directory
-      dir: './sites/coverage',
+      dir: './docs/sites/coverage',
       reporters: [
         { type: 'json', subdir: '.', file: 'coverage.json' }
       ]

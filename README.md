@@ -18,13 +18,13 @@ npm install punchcardjs
 
 Here are some examples of the type of visualizations you can make with this library:
 
-![example-date-circle.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/example-date-circle.png "example-date-circle.png")
+![example-date-circle.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/example-date-circle.png "example-date-circle.png")
 
-![example-date-rect.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/example-date-rect.png "example-date-rect.png")
+![example-date-rect.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/example-date-rect.png "example-date-rect.png")
 
-![example-weekday-circle.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/example-weekday-circle.png "example-weekday-circle.png")
+![example-weekday-circle.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/example-weekday-circle.png "example-weekday-circle.png")
 
-![example-weekday-rect.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/example-weekday-rect.png "example-weekday-rect.png")
+![example-weekday-rect.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/example-weekday-rect.png "example-weekday-rect.png")
 
 ## Code snippet
 
@@ -142,7 +142,7 @@ npm run cover
 ```
 .                                      # project root directory
 ├── CONTRIBUTING                       # outlines the rules/for contributing to this repository
-├── doc                                # directory containing files that help document the repository
+├── docs                                # directory containing files that help document the repository
 │   ├── example-date-circle.png        # example image of DateCircle class
 │   ├── example-date-rect.png          # example image of DateRect class
 │   ├── example-weekday-circle.png     # example image of WeekdayCircle class
@@ -209,7 +209,7 @@ So you wrote some **source code**. A **distributable** can be created from the s
 
 Here is a visual representation of our build process:
 
-![visual-description-of-setup.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/doc/visual-description-of-setup.png "visual-description-of-setup.png")
+![visual-description-of-setup.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/visual-description-of-setup.png "visual-description-of-setup.png")
 
 
 
