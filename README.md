@@ -214,9 +214,10 @@ Here is a visual representation of our build process:
 ![visual-description-of-setup.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/visual-description-of-setup.png "visual-description-of-setup.png")
 
 
-and here is a callgraph generated from [package.json](https://github.com/nlesc-sherlock/punchcardjs/blob/master/package.json):
+and here is a callgraph generated from [package.json](https://github.com/nlesc-sherlock/punchcardjs/blob/master/package.json) using [https://github.com/jspaaks/npm-scripts-callgraph](https://github.com/jspaaks/npm-scripts-callgraph):
 
 ![punchcardjs-callgraph.png](https://github.com/nlesc-sherlock/punchcardjs/blob/master/docs/punchcardjs-callgraph.png "punchcardjs-callgraph.png")
+
 
 
 
