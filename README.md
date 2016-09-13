@@ -216,7 +216,7 @@ Here is a visual representation of our build process:
 
 and here is a callgraph generated from [package.json](https://github.com/nlesc-sherlock/punchcardjs/blob/master/package.json) using [https://github.com/jspaaks/npm-scripts-callgraph](https://github.com/jspaaks/npm-scripts-callgraph):
 
-![punchcardjs-callgraph.png](https://github.com/nlesc-sherlock/punchcardjs/blob/master/docs/punchcardjs-callgraph.png "punchcardjs-callgraph.png")
+![punchcardjs-callgraph.png](https://github.com/nlesc-sherlock/punchcardjs/raw/master/docs/punchcardjs-callgraph.png "punchcardjs-callgraph.png")
 
 
 
