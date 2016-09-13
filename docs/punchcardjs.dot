@@ -1,100 +1,66 @@
 digraph punchcardjs{
-0 [label="prepublish", fillcolor="#fff2be", style="filled"]
-1 [label="publish", fillcolor="#fff2be", style="filled"]
-2 [label="postpublish", fillcolor="#fff2be", style="filled"]
-3 [label="preinstall", fillcolor="#fff2be", style="filled"]
-4 [label="install", fillcolor="#fff2be", style="filled"]
-5 [label="postinstall", fillcolor="#fff2be", style="filled"]
-6 [label="preuninstall", fillcolor="#fff2be", style="filled"]
-7 [label="uninstall", fillcolor="#fff2be", style="filled"]
-8 [label="postuninstall", fillcolor="#fff2be", style="filled"]
-9 [label="version", fillcolor="#fff2be", style="filled"]
-10 [label="pretest", fillcolor="#fff2be", style="filled"]
-11 [label="posttest", fillcolor="#fff2be", style="filled"]
-12 [label="prestop", fillcolor="#fff2be", style="filled"]
-13 [label="stop", fillcolor="#fff2be", style="filled"]
-14 [label="poststop", fillcolor="#fff2be", style="filled"]
-15 [label="prestart", fillcolor="#fff2be", style="filled"]
-16 [label="start", fillcolor="#fff2be", style="filled"]
-17 [label="poststart", fillcolor="#fff2be", style="filled"]
-18 [label="prerestart", fillcolor="#fff2be", style="filled"]
-19 [label="restart", fillcolor="#fff2be", style="filled"]
-20 [label="postrestart", fillcolor="#fff2be", style="filled"]
-21 [label="clean", tooltip="npm run clean-build & npm run clean-dist & npm run clean-sites"]
-22 [label="clean-build", tooltip="trash build/"]
-23 [label="clean-cover", tooltip="trash docs/sites/coverage/"]
-24 [label="clean-dist", tooltip="trash dist/"]
-25 [label="clean-downloaded", tooltip="trash typings/ node_modules/"]
-26 [label="clean-sites", tooltip="npm run clean-cover & npm run clean-tsdoc"]
-27 [label="clean-tsdoc", tooltip="trash docs/sites/tsdoc/"]
-28 [label="cover", tooltip="npm run test && npm run remap-istanbul-json && npm run remap-istanbul-html"]
-29 [label="csslint", tooltip="cat src/*.css > dist/punchcards.css && csslint --config=.csslintrc --format=compact dist/punchcards.css"]
-30 [label="dist", tooltip="browserify src/punchcards.ts --debug --standalone punchcards -p [ tsify --project . ] > build/punchcards-with-source-maps.js"]
-31 [label="everything", tooltip="npm run tsdoc && npm run cover"]
-32 [label="exorcist", tooltip="<build/punchcards-with-source-maps.js exorcist dist/punchcards.js.map > dist/punchcards.js"]
-33 [label="jshint", tooltip="jshint test/*.js"]
-34 [label="jslint", tooltip="jslint test/*.js"]
-35 [label="lint", tooltip="npm run tslint && npm run jshint && npm run jslint && npm run csslint"]
-36 [label="postdist", tooltip="npm run exorcist && npm run uglifyjs && npm run uglifycss"]
-37 [label="postversion", tooltip="git log --pretty=oneline --max-count 10", fillcolor="#fff2be", style="filled"]
-38 [label="precover", tooltip="trash docs/sites/coverage/ && npm run jslint && npm run jshint && npm run dist"]
-39 [label="predist", tooltip="trash build/ && mkdirp build && trash dist/ && mkdirp dist && npm run tslint && npm run csslint"]
-40 [label="pretsdoc", tooltip="npm run clean-tsdoc && mkdirp docs/sites/tsdoc"]
-41 [label="preversion", tooltip="npm run purge && npm install && typings install && npm run dist && npm run test", fillcolor="#fff2be", style="filled"]
-42 [label="purge", tooltip="npm run clean & npm run clean-downloaded"]
-43 [label="remap-istanbul-html", tooltip="remap-istanbul --input docs/sites/coverage/coverage-remapped.json --output docs/sites/coverage/remapped --type html --exclude node_modules"]
-44 [label="remap-istanbul-json", tooltip="remap-istanbul --input docs/sites/coverage/coverage.json --output docs/sites/coverage/coverage-remapped.json"]
-45 [label="test", tooltip="karma start karma.conf.js", fillcolor="#fff2be", style="filled"]
-46 [label="tsdoc", tooltip="typedoc --out docs/sites/tsdoc/ ."]
-47 [label="tslint", tooltip="tslint --config tslint.json ./src/**/*.ts"]
-48 [label="uglifycss", tooltip="uglifycss dist/punchcards.css > dist/punchcards.min.css"]
-49 [label="uglifyjs", tooltip="uglifyjs dist/punchcards.js --output dist/punchcards.min.js --source-map dist/punchcards.min.js.map --screw-ie8 --in-source-map dist/punchcards.js.map --source-map-url punchcards.min.js.map"]
-21 -> 22
-21 -> 24
-21 -> 26
-26 -> 23
-26 -> 27
-28 -> 45
-28 -> 44
-28 -> 43
-31 -> 46
-31 -> 28
-35 -> 47
-35 -> 33
-35 -> 34
-35 -> 29
-36 -> 32
-36 -> 49
-36 -> 48
-38 -> 34
-38 -> 33
-38 -> 30
-39 -> 47
-39 -> 29
-40 -> 27
-41 -> 42
-41 -> 30
-41 -> 45
-42 -> 21
-42 -> 25
-1 -> 0
-1 -> 2
-4 -> 3
-4 -> 5
-7 -> 6
-7 -> 8
-45 -> 10
-45 -> 11
-13 -> 12
-13 -> 14
-16 -> 15
-16 -> 17
-19 -> 18
-19 -> 20
-30 -> 36
-9 -> 37
-28 -> 38
-30 -> 39
-46 -> 40
-9 -> 41
+0 [label="clean", tooltip="npm run clean-build & npm run clean-dist & npm run clean-sites"]
+1 [label="clean-build", tooltip="trash build/"]
+2 [label="clean-cover", tooltip="trash docs/sites/coverage/"]
+3 [label="clean-dist", tooltip="trash dist/"]
+4 [label="clean-downloaded", tooltip="trash typings/ node_modules/"]
+5 [label="clean-sites", tooltip="npm run clean-cover & npm run clean-tsdoc"]
+6 [label="clean-tsdoc", tooltip="trash docs/sites/tsdoc/"]
+7 [label="cover", tooltip="npm run test && npm run remap-istanbul-json && npm run remap-istanbul-html"]
+8 [label="csslint", tooltip="cat src/*.css > dist/punchcards.css && csslint --config=.csslintrc --format=compact dist/punchcards.css"]
+9 [label="dist", tooltip="browserify src/punchcards.ts --debug --standalone punchcards -p [ tsify --project . ] > build/punchcards-with-source-maps.js"]
+10 [label="everything", tooltip="npm run tsdoc && npm run cover"]
+11 [label="exorcist", tooltip="<build/punchcards-with-source-maps.js exorcist dist/punchcards.js.map > dist/punchcards.js"]
+12 [label="jshint", tooltip="jshint test/*.js"]
+13 [label="jslint", tooltip="jslint test/*.js"]
+14 [label="lint", tooltip="npm run tslint && npm run jshint && npm run jslint && npm run csslint"]
+15 [label="postdist", tooltip="npm run exorcist && npm run uglifyjs && npm run uglifycss"]
+16 [label="postversion", tooltip="git log --pretty=oneline --max-count 10", fillcolor="#fff2be", style="filled"]
+17 [label="precover", tooltip="trash docs/sites/coverage/ && npm run jslint && npm run jshint && npm run dist"]
+18 [label="predist", tooltip="trash build/ && mkdirp build && trash dist/ && mkdirp dist && npm run tslint && npm run csslint"]
+19 [label="pretsdoc", tooltip="npm run clean-tsdoc && mkdirp docs/sites/tsdoc"]
+20 [label="preversion", tooltip="npm run purge && npm install && typings install && npm run dist && npm run test", fillcolor="#fff2be", style="filled"]
+21 [label="purge", tooltip="npm run clean & npm run clean-downloaded"]
+22 [label="remap-istanbul-html", tooltip="remap-istanbul --input docs/sites/coverage/coverage-remapped.json --output docs/sites/coverage/remapped --type html --exclude node_modules"]
+23 [label="remap-istanbul-json", tooltip="remap-istanbul --input docs/sites/coverage/coverage.json --output docs/sites/coverage/coverage-remapped.json"]
+24 [label="test", tooltip="karma start karma.conf.js", fillcolor="#fff2be", style="filled"]
+25 [label="tsdoc", tooltip="typedoc --out docs/sites/tsdoc/ ."]
+26 [label="tslint", tooltip="tslint --config tslint.json ./src/**/*.ts"]
+27 [label="uglifycss", tooltip="uglifycss dist/punchcards.css > dist/punchcards.min.css"]
+28 [label="uglifyjs", tooltip="uglifyjs dist/punchcards.js --output dist/punchcards.min.js --source-map dist/punchcards.min.js.map --screw-ie8 --in-source-map dist/punchcards.js.map --source-map-url punchcards.min.js.map"]
+29 [label="version", fillcolor="#fff2be", style="filled"]
+0 -> 1
+0 -> 3
+0 -> 5
+5 -> 2
+5 -> 6
+7 -> 24
+7 -> 23
+7 -> 22
+10 -> 25
+10 -> 7
+14 -> 26
+14 -> 12
+14 -> 13
+14 -> 8
+15 -> 11
+15 -> 28
+15 -> 27
+17 -> 13
+17 -> 12
+17 -> 9
+18 -> 26
+18 -> 8
+19 -> 6
+20 -> 21
+20 -> 9
+20 -> 24
+21 -> 0
+21 -> 4
+9 -> 15
+29 -> 16
+7 -> 17
+9 -> 18
+25 -> 19
+29 -> 20
 }
