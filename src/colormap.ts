@@ -1,19 +1,46 @@
 
-
+/**
+ * Associates a point in the domain space to a color
+ * @type {Object}
+ */
 type ColorTableItem = {
     at   : number;
     color: [number, number, number];
 }
 
+/**
+ * An array of ColorTableItems
+ * @type {[type]}
+ */
 type ColorTable = Array<ColorTableItem>;
 
-
+/**
+ * ColorMap helps you associate values from the domain to rgba color values,
+ * where each channel is in the range [0,255]
+ */
 export class ColorMap {
 
+    /**
+     * Array of ColorTableItems, where each ColorTableItem associates a point
+     * along the domain's number line to an rgba color.
+     * @type {ColorTable}
+     */
     private _colortable: ColorTable;
+    /**
+     * Domain value assocatiated with the lowest color from the ColorMap.
+     * @type {number}
+     */
     private _cLimLow: number;
+    /**
+     * Domain value assocatiated with the highest color from the ColorMap.
+     * @type {number}
+     */
     private _cLimHigh: number;
-
+    /**
+     * if the user does not specify which ColorMap she wants to use,
+     * defaultColorTable is what she'll get.
+     * @type {ColorTable}
+     */
     static defaultColorTable:ColorTable = [
         {
             at: Number.NEGATIVE_INFINITY,
@@ -33,7 +60,11 @@ export class ColorMap {
         }
     ];
 
-
+    /**
+     * [constructor description]
+     * @param  {ColorTable|string} colortable [description]
+     * @return {[type]}                       [description]
+     */
     constructor (colortable?:ColorTable|string) {
 
         let str: string;
@@ -73,7 +104,18 @@ export class ColorMap {
     }
 
 
-
+    /**
+     * comparison function to help sort the ColorTableItems that make
+     * up a ColorTable. Basically when comparing objects, you have to specify
+     * which key you want to compare/sort on, which for this function is the
+     * value of a ColorTableItem's 'at' key.
+     * @param  {ColorTableItem} a the first ColorTableItem (left hand side
+     * member of the comparison)
+     * @param  {ColorTableItem} b the second ColorTableItem (right hand side
+     * of the comparison)
+     * @return {number} number identifying how a nd b compare. Returns -1 when
+     * a<b, 1 when a>b, or 0 when a==b
+     */
     private compare(a:ColorTableItem, b:ColorTableItem):number {
 
         if (a.at < b.at) {
@@ -86,7 +128,12 @@ export class ColorMap {
     }
 
 
-
+    /**
+     * Returns a ColorTable based on an input string
+     * @param  {string} input string, e.g. 'default', 'gray', 'empty',
+     * 'autumn', 'blues', 'summer', 'rainbow'
+     * @return {ColorTable} The ColorTable associated with the input string
+     */
     protected expandColorTableStr(str:string):ColorTable {
 
         let colortable:ColorTable;
@@ -253,10 +300,19 @@ export class ColorMap {
 
 
 
+    /**
+     * Returns an rgba color array based on the current colormap (including the
+     * domain values at the upper and lower boundaries of the ColorMap) and an
+     * input domain value. The color values are determined by linear
+     * interpolation between the known color values, as defined by the ColorMap.
+     * @param  {number} at Value for which you want to know the associated color
+     * @return {[type]} 4-D vector containing rgba value of the color, with 0
+     * represetning zero intensity and 255 full intensity.
+     */
+    public getColor(at:number):[number, number, number, number] {
 
-    public getColor(at:number):[number, number, number] {
-
-        // if there is only one value in the range, lower the lower limit and raise the upper limit
+        // if there is only one value in the range, lower the lower limit and
+        // raise the upper limit
         if (this.cLimLow === this.cLimHigh) {
             this.cLimLow -= 0.5;
             this.cLimHigh += 0.5;
@@ -297,7 +353,12 @@ export class ColorMap {
 
 
 
-
+    /**
+     * CSS string representation of the result returned by ColorMap.getColor().
+     * Note that the string does not include a transparency value.
+     * @param  {number} at Value for which you want to know the associated color.
+     * @return {string} CSS string representing the rgb color.
+     */
     public getColorRGB(at:number):string {
 
         let color:[number, number, number];
@@ -307,7 +368,11 @@ export class ColorMap {
 
 
 
-
+    /**
+     * Add a ColorTableItem to the current ColorMap
+     * @param  {ColorTableItem} color Color to add, with linkage to domain value.
+     * @return {ColorMap} Updated ColorMap
+     */
     public addColor(color: ColorTableItem): ColorMap {
 
         this.colortable.push(color);
@@ -316,6 +381,11 @@ export class ColorMap {
         return this;
     }
 
+    /**
+     * Add multiple ColorTableItems to the ColorMap
+     * @param  {ColorTable} colors Colors to add to the ColorMap
+     * @return {ColorMap} Updated Colormap
+     */
     public addColors(colors:ColorTable): ColorMap {
 
         for (let elem of colors) {
@@ -327,32 +397,52 @@ export class ColorMap {
     }
 
 
-
-
+    /**
+     * Set the domain value associated with the lower limit of the ColorMap
+     * @param  {number} cLimLow Domain value associated with the lower limit
+     * of the ColorMap
+     */
     public set cLimLow(cLimLow:number) {
         this._cLimLow = cLimLow;
     }
 
+    /**
+     * @return {[type]} The domain value associated with the lower limit of the
+     * ColorMap
+     */
     public get cLimLow() {
         return this._cLimLow;
     }
 
+    /**
+     * Set the domain value associated with the upper limit of the ColorMap
+     * @param  {number} cLimHigh The domain value associated with the upper
+     * limit of the ColorMap
+     */
     public set cLimHigh(cLimHigh:number) {
         this._cLimHigh = cLimHigh;
     }
 
+    /**
+     * @return {[type]} The domain value associated with the upper limit of the
+     * ColorMap
+     */
     public get cLimHigh() {
         return this._cLimHigh;
     }
 
+    /**
+     * @param  {ColorTable} colortable Set the list of ColorTableItems aka the
+     * colortable
+     */
     public set colortable(colortable:ColorTable) {
-
-        // TODO check if the colortable has colors at Infinity, at 0.0, at 1.0
-        // check that the colors are rgba
-        // check that infinity has 255 as alpha value on both sides
         this._colortable = colortable;
     }
 
+    /**
+     * @return {ColorTable} Returns the list of ColorTableItems, aka the
+     * ColorTable
+     */
     public get colortable():ColorTable{
         return this._colortable;
     }
