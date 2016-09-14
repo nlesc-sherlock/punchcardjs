@@ -8,77 +8,78 @@ import {WeekdayCircle} from './weekday-circle';
 import {WeekdayRect} from './weekday-rect';
 
 /**
- * [PunchcardVisualization description]
- * @type {[type]}
- */
+ * Convenience type/collection of various punchcards
+  */
 type PunchcardVisualization = Base|DateCircle|DateRect|
                                     WeekdayCircle|WeekdayRect;
 
 /**
- *
+ * Legend adds a legend to an existing PunchcardVisualization, indicating which
+ * color represents which domain value.
  */
 export class Legend {
 
     /**
-     * [_marginLeft description]
+     * Margin in pixels to the left of the legend
      * @type {number}
      */
     private _marginLeft: number;
     /**
-     * [_marginRight description]
+     * Margin in pixels to the right of the legend
      * @type {number}
      */
     private _marginRight: number;
     /**
-     * [_marginTop description]
+     * Margin in pixels to the top of the legend
      * @type {number}
      */
     private _marginTop: number;
     /**
-     * [_marginBottom description]
+     * Margin in pixels to the bottom of the legend
      * @type {number}
      */
     private _marginBottom: number;
     /**
-     * [_sibling description]
+     * The Legend's sibling, i.e. the object that the legend is associated with.
      * @type {PunchcardVisualization}
      */
     private _sibling: PunchcardVisualization;
     /**
-     * [_title description]
+     * The title of the Legend
      * @type {string}
      */
     private _title: string;
     /**
-     * [_ylabel description]
+     * Text to label the Legend's vertical axis
      * @type {string}
      */
     private _ylabel: string;
     /**
-     * [_horizontalScale description]
+     * The legend's horizontal axis scale
      * @type {any}
      */
     private _horizontalScale: any;
     /**
-     * [_verticalScale description]
+     * The Legend's vertical axis scale
      * @type {any}
      */
     private _verticalScale: any;
     /**
-     * [_width description]
+     * The Legend's width in pixels
      * @type {number}
      */
     private _width: number;
     /**
-     * [_height description]
+     * The Legend's height in pixels
      * @type {number}
      */
     private _height: number;
 
     /**
-     * [constructor description]
-     * @param  {PunchcardVisualization} sibling [description]
-     * @return {[type]}                         [description]
+     * Adds a legend to an existing PunchcardVisualization.
+     * @param  {PunchcardVisualization} sibling The sibling element, for which
+     * a legend needs to be constructed
+     * @return {[type]} A reference to the instance of Legend
      */
     constructor (sibling:PunchcardVisualization) {
 
@@ -101,8 +102,9 @@ export class Legend {
 
 
     /**
-     * [draw description]
-     * @return {Legend} [description]
+     * This method calls the other methods in a predefined succession, so that
+     * the whole legend gets drawn
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     public draw(): Legend {
         // draw the legend
@@ -121,8 +123,8 @@ export class Legend {
 
 
     /**
-     * [drawBox description]
-     * @return {Legend} [description]
+     * Draws the box around the legend
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawBox():Legend {
         // draw box
@@ -144,8 +146,8 @@ export class Legend {
 
 
     /**
-     * [drawHorizontalAxis description]
-     * @return {Legend} [description]
+     * Draws the Legend's horizontal axis
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     private drawHorizontalAxis():Legend {
 
@@ -168,8 +170,8 @@ export class Legend {
 
 
     /**
-     * [drawLegendBody description]
-     * @return {Legend} [description]
+     * Draws the Legend's body (but not the colored symbols on it)
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawLegendBody():Legend {
         //
@@ -191,8 +193,9 @@ export class Legend {
 
 
     /**
-     * [drawSymbols description]
-     * @return {Legend} [description]
+     * Draws the Legend's colored symbols, each of which is associated with a
+     * certain domain value.
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawSymbols():Legend {
         // pass
@@ -239,8 +242,8 @@ export class Legend {
 
 
     /**
-     * [drawTitle description]
-     * @return {Legend} [description]
+     * Draws the Legend's title
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawTitle():Legend {
 
@@ -260,8 +263,9 @@ export class Legend {
 
 
     /**
-     * [drawVerticalAxis description]
-     * @return {Legend} [description]
+     * Draws the Legend's vertical axis, that is used to read the domain value
+     * associated with a certain color.
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawVerticalAxis():Legend {
         //
@@ -292,8 +296,8 @@ export class Legend {
 
 
     /**
-     * [drawVerticalAxisLabel description]
-     * @return {Legend} [description]
+     * Draws the Legend's vertical axis text label
+     * @return {Legend} Returns a reference to the instance of Legend
      */
     protected drawVerticalAxisLabel():Legend {
         //
