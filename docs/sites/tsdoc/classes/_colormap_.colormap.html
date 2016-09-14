@@ -70,6 +70,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>ColorMap helps you associate values from the domain to rgba color values,
+						where each channel is in the range [0,255]</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -131,9 +139,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L34">colormap.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L61">colormap.ts:61</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>[constructor description]</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -141,6 +154,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_colormap_.colormap.html" class="tsd-signature-type">ColorMap</a></h4>
+							<p>[description]</p>
 						</li>
 					</ul>
 				</section>
@@ -153,9 +167,19 @@
 					<div class="tsd-signature tsd-kind-icon">_c<wbr>Lim<wbr>High<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L15">colormap.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L38">colormap.ts:38</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Domain value assocatiated with the highest color from the ColorMap.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{number}</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="_climlow" class="tsd-anchor"></a>
@@ -163,9 +187,19 @@
 					<div class="tsd-signature tsd-kind-icon">_c<wbr>Lim<wbr>Low<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L14">colormap.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L33">colormap.ts:33</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Domain value assocatiated with the lowest color from the ColorMap.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{number}</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="_colortable" class="tsd-anchor"></a>
@@ -173,9 +207,20 @@
 					<div class="tsd-signature tsd-kind-icon">_colortable<span class="tsd-signature-symbol">:</span> <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L13">colormap.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L28">colormap.ts:28</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array of ColorTableItems, where each ColorTableItem associates a point
+							along the domain&#39;s number line to an rgba color.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{ColorTable}</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="defaultcolortable" class="tsd-anchor"></a>
@@ -183,9 +228,20 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Color<wbr>Table<span class="tsd-signature-symbol">:</span> <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a><span class="tsd-signature-symbol"> =&nbsp;[{at: Number.NEGATIVE_INFINITY,color: [255, 255, 255, 255]},{at: 0.0,color: [8, 106, 227, 0]},{at: 1.0,color: [227, 8, 88, 0]},{at: Number.POSITIVE_INFINITY,color: [255, 255, 255, 255]}]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L17">colormap.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L44">colormap.ts:44</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>if the user does not specify which ColorMap she wants to use,
+							defaultColorTable is what she&#39;ll get.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{ColorTable}</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
@@ -201,24 +257,44 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L344">colormap.ts:344</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L430">colormap.ts:430</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the domain value associated with the upper limit of the ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The domain value associated with the upper limit of the
+							ColorMap</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L340">colormap.ts:340</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L422">colormap.ts:422</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the domain value associated with the upper limit of the ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>cLimHigh: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The domain value associated with the upper
+											limit of the ColorMap</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>The domain value associated with the upper limit of the
+							ColorMap</p>
 						</li>
 					</ul>
 				</section>
@@ -233,24 +309,44 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L336">colormap.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L413">colormap.ts:413</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the domain value associated with the lower limit of the ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The domain value associated with the lower limit of the
+							ColorMap</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L332">colormap.ts:332</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L405">colormap.ts:405</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the domain value associated with the lower limit of the ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>cLimLow: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Domain value associated with the lower limit
+											of the ColorMap</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>The domain value associated with the lower limit of the
+							ColorMap</p>
 						</li>
 					</ul>
 				</section>
@@ -265,24 +361,38 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L356">colormap.ts:356</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L446">colormap.ts:446</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a></h4>
+							<p>Returns the list of ColorTableItems, aka the
+							ColorTable</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L348">colormap.ts:348</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L438">colormap.ts:438</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>colortable: <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Set the list of ColorTableItems aka the
+											colortable</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>Returns the list of ColorTableItems, aka the
+							ColorTable</p>
 						</li>
 					</ul>
 				</section>
@@ -299,16 +409,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L311">colormap.ts:311</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L376">colormap.ts:376</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a ColorTableItem to the current ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>color: <a href="../modules/_colormap_.html#colortableitem" class="tsd-signature-type">ColorTableItem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Color to add, with linkage to domain value.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_colormap_.colormap.html" class="tsd-signature-type">ColorMap</a></h4>
+							<p>Updated ColorMap</p>
 						</li>
 					</ul>
 				</section>
@@ -322,16 +441,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L319">colormap.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L389">colormap.ts:389</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add multiple ColorTableItems to the ColorMap</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>colors: <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Colors to add to the ColorMap</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_colormap_.colormap.html" class="tsd-signature-type">ColorMap</a></h4>
+							<p>Updated Colormap</p>
 						</li>
 					</ul>
 				</section>
@@ -345,19 +473,37 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L77">colormap.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L119">colormap.ts:119</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>comparison function to help sort the ColorTableItems that make
+										up a ColorTable. Basically when comparing objects, you have to specify
+										which key you want to compare/sort on, which for this function is the
+									value of a ColorTableItem&#39;s &#39;at&#39; key.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>a: <a href="../modules/_colormap_.html#colortableitem" class="tsd-signature-type">ColorTableItem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the first ColorTableItem (left hand side
+										member of the comparison)</p>
+									</div>
 								</li>
 								<li>
 									<h5>b: <a href="../modules/_colormap_.html#colortableitem" class="tsd-signature-type">ColorTableItem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the second ColorTableItem (right hand side
+										of the comparison)</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>number identifying how a nd b compare. Returns -1 when
+							a<b, 1 when a>b, or 0 when a==b</p>
 						</li>
 					</ul>
 				</section>
@@ -371,9 +517,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L90">colormap.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L137">colormap.ts:137</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a ColorTable based on an input string</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -381,6 +532,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_colormap_.html#colortable" class="tsd-signature-type">ColorTable</a></h4>
+							<p>The ColorTable associated with the input string</p>
 						</li>
 					</ul>
 				</section>
@@ -388,22 +540,35 @@
 					<a name="getcolor" class="tsd-anchor"></a>
 					<h3>get<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Color<span class="tsd-signature-symbol">(</span>at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Color<span class="tsd-signature-symbol">(</span>at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L257">colormap.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L312">colormap.ts:312</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an rgba color array based on the current colormap (including the
+										domain values at the upper and lower boundaries of the ColorMap) and an
+										input domain value. The color values are determined by linear
+									interpolation between the known color values, as defined by the ColorMap.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>at: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value for which you want to know the associated color</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>4-D vector containing rgba value of the color, with 0
+							represetning zero intensity and 255 full intensity.</p>
 						</li>
 					</ul>
 				</section>
@@ -417,16 +582,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/040f333/src/colormap.ts#L301">colormap.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/3a1953e/src/colormap.ts#L362">colormap.ts:362</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>CSS string representation of the result returned by ColorMap.getColor().
+									Note that the string does not include a transparency value.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>at: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value for which you want to know the associated color.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>CSS string representing the rgb color.</p>
 						</li>
 					</ul>
 				</section>
