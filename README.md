@@ -128,11 +128,11 @@ npm run clean
 # do an npm run clean and additionally throw away any downloaded files
 npm run purge
 
-# generate the TypeDoc, inspect afterwards in a browser (output will be at <projectroot>/sites/tsdoc)
+# generate the TypeDoc, inspect afterwards in a browser (output will be at <projectroot>/docs/sites/tsdoc)
 npm run tsdoc
 
-# generate code coverage in various formats. output will be at <projectroot>/sites/coverage/, e.g.
-# sites/coverage/remapped/ts/punchcards/index.html
+# generate code coverage in various formats. output will be at <projectroot>/docs/sites/coverage/, e.g.
+# <projectroot>/docs/sites/coverage/remapped/ts/punchcards/index.html
 npm run cover
 
 ```
