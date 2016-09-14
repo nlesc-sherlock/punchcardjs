@@ -107,7 +107,7 @@ do all of these in one go using:
 npm install && typings install
 ```
 
-Next, the software needs to be built. We use `npm` for that as well. We've defined a few build tasks under `scripts` in `packages.json`.
+We use ``npm`` for the various build tasks (see ``scripts`` in ``packages.json`` for the complete list and their definitions). Here's a summary of the most relevant tasks (see also below for the dependency graph):
 
 ```bash
 # make a distributable js file, punchcards.js
@@ -116,11 +116,11 @@ npm run dist
 # run the unit tests against the distributable
 npm run test
 
-```
-
-## some other useful tasks
-
-```bash
+# do all types of linting:
+# tslint on the TypeScript from src/
+# csslint on the CSS from src/
+# jslint and jshint on the JS from test/
+npm run lint
 
 # clean up generated files
 npm run clean
