@@ -23,57 +23,57 @@ export class Legend {
      * [_marginLeft description]
      * @type {number}
      */
-    private _marginLeft      : number;
+    private _marginLeft: number;
     /**
      * [_marginRight description]
      * @type {number}
      */
-    private _marginRight     : number;
+    private _marginRight: number;
     /**
      * [_marginTop description]
      * @type {number}
      */
-    private _marginTop       : number;
+    private _marginTop: number;
     /**
      * [_marginBottom description]
      * @type {number}
      */
-    private _marginBottom    : number;
+    private _marginBottom: number;
     /**
      * [_sibling description]
      * @type {PunchcardVisualization}
      */
-    private _sibling         : PunchcardVisualization;
+    private _sibling: PunchcardVisualization;
     /**
      * [_title description]
      * @type {string}
      */
-    private _title           : string;
+    private _title: string;
     /**
      * [_ylabel description]
      * @type {string}
      */
-    private _ylabel          : string;
+    private _ylabel: string;
     /**
      * [_horizontalScale description]
      * @type {any}
      */
-    private _horizontalScale : any;
+    private _horizontalScale: any;
     /**
      * [_verticalScale description]
      * @type {any}
      */
-    private _verticalScale   : any;
+    private _verticalScale: any;
     /**
      * [_width description]
      * @type {number}
      */
-    private _width           : number;
+    private _width: number;
     /**
      * [_height description]
      * @type {number}
      */
-    private _height          : number;
+    private _height: number;
 
     /**
      * [constructor description]
