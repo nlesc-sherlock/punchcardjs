@@ -7,26 +7,79 @@ import {DateRect} from './date-rect';
 import {WeekdayCircle} from './weekday-circle';
 import {WeekdayRect} from './weekday-rect';
 
-
+/**
+ * [PunchcardVisualization description]
+ * @type {[type]}
+ */
 type PunchcardVisualization = Base|DateCircle|DateRect|
                                     WeekdayCircle|WeekdayRect;
 
-
+/**
+ *
+ */
 export class Legend {
 
+    /**
+     * [_marginLeft description]
+     * @type {number}
+     */
     private _marginLeft      : number;
+    /**
+     * [_marginRight description]
+     * @type {number}
+     */
     private _marginRight     : number;
+    /**
+     * [_marginTop description]
+     * @type {number}
+     */
     private _marginTop       : number;
+    /**
+     * [_marginBottom description]
+     * @type {number}
+     */
     private _marginBottom    : number;
+    /**
+     * [_sibling description]
+     * @type {PunchcardVisualization}
+     */
     private _sibling         : PunchcardVisualization;
+    /**
+     * [_title description]
+     * @type {string}
+     */
     private _title           : string;
+    /**
+     * [_ylabel description]
+     * @type {string}
+     */
     private _ylabel          : string;
+    /**
+     * [_horizontalScale description]
+     * @type {any}
+     */
     private _horizontalScale : any;
+    /**
+     * [_verticalScale description]
+     * @type {any}
+     */
     private _verticalScale   : any;
+    /**
+     * [_width description]
+     * @type {number}
+     */
     private _width           : number;
+    /**
+     * [_height description]
+     * @type {number}
+     */
     private _height          : number;
 
-
+    /**
+     * [constructor description]
+     * @param  {PunchcardVisualization} sibling [description]
+     * @return {[type]}                         [description]
+     */
     constructor (sibling:PunchcardVisualization) {
 
         this.sibling = sibling;
@@ -47,7 +100,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [draw description]
+     * @return {Legend} [description]
+     */
     public draw(): Legend {
         // draw the legend
 
@@ -64,7 +120,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawBox description]
+     * @return {Legend} [description]
+     */
     protected drawBox():Legend {
         // draw box
 
@@ -84,7 +143,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawHorizontalAxis description]
+     * @return {Legend} [description]
+     */
     private drawHorizontalAxis():Legend {
 
         let dx:number = this.sibling.domElem.clientWidth - this.sibling.legendWidth + this.marginLeft;
@@ -105,7 +167,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawLegendBody description]
+     * @return {Legend} [description]
+     */
     protected drawLegendBody():Legend {
         //
         let dx:number = this.sibling.domElem.clientWidth - this.sibling.legendWidth + this.marginLeft;
@@ -125,7 +190,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawSymbols description]
+     * @return {Legend} [description]
+     */
     protected drawSymbols():Legend {
         // pass
 
@@ -170,7 +238,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawTitle description]
+     * @return {Legend} [description]
+     */
     protected drawTitle():Legend {
 
         let dx:number = this.sibling.domElem.clientWidth - this.sibling.legendWidth + this.marginLeft + 0.5 * this.width;
@@ -188,7 +259,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawVerticalAxis description]
+     * @return {Legend} [description]
+     */
     protected drawVerticalAxis():Legend {
         //
         let w :number = this.sibling.legendWidth - this.marginLeft - this.marginRight;
@@ -217,7 +291,10 @@ export class Legend {
 
 
 
-
+    /**
+     * [drawVerticalAxisLabel description]
+     * @return {Legend} [description]
+     */
     protected drawVerticalAxisLabel():Legend {
         //
         let h :number = this.sibling.domElem.clientHeight - this.marginTop - this.marginBottom;
@@ -237,91 +314,189 @@ export class Legend {
 
 
 
-
+    /**
+     * [marginLeft description]
+     * @param  {number} marginLeft [description]
+     * @return {[type]}            [description]
+     */
     protected set marginLeft(marginLeft:number) {
         this._marginLeft = Math.max(marginLeft, 0);
     }
 
+    /**
+     * [marginLeft description]
+     * @return {number} [description]
+     */
     protected get marginLeft():number {
         return this._marginLeft;
     }
 
+    /**
+     * [marginRight description]
+     * @param  {number} marginRight [description]
+     * @return {[type]}             [description]
+     */
     protected set marginRight(marginRight:number) {
         this._marginRight = Math.max(marginRight, 0);
     }
 
+    /**
+     * [marginRight description]
+     * @return {number} [description]
+     */
     protected get marginRight():number {
         return this._marginRight;
     }
 
+    /**
+     * [marginTop description]
+     * @param  {number} marginTop [description]
+     * @return {[type]}           [description]
+     */
     protected set marginTop(marginTop:number) {
         this._marginTop = Math.max(marginTop, this.sibling.marginTop);
     }
 
+    /**
+     * [marginTop description]
+     * @return {number} [description]
+     */
     protected get marginTop():number {
         return this._marginTop;
     }
 
+    /**
+     * [marginBottom description]
+     * @param  {number} marginBottom [description]
+     * @return {[type]}              [description]
+     */
     protected set marginBottom(marginBottom:number) {
         this._marginBottom = Math.max(marginBottom, this.sibling.marginBottom);
     }
 
+    /**
+     * [marginBottom description]
+     * @return {number} [description]
+     */
     protected get marginBottom():number {
         return this._marginBottom;
     }
 
+    /**
+     * [title description]
+     * @param  {string} title [description]
+     * @return {[type]}       [description]
+     */
     protected set title(title:string) {
         this._title = title;
     }
 
+    /**
+     * [title description]
+     * @return {string} [description]
+     */
     protected get title():string {
         return this._title;
     }
 
+    /**
+     * [ylabel description]
+     * @param  {string} ylabel [description]
+     * @return {[type]}        [description]
+     */
     protected set ylabel(ylabel:string) {
         this._ylabel = ylabel;
     }
 
+    /**
+     * [ylabel description]
+     * @return {string} [description]
+     */
     protected get ylabel():string {
         return this._ylabel;
     }
 
+    /**
+     * [sibling description]
+     * @param  {PunchcardVisualization} sibling [description]
+     * @return {[type]}                         [description]
+     */
     protected set sibling(sibling:PunchcardVisualization) {
         this._sibling = sibling;
     }
 
+    /**
+     * [sibling description]
+     * @return {PunchcardVisualization} [description]
+     */
     protected get sibling():PunchcardVisualization {
         return this._sibling;
     }
 
+    /**
+     * [horizontalScale description]
+     * @param  {any}    horizontalScale [description]
+     * @return {[type]}                 [description]
+     */
     protected set horizontalScale(horizontalScale:any) {
         this._horizontalScale = horizontalScale;
     }
 
+    /**
+     * [horizontalScale description]
+     * @return {any} [description]
+     */
     protected get horizontalScale():any {
         return this._horizontalScale;
     }
 
+    /**
+     * [verticalScale description]
+     * @param  {any}    verticalScale [description]
+     * @return {[type]}               [description]
+     */
     protected set verticalScale(verticalScale:any) {
         this._verticalScale = verticalScale;
     }
 
+    /**
+     * [verticalScale description]
+     * @return {any} [description]
+     */
     protected get verticalScale():any {
         return this._verticalScale;
     }
 
+    /**
+     * [width description]
+     * @param  {number} width [description]
+     * @return {[type]}       [description]
+     */
     protected set width(width:number) {
         this._width = width;
     }
 
+    /**
+     * [width description]
+     * @return {number} [description]
+     */
     protected get width():number {
         return this._width;
     }
 
+    /**
+     * [height description]
+     * @param  {number} height [description]
+     * @return {[type]}        [description]
+     */
     protected set height(height:number) {
         this._height = height;
     }
 
+    /**
+     * [height description]
+     * @return {number} [description]
+     */
     protected get height():number {
         return this._height;
     }
