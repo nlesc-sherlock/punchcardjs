@@ -1,5 +1,7 @@
 [![devDependency Status](https://david-dm.org/nlesc-sherlock/punchcardjs/dev-status.svg)](https://david-dm.org/nlesc-sherlock/punchcardjs#info=devDependencies)
 [![Build Status](https://travis-ci.org/nlesc-sherlock/punchcardjs.svg?branch=master)](https://travis-ci.org/nlesc-sherlock/punchcardjs)
+[![bitHound Dependencies](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/dependencies.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/devDependencies.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/master/dependencies/npm)
 
 _this library is still very much a work in progress_
 
