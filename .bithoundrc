@@ -1,9 +1,9 @@
 {
   "ignore": [
-    "/docs/**"
+    "docs/**"
   ],
   "test": [
-    "**/test/**"
+    "test/**"
   ],
   "critics": {
     "lint": {"engine": "tslint"}
