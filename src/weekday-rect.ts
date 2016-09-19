@@ -9,9 +9,9 @@ import {ColorMap} from './colormap';
 
 export class WeekdayRect extends Base {
 
-    private _dayOfWeekScale: d3.scale.Ordinal<any, any>;
-    private _xFrom         : number;
-    private _xTo           : number;
+    protected dayOfWeekScale: d3.scale.Ordinal<any, any>;
+    protected xFrom         : number;
+    protected xTo           : number;
 
     /**
      * Constructor method for making a punchcard visualization with the day of
@@ -218,34 +218,6 @@ export class WeekdayRect extends Base {
 
         return this;
     }
-
-
-
-
-    protected set dayOfWeekScale(dayOfWeekScale:d3.scale.Ordinal<any, any>) {
-        this._dayOfWeekScale = dayOfWeekScale;
-    }
-
-    protected get dayOfWeekScale():d3.scale.Ordinal<any, any> {
-        return this._dayOfWeekScale;
-    }
-
-    protected set xFrom(xFrom:number) {
-        this._xFrom = xFrom;
-    }
-
-    protected get xFrom():number {
-        return this._xFrom;
-    }
-
-    protected set xTo(xTo:number) {
-        this._xTo = xTo;
-    }
-
-    protected get xTo():number {
-        return this._xTo;
-    }
-
 
 
 }
