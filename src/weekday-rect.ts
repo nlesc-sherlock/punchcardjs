@@ -32,6 +32,8 @@ export class WeekdayRect extends Base {
         this.title = 'WeekdayRect title';
         this.colormap = new ColorMap('summer');
 
+        this.defineDimensions();
+
     }
 
 
@@ -41,7 +43,7 @@ export class WeekdayRect extends Base {
      * define the crossfilter dimensions as used by this class
      * @return {WeekdayRect} A reference to the instance of WeekdayRect
      */
-    public defineDimensions():WeekdayRect {
+    protected defineDimensions():WeekdayRect {
 
         // store a reference to the instance
         let that:WeekdayRect = this;

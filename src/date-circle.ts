@@ -18,6 +18,7 @@ export class DateCircle extends DateRect {
         this.xlabel = '';
         this.title = 'DateCircle title';
         this.colormap = new ColorMap('rainbow');
+        super.defineDimensions();
     }
 
 

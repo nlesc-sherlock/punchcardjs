@@ -16,6 +16,7 @@ export class WeekdayCircle extends WeekdayRect {
         this.xlabel = 'Day of week';
         this.title = 'WeekdayCircle title';
         this.colormap = new ColorMap('blues');
+        super.defineDimensions();
     }
 
 

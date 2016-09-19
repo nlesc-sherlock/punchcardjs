@@ -28,6 +28,7 @@ export class DateRect extends Base {
         this.xlabel = '';
         this.title = 'DateRect title';
         this.colormap = new ColorMap('default');
+        this.defineDimensions();
 
     }
 
@@ -38,7 +39,7 @@ export class DateRect extends Base {
      * Defines the crossfilter dimensions as used by this class
      * @return {Base} A reference to an instance of DateRect.
      */
-    public defineDimensions():Base {
+    protected defineDimensions():Base {
 
         // store a reference to the instance
         let that:DateRect = this;
