@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.55% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>87/93</span>
+        <span class='fraction'>78/84</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">85.71% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">92.59% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>84/90</span>
+        <span class='fraction'>75/81</span>
       </div>
     </div>
   </div>
@@ -444,56 +444,7 @@
 399
 400
 401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429
-430
-431
-432
-433
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450
-451</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+402</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -894,55 +845,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">251×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">75392×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">251×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45903×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">102×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">156603×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 /**
  * Associates a point in the domain space to a color
@@ -970,17 +872,17 @@ export class ColorMap {
      * along the domain's number line to an rgba color.
      * @type {ColorTable}
      */
-    private _colortable: ColorTable;
+    public colortable: ColorTable;
     /**
      * Domain value assocatiated with the lowest color from the ColorMap.
      * @type {number}
      */
-    private _cLimLow: number;
+    public cLimLow: number;
     /**
      * Domain value assocatiated with the highest color from the ColorMap.
      * @type {number}
      */
-    private _cLimHigh: number;
+    public cLimHigh: number;
     /**
      * if the user does not specify which ColorMap she wants to use,
      * defaultColorTable is what she'll get.
@@ -1342,55 +1244,6 @@ export class ColorMap {
     }
 &nbsp;
 &nbsp;
-    /**
-     * Set the domain value associated with the lower limit of the ColorMap
-     * @param  {number} cLimLow Domain value associated with the lower limit
-     * of the ColorMap
-     */
-    public set cLimLow(cLimLow:number) {
-        this._cLimLow = cLimLow;
-    }
-&nbsp;
-    /**
-     * @return {[type]} The domain value associated with the lower limit of the
-     * ColorMap
-     */
-    public get cLimLow() {
-        return this._cLimLow;
-    }
-&nbsp;
-    /**
-     * Set the domain value associated with the upper limit of the ColorMap
-     * @param  {number} cLimHigh The domain value associated with the upper
-     * limit of the ColorMap
-     */
-    public set cLimHigh(cLimHigh:number) {
-        this._cLimHigh = cLimHigh;
-    }
-&nbsp;
-    /**
-     * @return {[type]} The domain value associated with the upper limit of the
-     * ColorMap
-     */
-    public get cLimHigh() {
-        return this._cLimHigh;
-    }
-&nbsp;
-    /**
-     * @param  {ColorTable} colortable Set the list of ColorTableItems aka the
-     * colortable
-     */
-    public set colortable(colortable:ColorTable) {
-        this._colortable = colortable;
-    }
-&nbsp;
-    /**
-     * @return {ColorTable} Returns the list of ColorTableItems, aka the
-     * ColorTable
-     */
-    public get colortable():ColorTable{
-        return this._colortable;
-    }
 &nbsp;
 &nbsp;
 }</pre></td></tr>
@@ -1399,7 +1252,7 @@ export class ColorMap {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 14 2016 14:22:22 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 19 2016 17:06:16 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../prettify.js"></script>
