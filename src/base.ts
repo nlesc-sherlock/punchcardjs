@@ -18,7 +18,7 @@ export class Base {
      * The crossfilter that contains the data which needs to be visualized.
      * @type {CrossFilter.CrossFilter<any>}
      */
-    public cf: CrossFilter.CrossFilter<any>;
+    protected cf: CrossFilter.CrossFilter<any>;
     /**
      * The colormap: i.e. the element that determines what color is used to
      * display a certain value.
@@ -30,7 +30,7 @@ export class Base {
      * data.
      * @type {any}
      */
-    public dim: any;
+    protected dim: any;
     /**
      * The element of the DOM where the punchcard should be visualized.
      * @type {HTMLElement}
@@ -40,7 +40,7 @@ export class Base {
      * The element ID of the this._domElem object.
      * @type {string}
      */
-    public domElemId: string;
+    protected domElemId: string;
     /**
      * The SVG DOM element that is used to draw a punchcard in.
      * @type {any}
@@ -74,27 +74,27 @@ export class Base {
      * Text to use as title for the graph
      * @type {string}
      */
-    public title: string;
+    protected title: string;
     /**
      * Text to use as label for the horizontal axis
      * @type {string}
      */
-    public xlabel: string;
+    protected xlabel: string;
     /**
      * Text to use as label for the vertical axis
      * @type {string}
      */
-    public ylabel: string;
+    protected ylabel: string;
     /**
      * d3 time scale for the vertical axis
      * @type {d3.scale.Linear<any, any>}
      */
-    public todScale: d3.scale.Linear<any, any>;
+    protected todScale: d3.scale.Linear<any, any>;
     /**
      * height of the axis
      * @type {number}
      */
-    public height: number;
+    protected height: number;
     /**
      * width in pixels that is occupied by the legend
      * @type {number}
