@@ -9,9 +9,9 @@ import {ColorMap} from './colormap';
 
 export class DateRect extends Base {
 
-    public dateScale: d3.time.Scale<any, any>;
-    public dateFrom: Date;
-    public dateTo: Date;
+    protected dateScale: d3.time.Scale<any, any>;
+    protected dateFrom: Date;
+    protected dateTo: Date;
 
 
     /**
