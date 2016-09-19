@@ -43,37 +43,37 @@ export class Legend {
      * The Legend's sibling, i.e. the object that the legend is associated with.
      * @type {PunchcardVisualization}
      */
-    private _sibling: PunchcardVisualization;
+    protected sibling: PunchcardVisualization;
     /**
      * The title of the Legend
      * @type {string}
      */
-    private _title: string;
+    protected title: string;
     /**
      * Text to label the Legend's vertical axis
      * @type {string}
      */
-    private _ylabel: string;
+    protected ylabel: string;
     /**
      * The legend's horizontal axis scale
      * @type {any}
      */
-    private _horizontalScale: any;
+    protected horizontalScale: any;
     /**
      * The Legend's vertical axis scale
      * @type {any}
      */
-    private _verticalScale: any;
+    protected verticalScale: any;
     /**
      * The Legend's width in pixels
      * @type {number}
      */
-    private _width: number;
+    protected width: number;
     /**
      * The Legend's height in pixels
      * @type {number}
      */
-    private _height: number;
+    protected height: number;
 
     /**
      * Adds a legend to an existing PunchcardVisualization.
@@ -384,125 +384,6 @@ export class Legend {
      */
     protected get marginBottom():number {
         return this._marginBottom;
-    }
-
-    /**
-     * [title description]
-     * @param  {string} title [description]
-     * @return {[type]}       [description]
-     */
-    protected set title(title:string) {
-        this._title = title;
-    }
-
-    /**
-     * [title description]
-     * @return {string} [description]
-     */
-    protected get title():string {
-        return this._title;
-    }
-
-    /**
-     * [ylabel description]
-     * @param  {string} ylabel [description]
-     * @return {[type]}        [description]
-     */
-    protected set ylabel(ylabel:string) {
-        this._ylabel = ylabel;
-    }
-
-    /**
-     * [ylabel description]
-     * @return {string} [description]
-     */
-    protected get ylabel():string {
-        return this._ylabel;
-    }
-
-    /**
-     * [sibling description]
-     * @param  {PunchcardVisualization} sibling [description]
-     * @return {[type]}                         [description]
-     */
-    protected set sibling(sibling:PunchcardVisualization) {
-        this._sibling = sibling;
-    }
-
-    /**
-     * [sibling description]
-     * @return {PunchcardVisualization} [description]
-     */
-    protected get sibling():PunchcardVisualization {
-        return this._sibling;
-    }
-
-    /**
-     * [horizontalScale description]
-     * @param  {any}    horizontalScale [description]
-     * @return {[type]}                 [description]
-     */
-    protected set horizontalScale(horizontalScale:any) {
-        this._horizontalScale = horizontalScale;
-    }
-
-    /**
-     * [horizontalScale description]
-     * @return {any} [description]
-     */
-    protected get horizontalScale():any {
-        return this._horizontalScale;
-    }
-
-    /**
-     * [verticalScale description]
-     * @param  {any}    verticalScale [description]
-     * @return {[type]}               [description]
-     */
-    protected set verticalScale(verticalScale:any) {
-        this._verticalScale = verticalScale;
-    }
-
-    /**
-     * [verticalScale description]
-     * @return {any} [description]
-     */
-    protected get verticalScale():any {
-        return this._verticalScale;
-    }
-
-    /**
-     * [width description]
-     * @param  {number} width [description]
-     * @return {[type]}       [description]
-     */
-    protected set width(width:number) {
-        this._width = width;
-    }
-
-    /**
-     * [width description]
-     * @return {number} [description]
-     */
-    protected get width():number {
-        return this._width;
-    }
-
-    /**
-     * [height description]
-     * @param  {number} height [description]
-     * @return {[type]}        [description]
-     */
-    protected set height(height:number) {
-        this._height = height;
-    }
-
-    /**
-     * [height description]
-     * @return {number} [description]
-     */
-    protected get height():number {
-        return this._height;
     }
 
 }
