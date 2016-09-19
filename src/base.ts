@@ -18,34 +18,34 @@ export class Base {
      * The crossfilter that contains the data which needs to be visualized.
      * @type {CrossFilter.CrossFilter<any>}
      */
-    private _cf: CrossFilter.CrossFilter<any>;
+    public cf: CrossFilter.CrossFilter<any>;
     /**
      * The colormap: i.e. the element that determines what color is used to
      * display a certain value.
      * @type {ColorMap}
      */
-    private _colormap: ColorMap;
+    public colormap: ColorMap;
     /**
      * The user-defined dimensions that are used to manipulate the crossfilter
      * data.
      * @type {any}
      */
-    private _dim: any;
+    public dim: any;
     /**
      * The element of the DOM where the punchcard should be visualized.
      * @type {HTMLElement}
      */
-    private _domElem: HTMLElement;
+    public domElem: HTMLElement;
     /**
      * The element ID of the this._domElem object.
      * @type {string}
      */
-    private _domElemId: string;
+    public domElemId: string;
     /**
      * The SVG DOM element that is used to draw a punchcard in.
      * @type {any}
      */
-    private _svg: any;
+    public svg: any;
     /**
      * The space in pixels between the left side of the axis background and
      * edge of the SVG element.
@@ -74,27 +74,27 @@ export class Base {
      * Text to use as title for the graph
      * @type {string}
      */
-    private _title: string;
+    public title: string;
     /**
      * Text to use as label for the horizontal axis
      * @type {string}
      */
-    private _xlabel: string;
+    public xlabel: string;
     /**
      * Text to use as label for the vertical axis
      * @type {string}
      */
-    private _ylabel: string;
+    public ylabel: string;
     /**
      * d3 time scale for the vertical axis
      * @type {d3.scale.Linear<any, any>}
      */
-    private _todScale: d3.scale.Linear<any, any>;
+    public todScale: d3.scale.Linear<any, any>;
     /**
      * height of the axis
      * @type {number}
      */
-    private _height: number;
+    public height: number;
     /**
      * width in pixels that is occupied by the legend
      * @type {number}
@@ -104,14 +104,14 @@ export class Base {
      * Whether or not there is enough data defined to be able to draw anything.
      * @type {boolean}
      */
-    private _canDraw: boolean;
+    public canDraw: boolean;
     /**
      * Defines which key of your input data contains the datetime information
      * based on which you want to create the symbols in the punchcard's body.
      * The default value is 'datestr'
      * @type {string}
      */
-    private _datekey:string;
+    public datekey:string;
 
 
 
@@ -448,108 +448,6 @@ export class Base {
 
 
     /**
-     * [cf description]
-     * @param  {CrossFilter.CrossFilter<any>}    cf [description]
-     * @return {[type]}    [description]
-     */
-    protected set cf(cf:CrossFilter.CrossFilter<any>) {
-        this._cf = cf;
-    }
-
-    /**
-     * [cf description]
-     * @return {any} [description]
-     */
-    protected get cf():CrossFilter.CrossFilter<any> {
-        return this._cf;
-    }
-
-    /**
-     * [colormap description]
-     * @param  {ColorMap} colormap [description]
-     * @return {[type]}            [description]
-     */
-    public set colormap(colormap:ColorMap) {
-        this._colormap = colormap;
-    }
-
-    /**
-     * [colormap description]
-     * @return {ColorMap} [description]
-     */
-    public get colormap():ColorMap {
-        return this._colormap;
-    }
-
-    /**
-     * [dim description]
-     * @param  {any}    dim [description]
-     * @return {[type]}     [description]
-     */
-    protected set dim(dim:any) {
-        this._dim = dim;
-    }
-
-    /**
-     * [dim description]
-     * @return {any} [description]
-     */
-    protected get dim():any {
-        return this._dim;
-    }
-
-    /**
-     * [domElem description]
-     * @param  {HTMLElement} domElem [description]
-     * @return {[type]}              [description]
-     */
-    public set domElem(domElem:HTMLElement) {
-        this._domElem = domElem;
-    }
-
-    /**
-     * [domElem description]
-     * @return {HTMLElement} [description]
-     */
-    public get domElem():HTMLElement {
-        return this._domElem;
-    }
-
-    /**
-     * [domElemId description]
-     * @param  {string} domElemId [description]
-     * @return {[type]}           [description]
-     */
-    protected set domElemId(domElemId:string) {
-        this._domElemId = domElemId;
-    }
-
-    /**
-     * [domElemId description]
-     * @return {string} [description]
-     */
-    protected get domElemId():string {
-        return this._domElemId;
-    }
-
-    /**
-     * [svg description]
-     * @param  {any}    svg [description]
-     * @return {[type]}     [description]
-     */
-    public set svg(svg:any) {
-        this._svg = svg;
-    }
-
-    /**
-     * [svg description]
-     * @return {any} [description]
-     */
-    public get svg():any {
-        return this._svg;
-    }
-
-    /**
      * [marginLeft description]
      * @param  {number} marginLeft [description]
      * @return {[type]}            [description]
@@ -622,91 +520,6 @@ export class Base {
     }
 
     /**
-     * [title description]
-     * @param  {string} title [description]
-     * @return {[type]}       [description]
-     */
-    protected set title(title:string) {
-        this._title = title;
-    }
-
-    /**
-     * [title description]
-     * @return {string} [description]
-     */
-    protected get title():string {
-        return this._title;
-    }
-
-    /**
-     * [xlabel description]
-     * @param  {string} xlabel [description]
-     * @return {[type]}        [description]
-     */
-    protected set xlabel(xlabel:string) {
-        this._xlabel = xlabel;
-    }
-
-    /**
-     * [xlabel description]
-     * @return {string} [description]
-     */
-    protected get xlabel():string {
-        return this._xlabel;
-    }
-
-    /**
-     * [ylabel description]
-     * @param  {string} ylabel [description]
-     * @return {[type]}        [description]
-     */
-    protected set ylabel(ylabel:string) {
-        this._ylabel = ylabel;
-    }
-
-    /**
-     * [ylabel description]
-     * @return {string} [description]
-     */
-    protected get ylabel():string {
-        return this._ylabel;
-    }
-
-    /**
-     * [todScale description]
-     * @param  {d3.scale.Linear<any, any>} todScale [description]
-     * @return {[type]}          [description]
-     */
-    protected set todScale(todScale:d3.scale.Linear<any, any>) {
-        this._todScale = todScale;
-    }
-
-    /**
-     * [todScale description]
-     * @return {d3.scale.Linear<any, any>} [description]
-     */
-    protected get todScale():d3.scale.Linear<any, any> {
-        return this._todScale;
-    }
-
-    /**
-     * [height description]
-     * @param  {number} height [description]
-     * @return {[type]}        [description]
-     */
-    protected set height(height:number) {
-        this._height = height;
-    }
-
-    /**
-     * [height description]
-     * @return {number} [description]
-     */
-    protected get height():number {
-        return this._height;
-    }
-
-    /**
      * [legendWidth description]
      * @param  {number} legendWidth [description]
      * @return {[type]}             [description]
@@ -722,40 +535,6 @@ export class Base {
      */
     public get legendWidth():number {
         return this._legendWidth;
-    }
-
-    /**
-     * [canDraw description]
-     * @param  {boolean} canDraw [description]
-     * @return {[type]}             [description]
-     */
-    public set canDraw(canDraw:boolean) {
-        this._canDraw = canDraw;
-    }
-
-    /**
-     * [canDraw description]
-     * @return {boolean} [description]
-     */
-    public get canDraw():boolean {
-        return this._canDraw;
-    }
-
-    /**
-     * [datekey description]
-     * @param  {string} datekey [description]
-     * @return {[type]}         [description]
-     */
-    public set datekey(datekey:string) {
-        this._datekey = datekey;
-    }
-
-    /**
-     * [datekey description]
-     * @return {string} [description]
-     */
-    public get datekey():string {
-        return this._datekey;
     }
 
 }
