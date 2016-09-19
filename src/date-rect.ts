@@ -9,9 +9,9 @@ import {ColorMap} from './colormap';
 
 export class DateRect extends Base {
 
-    private _dateScale   : d3.time.Scale<any, any>;
-    private _dateFrom    : Date;
-    private _dateTo      : Date;
+    protected dateScale: d3.time.Scale<any, any>;
+    protected dateFrom: Date;
+    protected dateTo: Date;
 
 
     /**
@@ -234,34 +234,6 @@ export class DateRect extends Base {
         return this;
 
     }
-
-
-
-
-    protected set dateScale(dateScale:d3.time.Scale<any, any>) {
-        this._dateScale = dateScale;
-    }
-
-    protected get dateScale():d3.time.Scale<any, any> {
-        return this._dateScale;
-    }
-
-    protected set dateFrom(dateFrom:Date) {
-        this._dateFrom = dateFrom;
-    }
-
-    protected get dateFrom():Date {
-        return this._dateFrom;
-    }
-
-    protected set dateTo(dateTo:Date) {
-        this._dateTo = dateTo;
-    }
-
-    protected get dateTo():Date {
-        return this._dateTo;
-    }
-
 
 
 }

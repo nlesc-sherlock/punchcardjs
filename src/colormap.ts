@@ -25,17 +25,17 @@ export class ColorMap {
      * along the domain's number line to an rgba color.
      * @type {ColorTable}
      */
-    private _colortable: ColorTable;
+    public colortable: ColorTable;
     /**
      * Domain value assocatiated with the lowest color from the ColorMap.
      * @type {number}
      */
-    private _cLimLow: number;
+    public cLimLow: number;
     /**
      * Domain value assocatiated with the highest color from the ColorMap.
      * @type {number}
      */
-    private _cLimHigh: number;
+    public cLimHigh: number;
     /**
      * if the user does not specify which ColorMap she wants to use,
      * defaultColorTable is what she'll get.
@@ -397,55 +397,6 @@ export class ColorMap {
     }
 
 
-    /**
-     * Set the domain value associated with the lower limit of the ColorMap
-     * @param  {number} cLimLow Domain value associated with the lower limit
-     * of the ColorMap
-     */
-    public set cLimLow(cLimLow:number) {
-        this._cLimLow = cLimLow;
-    }
-
-    /**
-     * @return {[type]} The domain value associated with the lower limit of the
-     * ColorMap
-     */
-    public get cLimLow() {
-        return this._cLimLow;
-    }
-
-    /**
-     * Set the domain value associated with the upper limit of the ColorMap
-     * @param  {number} cLimHigh The domain value associated with the upper
-     * limit of the ColorMap
-     */
-    public set cLimHigh(cLimHigh:number) {
-        this._cLimHigh = cLimHigh;
-    }
-
-    /**
-     * @return {[type]} The domain value associated with the upper limit of the
-     * ColorMap
-     */
-    public get cLimHigh() {
-        return this._cLimHigh;
-    }
-
-    /**
-     * @param  {ColorTable} colortable Set the list of ColorTableItems aka the
-     * colortable
-     */
-    public set colortable(colortable:ColorTable) {
-        this._colortable = colortable;
-    }
-
-    /**
-     * @return {ColorTable} Returns the list of ColorTableItems, aka the
-     * ColorTable
-     */
-    public get colortable():ColorTable{
-        return this._colortable;
-    }
 
 
 }
