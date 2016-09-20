@@ -114,7 +114,6 @@ export class Base {
     protected datekey:string;
 
 
-
     /**
      * Constructs an instance of Base when given a crossfilter object and the
      * name of a DOM element to draw in.
@@ -392,6 +391,12 @@ export class Base {
 
         this.draw();
 
+    }
+
+
+
+    protected onMouseOver(d:any) {
+        console.log(d);
     }
 
 

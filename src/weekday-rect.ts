@@ -221,6 +221,9 @@ export class WeekdayRect extends Base {
                     .attr('height', symbolHeight)
                     .attr('fill', function(d:any){
                         return that.colormap.getColorRGB(d.value);
+                    })
+                    .on('mouseover', function(d:any){
+                        that.onMouseOver(d);
                     });
 
         return this;
