@@ -48,12 +48,17 @@ export class DateRect extends Base {
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
         this.dim.dateAndHourOfDay = this.cf.dimension(function (d:any) {
-            let m:moment.Moment = moment(d[that.datekey]);
-            //stringify() and later, parse() to get keyed objects
-            return JSON.stringify({
-                datestr: m.format('YYYY-MM-DD'),
-                hourOfDay: m.hour()
-            });
+            let m:moment.Moment;
+            if (d.hasOwnProperty(that.datekey)) {
+                m = moment(d[that.datekey]);
+                let obj:any = {};
+                obj[that.datekey] = m.format('YYYY-MM-DD');
+                obj['hourOfDay'] =  m.hour();
+                //stringify() and later, parse() to get keyed objects
+                return JSON.stringify(obj);
+            } else {
+                throw new Error('datekey undefined');
+            }
         });
         this.canDraw = true;
         return this;
