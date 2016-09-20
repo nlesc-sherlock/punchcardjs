@@ -21,9 +21,9 @@ export class DateRect extends Base {
      * @param  {string} domElemId name of the DOM element to draw in.
      * @return {[type]} A reference to an instance of DateRect.
      */
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
-        super(cf, domElemId);
+        super(cf, domElemId, datekey);
 
         this.xlabel = '';
         this.title = 'DateRect title';

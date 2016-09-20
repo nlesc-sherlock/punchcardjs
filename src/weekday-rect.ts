@@ -23,9 +23,9 @@ export class WeekdayRect extends Base {
      * @param  {string} domElemId Name of the DOM element in which to draw.
      * @return {[type]} A reference to the instance of WeekdayRect.
      */
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
-        super(cf, domElemId);
+        super(cf, domElemId, datekey);
 
         this.marginBottom = 50;
         this.xlabel = 'Day of week';

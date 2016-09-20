@@ -11,9 +11,9 @@ import {DateRect} from './date-rect';
 export class DateCircle extends DateRect {
 
 
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
-        super(cf, domElemId);
+        super(cf, domElemId, datekey);
 
         this.xlabel = '';
         this.title = 'DateCircle title';

@@ -124,7 +124,7 @@ export class Base {
      * draw the punchcard graph
      * @return {[type]} Returns an instance of Base class
      */
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         // the crossfilter object
         this.cf = cf;
@@ -152,7 +152,7 @@ export class Base {
         this.ylabel = 'Time of day';
         this.title = '';
 
-        this.datekey = 'datestr';
+        this.datekey = datekey || 'datestr';
         this.colormap = new ColorMap();
 
         this.domElem.classList.add('punchcard-common');

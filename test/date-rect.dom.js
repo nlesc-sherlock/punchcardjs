@@ -343,8 +343,7 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
         '"symbol" attached to it', function () {
             var actual, daterect, symbols;
-            daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.datekey = 'my-custom-datekey';
+            daterect = new punchcards.DateRect(cf, 'punchcard-date-rect', 'my-custom-datekey');
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();

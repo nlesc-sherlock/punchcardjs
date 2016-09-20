@@ -361,8 +361,7 @@ describe('punchcards DateCircle class with test/simple-n1-custom-datekey.fixture
         'SVG g element of class "symbol" with 1 SVG circle of class ' +
         '"symbol" attached to it', function () {
             var actual, datecircle, symbols;
-            datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.datekey = 'my-custom-datekey';
+            datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle', 'my-custom-datekey');
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -393,8 +392,7 @@ describe('punchcards DateCircle class with test/simple-n1-custom-datekey.fixture
             // NaN
 
             var actual, datecircle, symbols, re;
-            datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.datekey = 'my-custom-datekey';
+            datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle', 'my-custom-datekey');
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();

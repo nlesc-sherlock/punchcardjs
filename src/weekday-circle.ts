@@ -9,9 +9,9 @@ import {WeekdayRect} from './weekday-rect';
 
 export class WeekdayCircle extends WeekdayRect {
 
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string) {
+    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
-        super(cf, domElemId);
+        super(cf, domElemId, datekey);
 
         this.xlabel = 'Day of week';
         this.title = 'WeekdayCircle title';

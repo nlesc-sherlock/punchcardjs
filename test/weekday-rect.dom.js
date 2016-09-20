@@ -342,8 +342,7 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
         '"symbol" attached to it', function () {
             var actual, weekdayrect, symbols;
-            weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.datekey = 'my-custom-datekey';
+            weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect', 'my-custom-datekey');
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();

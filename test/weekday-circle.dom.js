@@ -364,8 +364,7 @@ describe('punchcards WeekdayCircle class with test/simple-n1-custom-datekey.fixt
         'SVG g element of class "symbol" with 1 SVG circle of class ' +
         '"symbol" attached to it', function () {
             var actual, weekdaycircle, symbols;
-            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.datekey = 'my-custom-datekey';
+            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle', 'my-custom-datekey');
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -396,8 +395,7 @@ describe('punchcards WeekdayCircle class with test/simple-n1-custom-datekey.fixt
             // NaN
 
             var actual, weekdaycircle, symbols, re;
-            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.datekey = 'my-custom-datekey';
+            weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle', 'my-custom-datekey');
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
