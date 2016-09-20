@@ -53,11 +53,16 @@ export class WeekdayRect extends Base {
 
         this.dim.weekdayAndHourOfDay = this.cf.dimension(function (d:any) {
             //stringify() and later, parse() to get keyed objects
-            let m:moment.Moment = moment(d[that.datekey]);
-            return JSON.stringify({
-                weekday: m.format('ddd'),
-                hourOfDay: m.hour()
-            });
+            let m:moment.Moment;
+            if (d.hasOwnProperty(that.datekey)) {
+                m = moment(d[that.datekey]);
+                let obj:any = {};
+                obj['weekday'] = m.format('ddd');
+                obj['hourOfDay'] = m.hour();
+                return JSON.stringify(obj);
+            } else {
+                throw new Error('datekey undefined');
+            }
         });
         this.canDraw = true;
 
