@@ -155,6 +155,7 @@ export class Base {
         this.datekey = 'datestr';
         this.colormap = new ColorMap();
 
+        this.domElem.classList.add('punchcard-common');
 
         // beware: JavaScript magic happens here
         let that:Base = this;

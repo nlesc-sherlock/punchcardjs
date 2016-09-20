@@ -29,6 +29,7 @@ export class DateRect extends Base {
         this.title = 'DateRect title';
         this.colormap = new ColorMap('default');
         this.defineDimensions();
+        this.domElem.classList.add('punchcard-date-rect');
 
     }
 

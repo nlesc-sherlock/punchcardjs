@@ -31,8 +31,8 @@ export class WeekdayRect extends Base {
         this.xlabel = 'Day of week';
         this.title = 'WeekdayRect title';
         this.colormap = new ColorMap('summer');
-
         this.defineDimensions();
+        this.domElem.classList.add('punchcard-weekday-rect');
 
     }
 

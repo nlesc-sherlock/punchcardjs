@@ -17,6 +17,8 @@ export class WeekdayCircle extends WeekdayRect {
         this.title = 'WeekdayCircle title';
         this.colormap = new ColorMap('blues');
         super.defineDimensions();
+        this.domElem.classList.remove('punchcard-weekday-rect');
+        this.domElem.classList.add('punchcard-weekday-circle');
     }
 
 

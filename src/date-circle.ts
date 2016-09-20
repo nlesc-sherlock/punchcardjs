@@ -19,6 +19,9 @@ export class DateCircle extends DateRect {
         this.title = 'DateCircle title';
         this.colormap = new ColorMap('rainbow');
         super.defineDimensions();
+        this.domElem.classList.remove('punchcard-date-rect');
+        this.domElem.classList.add('punchcard-date-circle');
+
     }
 
 
