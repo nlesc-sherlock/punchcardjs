@@ -111,7 +111,7 @@ export class Base {
      * The default value is 'datestr'
      * @type {string}
      */
-    public datekey:string;
+    protected datekey:string;
 
 
 
