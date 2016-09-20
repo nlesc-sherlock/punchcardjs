@@ -1,51 +1,51 @@
 
 /* the axes */
-div.punchcard-common svg g.legendbody {
+.punchcard-common svg g.legendbody {
   fill: none;
   shape-rendering: crispEdges;
   stroke: black;
 }
 
 /* the axes/legend's background */
-div.punchcard-common svg g.punchcard-legend rect.legendbody {
+.punchcard-common svg g.punchcard-legend rect.legendbody {
     fill: #d8d8d8;
     shape-rendering: crispEdges;
 }
 
 /* the box around the legend background is a separate rect, this is its style */
-div.punchcard-common svg g.punchcard-legend .legendbody-box {
+.punchcard-common svg g.punchcard-legend .legendbody-box {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the symbols that are the main content of the legend */
-div.punchcard-common svg g.punchcard-legend rect.symbol {
+.punchcard-common svg g.punchcard-legend rect.symbol {
     shape-rendering: crispEdges;
     stroke: none;
     stroke-width: 0;
 }
 
 /* the xlabel text */
-div.punchcard-common svg g.punchcard-legend text.horizontal-axis-label {
+.punchcard-common svg g.punchcard-legend text.horizontal-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the ylabel text */
-div.punchcard-common svg g.punchcard-legend text.vertical-axis-label {
+.punchcard-common svg g.punchcard-legend text.vertical-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the title text */
-div.punchcard-common svg g.punchcard-legend text.title {
+.punchcard-common svg g.punchcard-legend text.title {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the tick marks */
-div.punchcard-common svg g.punchcard-legend g.tick line {
+.punchcard-common svg g.punchcard-legend g.tick line {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;

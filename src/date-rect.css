@@ -1,69 +1,69 @@
 
 /* the top level div */
-div.punchcard-date-rect {
+.punchcard-date-rect {
     height: 200px;
 }
 
 /* the svg element */
-div.punchcard-date-rect svg {
+.punchcard-date-rect svg {
     font-family: sans-serif;
     font-size: 0.7em;
 }
 
 /* the axes */
-div.punchcard-date-rect .domain {
+.punchcard-date-rect .domain {
   fill: none;
   shape-rendering: crispEdges;
   stroke: black;
 }
 
 /* the axes/chart's background  */
-div.punchcard-date-rect .chartbody {
+.punchcard-date-rect .chartbody {
     fill: #d8d8d8;
     shape-rendering: crispEdges;
 }
 
 /* the box around the chart background is a separate rect, this is its style */
-div.punchcard-date-rect .chartbody-box {
+.punchcard-date-rect .chartbody-box {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the symbols that are the main content of the plot */
-div.punchcard-date-rect .symbol {
+.punchcard-date-rect .symbol {
     shape-rendering: crispEdges;
     stroke: none;
     stroke-width: 0;
 }
 
 /* the xlabel text */
-div.punchcard-date-rect .horizontal-axis-label {
+.punchcard-date-rect .horizontal-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the ylabel text */
-div.punchcard-date-rect .vertical-axis-label {
+.punchcard-date-rect .vertical-axis-label {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the title text */
-div.punchcard-date-rect .title {
+.punchcard-date-rect .title {
     text-align: center;
     text-anchor: middle;
 }
 
 /* the tick marks */
-div.punchcard-date-rect .tick line {
+.punchcard-date-rect .tick line {
     fill: none;
     shape-rendering: crispEdges;
     stroke: black;
 }
 
 /* the ticks text */
-div.punchcard-date-rect .horizontal-axis text {
+.punchcard-date-rect .horizontal-axis text {
     /* some more style features are defined in the JavaScript*/
     transform: rotate(270deg);
 }
