@@ -6,7 +6,9 @@ import {ColorMap} from './colormap';
 import {WeekdayRect} from './weekday-rect';
 
 
-
+/**
+ * See <a href="https://nlesc-sherlock.github.io/punchcardjs-demo/sites/demo/">examples on GitHub</a>.
+ */
 export class WeekdayCircle extends WeekdayRect {
 
     constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {

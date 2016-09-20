@@ -6,7 +6,9 @@ import 'moment';
 import {Base} from './base';
 import {ColorMap} from './colormap';
 
-
+/**
+ * See <a href="https://nlesc-sherlock.github.io/punchcardjs-demo/sites/demo/">examples on GitHub</a>.
+ */
 export class DateRect extends Base {
 
     protected dateScale: d3.time.Scale<any, any>;

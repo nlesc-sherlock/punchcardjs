@@ -7,7 +7,9 @@ import {ColorMap} from './colormap';
 import {DateRect} from './date-rect';
 
 
-
+/**
+ * See <a href="https://nlesc-sherlock.github.io/punchcardjs-demo/sites/demo/">examples on GitHub</a>.
+ */
 export class DateCircle extends DateRect {
 
 
