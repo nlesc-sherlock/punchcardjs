@@ -107,7 +107,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#datefrom" class="tsd-kind-icon">date<wbr>From</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#datescale" class="tsd-kind-icon">date<wbr>Scale</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#dateto" class="tsd-kind-icon">date<wbr>To</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_date_rect_.daterect.html#datekey" class="tsd-kind-icon">datekey</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#datekey" class="tsd-kind-icon">datekey</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#dim" class="tsd-kind-icon">dim</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_date_rect_.daterect.html#domelem" class="tsd-kind-icon">dom<wbr>Elem</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#domelemid" class="tsd-kind-icon">dom<wbr>Elem<wbr>Id</a></li>
@@ -132,7 +132,7 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_date_rect_.daterect.html#definedimensions" class="tsd-kind-icon">define<wbr>Dimensions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#definedimensions" class="tsd-kind-icon">define<wbr>Dimensions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="_date_rect_.daterect.html#draw" class="tsd-kind-icon">draw</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#drawbox" class="tsd-kind-icon">draw<wbr>Box</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external"><a href="_date_rect_.daterect.html#drawchartbody" class="tsd-kind-icon">draw<wbr>Chart<wbr>Body</a></li>
@@ -156,14 +156,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Date<wbr>Rect<span class="tsd-signature-symbol">(</span>cf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CrossFilter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, domElemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_date_rect_.daterect.html" class="tsd-signature-type">DateRect</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Date<wbr>Rect<span class="tsd-signature-symbol">(</span>cf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CrossFilter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, domElemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, datekey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_date_rect_.daterect.html" class="tsd-signature-type">DateRect</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L14">date-rect.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L14">date-rect.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -190,6 +190,9 @@
 										</div>
 									</div>
 								</li>
+								<li>
+									<h5>datekey: <span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_date_rect_.daterect.html" class="tsd-signature-type">DateRect</a></h4>
 							<p>A reference to an instance of DateRect.</p>
@@ -206,7 +209,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#candraw">canDraw</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L107">base.ts:107</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L107">base.ts:107</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -227,7 +230,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#cf">cf</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L21">base.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L21">base.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -248,7 +251,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#colormap">colormap</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L27">base.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L27">base.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -269,7 +272,7 @@
 					<div class="tsd-signature tsd-kind-icon">date<wbr>From<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L13">date-rect.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L13">date-rect.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -279,7 +282,7 @@
 					<div class="tsd-signature tsd-kind-icon">date<wbr>Scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Scale</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L12">date-rect.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L12">date-rect.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -289,18 +292,18 @@
 					<div class="tsd-signature tsd-kind-icon">date<wbr>To<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L14">date-rect.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L14">date-rect.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external">
 					<a name="datekey" class="tsd-anchor"></a>
-					<h3>datekey</h3>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> datekey</h3>
 					<div class="tsd-signature tsd-kind-icon">datekey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#datekey">datekey</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L114">base.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L114">base.ts:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -323,7 +326,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#dim">dim</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L33">base.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L33">base.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -345,7 +348,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#domelem">domElem</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L38">base.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L38">base.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -366,7 +369,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#domelemid">domElemId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L43">base.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L43">base.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -387,7 +390,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#height">height</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L97">base.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L97">base.ts:97</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -408,7 +411,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#svg">svg</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L48">base.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L48">base.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -429,7 +432,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#title">title</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L77">base.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L77">base.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -450,7 +453,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#todscale">todScale</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L92">base.ts:92</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L92">base.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -471,7 +474,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#xlabel">xlabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L82">base.ts:82</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L82">base.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -492,7 +495,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#ylabel">ylabel</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L87">base.ts:87</a></li>
+							<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L87">base.ts:87</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -521,7 +524,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#legendwidth">legendWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L536">base.ts:536</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L537">base.ts:537</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -536,7 +539,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#legendwidth">legendWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L527">base.ts:527</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L528">base.ts:528</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -567,7 +570,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginbottom">marginBottom</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L518">base.ts:518</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L519">base.ts:519</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -582,7 +585,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginbottom">marginBottom</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L509">base.ts:509</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L510">base.ts:510</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -613,7 +616,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginleft">marginLeft</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L464">base.ts:464</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L465">base.ts:465</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -628,7 +631,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginleft">marginLeft</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L455">base.ts:455</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L456">base.ts:456</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -659,7 +662,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginright">marginRight</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L482">base.ts:482</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L483">base.ts:483</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -674,7 +677,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#marginright">marginRight</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L473">base.ts:473</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L474">base.ts:474</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -705,7 +708,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#margintop">marginTop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L500">base.ts:500</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L501">base.ts:501</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -720,7 +723,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#margintop">marginTop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L491">base.ts:491</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L492">base.ts:492</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -742,17 +745,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-external">
 					<a name="definedimensions" class="tsd-anchor"></a>
-					<h3>define<wbr>Dimensions</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> define<wbr>Dimensions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-external">
 						<li class="tsd-signature tsd-kind-icon">define<wbr>Dimensions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_base_.base.html" class="tsd-signature-type">Base</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L41">date-rect.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L43">date-rect.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -776,7 +779,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#draw">draw</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L78">date-rect.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L85">date-rect.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -808,7 +811,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawbox">drawBox</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L188">base.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L189">base.ts:189</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -833,7 +836,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawchartbody">drawChartBody</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L216">base.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L217">base.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -859,7 +862,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L109">date-rect.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L116">date-rect.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -884,7 +887,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawhorizontalaxislabel">drawHorizontalAxisLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L242">base.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L243">base.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -909,7 +912,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawlegend">drawLegend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L265">base.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L266">base.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -933,7 +936,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawsvg">drawSvg</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L282">base.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L283">base.ts:283</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -957,7 +960,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/date-rect.ts#L170">date-rect.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/date-rect.ts#L177">date-rect.ts:177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -984,7 +987,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawtitle">drawTitle</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L298">base.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L299">base.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1009,7 +1012,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawverticalaxis">drawVerticalAxis</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L321">base.ts:321</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L322">base.ts:322</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1034,7 +1037,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#drawverticalaxislabel">drawVerticalAxisLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L355">base.ts:355</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L356">base.ts:356</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1059,7 +1062,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_base_.base.html">Base</a>.<a href="_base_.base.html#onresize">onResize</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/e5453e4/src/base.ts#L382">base.ts:382</a></li>
+									<li>Defined in <a href="https://github.com/nlesc-sherlock/punchcardjs/blob/8f16d34/src/base.ts#L383">base.ts:383</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1141,7 +1144,7 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-external">
 								<a href="_date_rect_.daterect.html#dateto" class="tsd-kind-icon">date<wbr>To</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external">
 								<a href="_date_rect_.daterect.html#datekey" class="tsd-kind-icon">datekey</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-external">
@@ -1186,7 +1189,7 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
 								<a href="_date_rect_.daterect.html#margintop" class="tsd-kind-icon">margin<wbr>Top</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-external">
 								<a href="_date_rect_.daterect.html#definedimensions" class="tsd-kind-icon">define<wbr>Dimensions</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
