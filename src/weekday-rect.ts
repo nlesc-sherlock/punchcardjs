@@ -234,6 +234,14 @@ export class WeekdayRect extends Base {
         return this;
     }
 
+    /*
+     * overrides method from Base
+     */
+    protected onMouseOver(d: any) {
+        console.log('x:' + this.dayOfWeekScale(d.key['weekday']) +
+            ', y:' + this.todScale(d.key['hourOfDay']) +
+            ', count:' + d.value);
+    }
 
 }
 

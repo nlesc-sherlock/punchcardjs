@@ -251,6 +251,18 @@ export class DateRect extends Base {
     }
 
 
+
+    /*
+     * overrides method from Base
+     */
+    protected onMouseOver(d: any) {
+        console.log('x:' + this.dateScale(new Date(d.key[this.datekey])) +
+            ', y:' + this.todScale(d.key['hourOfDay']) +
+            ', count:' + d.value);
+    }
+
+
+
 }
 
 

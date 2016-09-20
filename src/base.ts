@@ -113,6 +113,8 @@ export class Base {
      */
     protected datekey:string;
 
+    protected tooltip: HTMLElement;
+
 
     /**
      * Constructs an instance of Base when given a crossfilter object and the
@@ -155,6 +157,8 @@ export class Base {
         this.colormap = new ColorMap();
 
         this.domElem.classList.add('punchcard-common');
+
+        this.addTooltip();
 
         // beware: JavaScript magic happens here
         let that:Base = this;
@@ -396,7 +400,7 @@ export class Base {
 
 
     protected onMouseOver(d:any) {
-        console.log('mouseover:' + d);
+        console.log(d);
     }
 
 
@@ -454,6 +458,15 @@ export class Base {
 
         this.domElem.style.minWidth = (left + right + 100).toString() + 'px';
 
+        return this;
+    }
+
+
+    protected addTooltip(): Base {
+
+        this.tooltip = document.createElement('div');
+        this.tooltip.classList.add('punchcard-tooltip');
+        this.domElem.insertAdjacentElement('beforeend', this.tooltip);
         return this;
     }
 
