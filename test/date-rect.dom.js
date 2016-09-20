@@ -36,7 +36,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: 81185b)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-date-rect"></div>';
@@ -45,7 +45,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: 2e35b1)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["casenumber", "datestr", "description", "latitude", "longitude", "primary"];
@@ -54,7 +54,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
 
-    it('...json fixture should have 5000 records', function () {
+    it('...json fixture should have 5000 records. (code: c1ef33)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 5000;
@@ -63,7 +63,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
 
-    it('...constructor should return an instance of punchcards.DateRect when called with valid arguments', function () {
+    it('...constructor should return an instance of punchcards.DateRect when called with valid arguments. (code: 90d3ae)', function () {
         var actual, daterect;
         daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
         actual = daterect instanceof punchcards.DateRect;
@@ -73,7 +73,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
     it('...after calling .drawHorizontalAxis(), the chart should have an ' +
-        'SVG g element of class "horizontal-axis" attached to it', function () {
+        'SVG g element of class "horizontal-axis" attached to it. (code: b7d23e)', function () {
             var actual, daterect;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.drawSvg();
@@ -85,7 +85,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
 
     it('...after calling .drawSymbols(), the chart should have an ' +
-        'SVG g element of class "symbol" attached to it', function () {
+        'SVG g element of class "symbol" attached to it. (code: 082e81)', function () {
             var actual, daterect;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.drawSvg();
@@ -100,7 +100,7 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 139 SVG rects of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 3f6378)', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.drawSvg();
@@ -150,7 +150,7 @@ describe('punchcards DateRect class with test/simple-n3.fixture.json...', functi
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: 82438e)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-date-rect"></div>';
@@ -159,7 +159,7 @@ describe('punchcards DateRect class with test/simple-n3.fixture.json...', functi
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: 842e60)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["datestr"];
@@ -168,7 +168,7 @@ describe('punchcards DateRect class with test/simple-n3.fixture.json...', functi
 
 
 
-    it('...json fixture should have 3 records', function () {
+    it('...json fixture should have 3 records. (code: ad261d)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 3;
@@ -179,7 +179,7 @@ describe('punchcards DateRect class with test/simple-n3.fixture.json...', functi
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 2 SVG rects of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 63ad59)', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.drawSvg();
@@ -231,7 +231,7 @@ describe('punchcards DateRect class with test/simple-n1.fixture.json...', functi
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: ce06dc)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-date-rect"></div>';
@@ -240,7 +240,7 @@ describe('punchcards DateRect class with test/simple-n1.fixture.json...', functi
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: d2e65d)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["datestr"];
@@ -249,7 +249,7 @@ describe('punchcards DateRect class with test/simple-n1.fixture.json...', functi
 
 
 
-    it('...json fixture should have just 1 record', function () {
+    it('...json fixture should have just 1 record. (code: 84aa1d)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 1;
@@ -260,7 +260,7 @@ describe('punchcards DateRect class with test/simple-n1.fixture.json...', functi
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 4e9fd5)', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.drawSvg();
@@ -312,7 +312,7 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: e3ec2a)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-date-rect"></div>';
@@ -321,7 +321,7 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: 601f82)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["my-custom-datekey"];
@@ -330,7 +330,7 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
 
 
 
-    it('...json fixture should have just 1 record', function () {
+    it('...json fixture should have just 1 record. (code: 1967ec)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 1;
@@ -341,7 +341,7 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 135b20)', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect', 'my-custom-datekey');
             daterect.drawSvg();

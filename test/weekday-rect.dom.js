@@ -36,7 +36,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: c7261a)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-weekday-rect"></div>';
@@ -45,7 +45,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: c7e0a7)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["casenumber", "datestr", "description", "latitude", "longitude", "primary"];
@@ -54,7 +54,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
 
-    it('...json fixture should have 5000 records', function () {
+    it('...json fixture should have 5000 records. (code: 67d281)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 5000;
@@ -63,7 +63,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
 
-    it('...constructor should return an instance of punchcards.WeekdayRect when called with valid arguments', function () {
+    it('...constructor should return an instance of punchcards.WeekdayRect when called with valid arguments. (code: 3365c6)', function () {
         var actual, weekdayrect;
         weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
         actual = weekdayrect instanceof punchcards.WeekdayRect;
@@ -73,7 +73,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
     it('...after calling .drawHorizontalAxis(), the chart should have an ' +
-        'SVG g element of class "horizontal-axis" attached to it', function () {
+        'SVG g element of class "horizontal-axis" attached to it. (code: 569623)', function () {
             var actual, weekdayrect;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.drawSvg();
@@ -85,7 +85,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
 
     it('...after calling .drawSymbols(), the chart should have an ' +
-        'SVG g element of class "symbol" attached to it', function () {
+        'SVG g element of class "symbol" attached to it. (code: 768b12)', function () {
             var actual, weekdayrect;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.drawSvg();
@@ -100,7 +100,7 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 139 SVG rects of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 4566ed)', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.drawSvg();
@@ -150,7 +150,7 @@ describe('punchcards WeekdayRect class with test/simple-n3.fixture.json...', fun
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: 568d68)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-weekday-rect"></div>';
@@ -159,7 +159,7 @@ describe('punchcards WeekdayRect class with test/simple-n3.fixture.json...', fun
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: 9704e4)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["datestr"];
@@ -168,7 +168,7 @@ describe('punchcards WeekdayRect class with test/simple-n3.fixture.json...', fun
 
 
 
-    it('...json fixture should have 3 records', function () {
+    it('...json fixture should have 3 records. (code: 61f4d7) ', function () {
         var actual, expected;
         actual = cf.size();
         expected = 3;
@@ -179,7 +179,7 @@ describe('punchcards WeekdayRect class with test/simple-n3.fixture.json...', fun
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 2 SVG rects of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: 02d32f)', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.drawSvg();
@@ -231,7 +231,7 @@ describe('punchcards WeekdayRect class with test/simple-n1.fixture.json...', fun
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: 32fdc1)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-weekday-rect"></div>';
@@ -240,7 +240,7 @@ describe('punchcards WeekdayRect class with test/simple-n1.fixture.json...', fun
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: 4b7ff9)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["datestr"];
@@ -249,7 +249,7 @@ describe('punchcards WeekdayRect class with test/simple-n1.fixture.json...', fun
 
 
 
-    it('...json fixture should have just 1 record', function () {
+    it('...json fixture should have just 1 record. (code: 0f92d2)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 1;
@@ -260,7 +260,7 @@ describe('punchcards WeekdayRect class with test/simple-n1.fixture.json...', fun
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: b4cc40)', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.drawSvg();
@@ -311,7 +311,7 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly. (code: 55724c)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-weekday-rect"></div>';
@@ -320,7 +320,7 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly. (code: c2ef41) ', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["my-custom-datekey"];
@@ -329,7 +329,7 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
 
 
 
-    it('...json fixture should have just 1 record', function () {
+    it('...json fixture should have just 1 record. (code: ceefa8)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 1;
@@ -340,7 +340,7 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
 
     it('...after calling .drawSymbols(), the chart should have an ' +
         'SVG g element of class "symbol" with 1 SVG rect of class ' +
-        '"symbol" attached to it', function () {
+        '"symbol" attached to it. (code: d993ba)', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect', 'my-custom-datekey');
             weekdayrect.drawSvg();

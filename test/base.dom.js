@@ -36,7 +36,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...html fixture should have loaded correctly', function () {
+    it('...html fixture should have loaded correctly (code: 6bed28)', function () {
         var actual, expected;
         actual = fixtures[0][0].outerHTML;
         expected = '<div id="punchcard-base"></div>';
@@ -45,7 +45,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...json fixture should have loaded correctly', function () {
+    it('...json fixture should have loaded correctly (code: fcf647)', function () {
         var actual, expected;
         actual = Object.keys(fixtures[1][0]).sort();
         expected = ["casenumber", "datestr", "description", "latitude", "longitude", "primary"];
@@ -54,7 +54,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...json fixture should have 5000 records', function () {
+    it('...json fixture should have 5000 records (code: 7ccd2d)', function () {
         var actual, expected;
         actual = cf.size();
         expected = 5000;
@@ -63,7 +63,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...constructor should return an instance of punchcards.Base when called with valid arguments', function () {
+    it('...constructor should return an instance of punchcards.Base when called with valid arguments (code: 035673)', function () {
         var actual, base;
         base = new punchcards.Base(cf, 'punchcard-base');
         actual = base instanceof punchcards.Base;
@@ -72,7 +72,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...calling .drawSvg() method should add an SVG svg to the DOM.', function () {
+    it('...calling .drawSvg() method should add an SVG svg to the DOM. (code: 65986c)', function () {
         // should match the string <svg></svg>
         var actual, expected, base, div, re;
         base = new punchcards.Base(cf, 'punchcard-base');
@@ -89,7 +89,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawSvg(), the SVG svg element should have a ' +
-        '"width" property with a numerical value.', function () {
+        '"width" property with a numerical value. (code: 1adb1b)', function () {
             // use a regular expression to verify that there is a 'width' property
             // attached to the svg opening tag with a numerical value.
             // see https://regex101.com/ for testing/debugging regular expressions
@@ -125,7 +125,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawSvg(), the SVG svg element should have a ' +
-        '"height" property with a numerical value.', function () {
+        '"height" property with a numerical value. (code: db2a56)', function () {
             // use a regular expression to verify that there is a 'height' property
             // attached to the svg opening tag with a numerical value.
             // see https://regex101.com/ for testing/debugging regular expressions
@@ -157,7 +157,7 @@ describe('punchcards Base class...', function () {
 
 
 
-    it('...after calling .drawSvg(), the instance should have a .svg member.', function () {
+    it('...after calling .drawSvg(), the instance should have a .svg member. (code: b54fd7)', function () {
         var actual, base;
         base = new punchcards.Base(cf, 'punchcard-base');
         base.drawSvg();
@@ -168,7 +168,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawChartBody(), the chart should have ' +
-         'an SVG g element of class "chartbody".', function () {
+         'an SVG g element of class "chartbody". (code: 23cfe8)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -181,7 +181,7 @@ describe('punchcards Base class...', function () {
 
     it('...after calling .drawChartBody(), the chart should have an ' +
         'SVG g element of class "chartbody" with an SVG rect element attached ' +
-        'to it.', function () {
+        'to it. (code: 53d0cc)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -193,7 +193,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawHorizontalAxisLabel(), the chart should have an ' +
-        'SVG g element of class "horizontal-axis-label" attached to it.', function () {
+        'SVG g element of class "horizontal-axis-label" attached to it. (code: a9a7b4)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -206,7 +206,7 @@ describe('punchcards Base class...', function () {
 
     it('...after calling .drawHorizontalAxisLabel(), the chart should have an ' +
         'SVG g element of class "horizontal-axis-label" with an SVG text ' +
-        'element of class "horizontal-axis-label" attached to it.', function () {
+        'element of class "horizontal-axis-label" attached to it. (code: abd406)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -218,7 +218,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawVerticalAxis(), the chart should have an ' +
-        'SVG g element of class "vertical-axis" attached to it.', function () {
+        'SVG g element of class "vertical-axis" attached to it. (code: 86e545)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -230,7 +230,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawVerticalAxisLabel(), the chart should have an ' +
-        'SVG g element of class "vertical-axis-label" attached to it.', function () {
+        'SVG g element of class "vertical-axis-label" attached to it. (code: 56d936)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -243,7 +243,7 @@ describe('punchcards Base class...', function () {
 
     it('...after calling .drawVerticalAxisLabel(), the chart should have an ' +
         'SVG g element of class "vertical-axis-label" with an SVG text ' +
-        'element of class "vertical-axis-label" attached to it.', function () {
+        'element of class "vertical-axis-label" attached to it. (code: fc82ac)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -255,7 +255,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawTitle(), the chart should have an ' +
-        'SVG g element of class "title" attached to it.', function () {
+        'SVG g element of class "title" attached to it. (code: 615349)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -268,7 +268,7 @@ describe('punchcards Base class...', function () {
 
     it('...after calling .drawTitle(), the chart should have an ' +
         'SVG g element of class "title" with an SVG text ' +
-        'element of class "title" attached to it.', function () {
+        'element of class "title" attached to it. (code: c8341c)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -280,7 +280,7 @@ describe('punchcards Base class...', function () {
 
 
     it('...after calling .drawBox(), the chart should have an ' +
-        'SVG g element of class "chartbody-box" attached to it.', function () {
+        'SVG g element of class "chartbody-box" attached to it. (code: 4c21a7)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
@@ -293,7 +293,7 @@ describe('punchcards Base class...', function () {
 
     it('...after calling .drawTitle(), the chart should have an ' +
         'SVG g element of class "chartbody-box" with an SVG rect ' +
-        'element of class "chartbody-box" attached to it.', function () {
+        'element of class "chartbody-box" attached to it. (code: f83f32)', function () {
             var actual, base;
             base = new punchcards.Base(cf, 'punchcard-base');
             base.drawSvg();
