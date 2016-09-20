@@ -396,7 +396,13 @@ export class Base {
 
 
     protected onMouseOver(d:any) {
-        console.log(d);
+        console.log('mouseover:' + d);
+    }
+
+
+
+    protected onClick(d:any) {
+        console.log('click:' + d);
     }
 
 

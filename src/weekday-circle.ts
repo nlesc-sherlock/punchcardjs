@@ -100,6 +100,9 @@ export class WeekdayCircle extends WeekdayRect {
                     .attr('fill', function(d:any){
                         return that.colormap.getColorRGB(d.value);
                     })
+                    .on('click', function(d:any){
+                        that.onClick(d);
+                    })
                     .on('mouseover', function(d:any){
                         that.onMouseOver(d);
                     });
