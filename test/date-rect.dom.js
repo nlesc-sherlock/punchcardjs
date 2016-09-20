@@ -76,7 +76,6 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
         'SVG g element of class "horizontal-axis" attached to it', function () {
             var actual, daterect;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             actual = daterect.svg.select('g.horizontal-axis')[0][0];
@@ -89,7 +88,6 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
         'SVG g element of class "symbol" attached to it', function () {
             var actual, daterect;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();
@@ -105,7 +103,6 @@ describe('punchcards DateRect class with cityofchicago-police-data.fixture.json.
         '"symbol" attached to it', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();
@@ -185,7 +182,6 @@ describe('punchcards DateRect class with test/simple-n3.fixture.json...', functi
         '"symbol" attached to it', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();
@@ -267,7 +263,6 @@ describe('punchcards DateRect class with test/simple-n1.fixture.json...', functi
         '"symbol" attached to it', function () {
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();
@@ -350,7 +345,6 @@ describe('punchcards DateRect class with test/simple-n1-custom-datekey.fixture.j
             var actual, daterect, symbols;
             daterect = new punchcards.DateRect(cf, 'punchcard-date-rect');
             daterect.datekey = 'my-custom-datekey';
-            daterect.defineDimensions();
             daterect.drawSvg();
             daterect.drawHorizontalAxis();
             daterect.drawVerticalAxis();

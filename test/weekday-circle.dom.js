@@ -74,7 +74,6 @@ describe('punchcards WeekdayCircle class with cityofchicago-police-data.fixture.
         'SVG g element of class "symbol" attached to it', function () {
             var actual, weekdaycircle;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -90,7 +89,6 @@ describe('punchcards WeekdayCircle class with cityofchicago-police-data.fixture.
         '"symbol" attached to it', function () {
             var actual, weekdaycircle, symbols;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -174,7 +172,6 @@ describe('punchcards WeekdayCircle class with test/simple-n3.fixture.json...', f
         '"symbol" attached to it', function () {
             var actual, weekdaycircle, symbols;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -256,7 +253,6 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
         '"symbol" attached to it', function () {
             var actual, weekdaycircle, symbols;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -288,7 +284,6 @@ describe('punchcards WeekdayCircle class with test/simple-n1.fixture.json...', f
 
             var actual, weekdaycircle, symbols, re;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -371,7 +366,6 @@ describe('punchcards WeekdayCircle class with test/simple-n1-custom-datekey.fixt
             var actual, weekdaycircle, symbols;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
             weekdaycircle.datekey = 'my-custom-datekey';
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();
@@ -404,7 +398,6 @@ describe('punchcards WeekdayCircle class with test/simple-n1-custom-datekey.fixt
             var actual, weekdaycircle, symbols, re;
             weekdaycircle = new punchcards.WeekdayCircle(cf, 'punchcard-weekday-circle');
             weekdaycircle.datekey = 'my-custom-datekey';
-            weekdaycircle.defineDimensions();
             weekdaycircle.drawSvg();
             weekdaycircle.drawHorizontalAxis();
             weekdaycircle.drawVerticalAxis();

@@ -76,7 +76,6 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
         'SVG g element of class "horizontal-axis" attached to it', function () {
             var actual, weekdayrect;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             actual = weekdayrect.svg.select('g.horizontal-axis')[0][0];
@@ -89,7 +88,6 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
         'SVG g element of class "symbol" attached to it', function () {
             var actual, weekdayrect;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();
@@ -105,7 +103,6 @@ describe('punchcards WeekdayRect class with test/cityofchicago-police-data.fixtu
         '"symbol" attached to it', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();
@@ -185,7 +182,6 @@ describe('punchcards WeekdayRect class with test/simple-n3.fixture.json...', fun
         '"symbol" attached to it', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();
@@ -267,7 +263,6 @@ describe('punchcards WeekdayRect class with test/simple-n1.fixture.json...', fun
         '"symbol" attached to it', function () {
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();
@@ -349,7 +344,6 @@ describe('punchcards WeekdayRect class with test/simple-n1-custom-datekey.fixtur
             var actual, weekdayrect, symbols;
             weekdayrect = new punchcards.WeekdayRect(cf, 'punchcard-weekday-rect');
             weekdayrect.datekey = 'my-custom-datekey';
-            weekdayrect.defineDimensions();
             weekdayrect.drawSvg();
             weekdayrect.drawHorizontalAxis();
             weekdayrect.drawVerticalAxis();

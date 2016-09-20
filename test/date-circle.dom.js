@@ -74,7 +74,6 @@ describe('punchcards DateCircle class with cityofchicago-police-data.fixture.jso
         'SVG g element of class "symbol" attached to it', function () {
             var actual, datecircle;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -90,7 +89,6 @@ describe('punchcards DateCircle class with cityofchicago-police-data.fixture.jso
         '"symbol" attached to it', function () {
             var actual, datecircle, symbols;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -170,7 +168,6 @@ describe('punchcards DateCircle class with test/simple-n3.fixture.json...', func
         '"symbol" attached to it', function () {
             var actual, datecircle, symbols;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -252,7 +249,6 @@ describe('punchcards DateCircle class with test/simple-n1.fixture.json...', func
         '"symbol" attached to it', function () {
             var actual, datecircle, symbols;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -284,7 +280,6 @@ describe('punchcards DateCircle class with test/simple-n1.fixture.json...', func
 
             var actual, datecircle, symbols, re;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -368,7 +363,6 @@ describe('punchcards DateCircle class with test/simple-n1-custom-datekey.fixture
             var actual, datecircle, symbols;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
             datecircle.datekey = 'my-custom-datekey';
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
@@ -401,7 +395,6 @@ describe('punchcards DateCircle class with test/simple-n1-custom-datekey.fixture
             var actual, datecircle, symbols, re;
             datecircle = new punchcards.DateCircle(cf, 'punchcard-date-circle');
             datecircle.datekey = 'my-custom-datekey';
-            datecircle.defineDimensions();
             datecircle.drawSvg();
             datecircle.drawHorizontalAxis();
             datecircle.drawVerticalAxis();
