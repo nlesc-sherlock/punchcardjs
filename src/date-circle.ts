@@ -105,6 +105,9 @@ export class DateCircle extends DateRect {
                     })
                     .on('mouseover', function(d:any){
                         that.onMouseOver(d);
+                    })
+                    .on('mouseout', function(){
+                        that.onMouseOut();
                     });
 
         return this;

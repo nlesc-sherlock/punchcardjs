@@ -233,6 +233,23 @@ export class Base {
 
 
 
+    protected drawFooter():Base {
+
+        let dx = this.domElem.clientWidth - this.marginRight - this.legendWidth;
+        let dy = this.domElem.clientHeight - this.marginBottom;
+        this.svg.append('g')
+            .attr('class', 'footer')
+            .append('text')
+            .text('')
+            .attr('transform', 'translate(' + dx + ',' + dy + ')')
+            .style('text-anchor', 'end')
+            .attr('x', '-5px')
+            .attr('y', '-5px');
+        return this;
+    }
+
+
+
     /**
      * Adds an SVG g element containing an SVG text element with which to label
      * the horizontal axis.
@@ -401,7 +418,7 @@ export class Base {
 
 
     protected onClick(d:any) {
-        console.log('click:' + d);
+        console.log(d);
     }
 
 

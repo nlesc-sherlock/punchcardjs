@@ -107,7 +107,11 @@ export class WeekdayCircle extends WeekdayRect {
                     })
                     .on('mouseover', function(d:any){
                         that.onMouseOver(d);
+                    })
+                    .on('mouseout', function(){
+                        that.onMouseOut();
                     });
+
 
         return this;
     }

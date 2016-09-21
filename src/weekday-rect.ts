@@ -108,6 +108,7 @@ export class WeekdayRect extends Base {
                 this.drawSymbols();
                 super.drawBox();
                 super.drawLegend();
+                super.drawFooter();
             }
 
             return this;
@@ -229,19 +230,36 @@ export class WeekdayRect extends Base {
                     })
                     .on('mouseover', function(d:any){
                         that.onMouseOver(d);
+                    })
+                    .on('mouseout', function(){
+                        that.onMouseOut();
                     });
 
         return this;
     }
 
+
+
     /*
      * overrides method from Base
      */
-    protected onMouseOver(d: any) {
-        console.log('x:' + this.dayOfWeekScale(d.key['weekday']) +
-            ', y:' + this.todScale(d.key['hourOfDay']) +
-            ', count:' + d.value);
+    protected onMouseOver(d: any): WeekdayRect {
+
+        let str: string = 'x:' + d.key['weekday'] +
+            ', y:' + d.key['hourOfDay'] +
+            ', count:' + d.value;
+        this.svg.select('g.footer').select('text').text(str);
+        return this;
     }
+
+
+
+    protected onMouseOut(): WeekdayRect {
+        this.svg.select('g.footer').select('text').text('');
+        return this;
+    }
+
+
 
 }
 

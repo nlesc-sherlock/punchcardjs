@@ -103,6 +103,7 @@ export class DateRect extends Base {
                 this.drawSymbols();
                 super.drawBox();
                 super.drawLegend();
+                super.drawFooter();
             }
             return this;
         }
@@ -244,6 +245,9 @@ export class DateRect extends Base {
                     })
                     .on('mouseover', function(d:any){
                         that.onMouseOver(d);
+                    })
+                    .on('mouseout', function(){
+                        that.onMouseOut();
                     });
 
         return this;
@@ -255,10 +259,19 @@ export class DateRect extends Base {
     /*
      * overrides method from Base
      */
-    protected onMouseOver(d: any) {
-        console.log('x:' + this.dateScale(new Date(d.key[this.datekey])) +
-            ', y:' + this.todScale(d.key['hourOfDay']) +
-            ', count:' + d.value);
+    protected onMouseOver(d: any): DateRect {
+        let str: string = 'x:' + d.key[this.datekey] +
+            ', y:' + d.key['hourOfDay'] +
+            ', count:' + d.value;
+        this.svg.select('g.footer').select('text').text(str);
+        return this;
+    }
+
+
+
+    protected onMouseOut(): DateRect {
+        this.svg.select('g.footer').select('text').text('');
+        return this;
     }
 
 
