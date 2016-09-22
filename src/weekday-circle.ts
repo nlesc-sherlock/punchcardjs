@@ -14,12 +14,14 @@ export class WeekdayCircle extends WeekdayRect {
     constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         super(cf, domElemId, datekey);
+        // ...but reset these properties
+        this.domElem.classList.remove('punchcard-weekday-rect');
+        this.canDraw = false;
 
         this.xlabel = 'Day of week';
         this.title = 'WeekdayCircle title';
         this.colormap = new ColorMap('blues');
         super.defineDimensions();
-        this.domElem.classList.remove('punchcard-weekday-rect');
         this.domElem.classList.add('punchcard-weekday-circle');
     }
 
