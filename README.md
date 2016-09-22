@@ -17,7 +17,7 @@ npm install punchcardjs
 
 See also:
 
-- [demo website](http://github.com/nlesc-sherlock/punchcardjs-demo);
+- GitHub [repo](http://github.com/nlesc-sherlock/punchcardjs-demo) with a website illustrating punchcardjs;
 - [code coverage](http://nlesc-sherlock.github.io/punchcardjs/sites/coverage/remapped/src/index.html);
 - [documentation](http://nlesc-sherlock.github.io/punchcardjs/sites/tsdoc/);
 
