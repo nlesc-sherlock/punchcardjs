@@ -50,33 +50,65 @@ Here are some examples of the type of visualizations you can make with this libr
     <script type="text/javascript" src="punchcards.min.js"></script>
   </head>
 
-  <body style="background-color: #b5d3e2">
+  <body>
 
-        <div id="punchcarddiv" class="punchcard-common punchcard-weekday-circle"></div>
+     <div id="punchcard-date-circle"></div>
 
-        <script>
+     <script>
 
-            var data, cf, weekdayCircle;
+        var data, cf, chart;
 
-            data = [{
-                    "datestr": "2014-06-12T09:54:00"
-                }, {
-                    "datestr": "2014-06-15T11:10:00"
-                }, {
-                    "datestr": "2014-06-15T11:23:00"
-            }];
+        data = [{
+            "commit-date": "2016-08-11T17:49:05+02:00"
+        }, {
+            "commit-date": "2016-08-10T18:16:30+02:00"
+        }, {
+            "commit-date": "2016-08-10T18:15:01+02:00"
+        }, {
+            "commit-date": "2016-08-10T14:23:02+02:00"
+        }, {
+            "commit-date": "2016-08-10T13:13:52+02:00"
+        }, {
+            "commit-date": "2016-08-10T13:05:11+02:00"
+        }, {
+            "commit-date": "2016-08-10T13:01:10+02:00"
+        }, {
+            "commit-date": "2016-08-10T13:00:28+02:00"
+        }, {
+            "commit-date": "2016-08-10T12:58:29+02:00"
+        }, {
+            "commit-date": "2016-08-10T12:01:06+02:00"
+        }, {
+            "commit-date": "2016-08-10T11:59:37+02:00"
+        }, {
+            "commit-date": "2016-08-10T11:57:47+02:00"
+        }, {
+            "commit-date": "2016-08-10T11:55:32+02:00"
+        }, {
+            "commit-date": "2016-08-09T16:19:42+02:00"
+        }, {
+            "commit-date": "2016-08-09T16:18:10+02:00"
+        }, {
+            "commit-date": "2016-08-09T12:01:38+02:00"
+        }, {
+            "commit-date": "2016-08-08T17:14:57+02:00"
+        }, {
+            "commit-date": "2016-08-08T15:29:19+02:00"
+        }, {
+            "commit-date": "2016-08-08T15:28:30+02:00"
+        }, {
+            "commit-date": "2016-08-08T13:42:06+02:00"
+        }, {
+            "commit-date": "2016-08-04T17:39:11+02:00"
+        }, {
+            "commit-date": "2016-08-04T17:03:59+02:00"
+        }];
 
-            cf = crossfilter(data);
+        cf = crossfilter(data);
+        chart = new punchcards.DateCircle(cf, 'punchcard-date-circle', 'commit-date');
+        chart.draw();
 
-            <!-- draw a punchcard WeekdayCircle using svg circle elements -->
-            weekdayCircle = new punchcards.WeekdayCircle(cf, 'punchcarddiv');
-            <!-- define the name of the key from your data holding the datetime information -->
-            weekdayCircle.datekey = 'datestr';
-            weekdayCircle.defineDimensions();
-            weekdayCircle.draw();
-
-        </script>
-
+     </script>
   </body>
 </html>
 
