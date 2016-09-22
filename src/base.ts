@@ -74,17 +74,17 @@ export class Base {
      * Text to use as title for the graph
      * @type {string}
      */
-    protected title: string;
+    protected _title: string;
     /**
      * Text to use as label for the horizontal axis
      * @type {string}
      */
-    protected xlabel: string;
+    protected _xlabel: string;
     /**
      * Text to use as label for the vertical axis
      * @type {string}
      */
-    protected ylabel: string;
+    protected _ylabel: string;
     /**
      * d3 time scale for the vertical axis
      * @type {d3.scale.Linear<any, any>}
@@ -160,6 +160,7 @@ export class Base {
         window.addEventListener('resize', function() {
             that.onResize();
         });
+
     }
 
 
@@ -405,7 +406,9 @@ export class Base {
             div.removeChild(div.firstChild);
         }
 
-        this.draw();
+        if (this.canDraw) {
+            this.draw();
+        }
 
     }
 
@@ -482,6 +485,7 @@ export class Base {
     public set marginLeft(marginLeft:number) {
         this._marginLeft = marginLeft;
         this.updateMinWidth();
+        this.onResize();
     }
 
     /**
@@ -500,6 +504,7 @@ export class Base {
     public set marginRight(marginRight:number) {
         this._marginRight = marginRight;
         this.updateMinWidth();
+        this.onResize();
     }
 
     /**
@@ -518,6 +523,7 @@ export class Base {
     public set marginTop(marginTop:number) {
         this._marginTop = marginTop;
         this.updateMinHeight();
+        this.onResize();
     }
 
     /**
@@ -536,6 +542,7 @@ export class Base {
     public set marginBottom(marginBottom:number) {
         this._marginBottom = marginBottom;
         this.updateMinHeight();
+        this.onResize();
     }
 
     /**
@@ -554,6 +561,7 @@ export class Base {
     public set legendWidth(legendWidth:number) {
         let minimumWidth:number = 50;
         this._legendWidth = Math.max(legendWidth, 50);
+        this.onResize();
     }
 
     /**
@@ -563,6 +571,35 @@ export class Base {
     public get legendWidth():number {
         return this._legendWidth;
     }
+
+    public set title(title:string) {
+        this._title = title;
+        this.onResize();
+    }
+
+    public get title():string {
+        return this._title;
+    }
+
+    public set xlabel(xlabel:string) {
+        this._xlabel = xlabel;
+        this.onResize();
+    }
+
+    public get xlabel():string {
+        return this._xlabel;
+    }
+
+    public set ylabel(ylabel:string) {
+        this._ylabel = ylabel;
+        this.onResize();
+    }
+
+    public get ylabel():string {
+        return this._ylabel;
+    }
+
+
 
 }
 

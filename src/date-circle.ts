@@ -16,12 +16,14 @@ export class DateCircle extends DateRect {
     constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         super(cf, domElemId, datekey);
+        // ...but reset these properties
+        this.domElem.classList.remove('punchcard-date-rect');
+        this.canDraw = false;
 
         this.xlabel = '';
         this.title = 'DateCircle title';
         this.colormap = new ColorMap('rainbow');
         super.defineDimensions();
-        this.domElem.classList.remove('punchcard-date-rect');
         this.domElem.classList.add('punchcard-date-circle');
 
     }
