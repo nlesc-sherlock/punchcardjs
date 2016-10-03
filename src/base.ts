@@ -168,12 +168,10 @@ export class Base {
 
     /**
      * Placeholder method that does not do anything but needs to be here because
-     * it's called by .onResize(). This method should be overridden by classes
-     * that inherit from Base.
+     * it's called by .update().
      * @return {Base} return the (unchanged) instance of Base
      */
-    public draw():Base {
-
+    protected draw():Base {
         // placeholder method to be overridden in classes that inherit from this class
         return this;
     }
@@ -389,27 +387,29 @@ export class Base {
 
 
 
+    protected update() {
+
+        if (this.canDraw) {
+            // get the div element that we want to redraw
+            let div = this.domElem;
+
+            // delete the contents of the div
+            while (div.firstChild) {
+                div.removeChild(div.firstChild);
+            }
+            this.draw();
+        }
+    }
+
+
 
 
     /**
-     * When the window is resized, redraw the punchcard graph in its entirety,
-     * while observing the new maximum size.
+     * When the window is resized, redraw the punchcard graph in its entirety.
      * @return {[type]} [description]
      */
     protected onResize() {
-
-        // get the div element that we want to redraw
-        let div = this.domElem;
-
-        // delete the contents of the div
-        while (div.firstChild) {
-            div.removeChild(div.firstChild);
-        }
-
-        if (this.canDraw) {
-            this.draw();
-        }
-
+        this.update();
     }
 
 
@@ -485,7 +485,7 @@ export class Base {
     public set marginLeft(marginLeft:number) {
         this._marginLeft = marginLeft;
         this.updateMinWidth();
-        this.onResize();
+        this.update();
     }
 
     /**
@@ -504,7 +504,7 @@ export class Base {
     public set marginRight(marginRight:number) {
         this._marginRight = marginRight;
         this.updateMinWidth();
-        this.onResize();
+        this.update();
     }
 
     /**
@@ -523,7 +523,7 @@ export class Base {
     public set marginTop(marginTop:number) {
         this._marginTop = marginTop;
         this.updateMinHeight();
-        this.onResize();
+        this.update();
     }
 
     /**
@@ -542,7 +542,7 @@ export class Base {
     public set marginBottom(marginBottom:number) {
         this._marginBottom = marginBottom;
         this.updateMinHeight();
-        this.onResize();
+        this.update();
     }
 
     /**
@@ -561,7 +561,7 @@ export class Base {
     public set legendWidth(legendWidth:number) {
         let minimumWidth:number = 50;
         this._legendWidth = Math.max(legendWidth, 50);
-        this.onResize();
+        this.update();
     }
 
     /**
@@ -574,7 +574,7 @@ export class Base {
 
     public set title(title:string) {
         this._title = title;
-        this.onResize();
+        this.update();
     }
 
     public get title():string {
@@ -583,7 +583,7 @@ export class Base {
 
     public set xlabel(xlabel:string) {
         this._xlabel = xlabel;
-        this.onResize();
+        this.update();
     }
 
     public get xlabel():string {
@@ -592,7 +592,7 @@ export class Base {
 
     public set ylabel(ylabel:string) {
         this._ylabel = ylabel;
-        this.onResize();
+        this.update();
     }
 
     public get ylabel():string {

@@ -25,6 +25,7 @@ export class DateCircle extends DateRect {
         this.colormap = new ColorMap('rainbow');
         super.defineDimensions();
         this.domElem.classList.add('punchcard-date-circle');
+        this.update();
 
     }
 

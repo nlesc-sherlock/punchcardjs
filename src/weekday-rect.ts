@@ -35,6 +35,7 @@ export class WeekdayRect extends Base {
         this.colormap = new ColorMap('summer');
         this.defineDimensions();
         this.domElem.classList.add('punchcard-weekday-rect');
+        this.update();
 
     }
 
@@ -89,7 +90,7 @@ export class WeekdayRect extends Base {
      *
      * @return {WeekdayRect} A reference to an instance of WeekdayRect.
      */
-    public draw():WeekdayRect {
+    protected draw():WeekdayRect {
 
         if (this.domElem.classList.contains('hidden')) {
             // div is hidden

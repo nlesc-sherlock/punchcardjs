@@ -32,6 +32,7 @@ export class DateRect extends Base {
         this.colormap = new ColorMap('default');
         this.defineDimensions();
         this.domElem.classList.add('punchcard-date-rect');
+        this.update();
 
     }
 
@@ -42,7 +43,7 @@ export class DateRect extends Base {
      * Defines the crossfilter dimensions as used by this class
      * @return {Base} A reference to an instance of DateRect.
      */
-    protected defineDimensions():Base {
+    protected defineDimensions():DateRect {
 
         // store a reference to the instance
         let that:DateRect = this;
@@ -84,7 +85,7 @@ export class DateRect extends Base {
      *
      * @return {DateRect} A reference to an instance of DateRect.
      */
-    public draw():DateRect {
+    protected draw():DateRect {
 
         if (this.domElem.classList.contains('hidden')) {
             // div is hidden

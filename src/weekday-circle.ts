@@ -23,6 +23,7 @@ export class WeekdayCircle extends WeekdayRect {
         this.colormap = new ColorMap('blues');
         super.defineDimensions();
         this.domElem.classList.add('punchcard-weekday-circle');
+        this.update();
     }
 
 
