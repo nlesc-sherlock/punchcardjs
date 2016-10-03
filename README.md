@@ -6,7 +6,7 @@
 - [![bitHound Dev Dependencies](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/devDependencies.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/master/dependencies/npm)
 - [![bitHound Code](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/code.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs)
 
-_this library is still very much a work in progress_
+_this library is still a work in progress_
 
 # Documentation for users
 
@@ -106,7 +106,6 @@ Here are some examples of the type of visualizations you can make with this libr
 
         cf = crossfilter(data);
         chart = new punchcards.DateCircle(cf, 'punchcard-date-circle', 'commit-date');
-        chart.draw();
 
      </script>
   </body>
