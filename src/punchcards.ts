@@ -9,4 +9,3 @@ export {DateRect} from './date-rect';
 export {Legend} from './legend';
 export {WeekdayCircle} from './weekday-circle';
 export {WeekdayRect} from './weekday-rect';
-

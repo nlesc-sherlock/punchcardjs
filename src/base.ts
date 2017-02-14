@@ -1,5 +1,5 @@
 import 'crossfilter';
-import 'd3';
+import * as d3 from 'd3';
 
 
 import {ColorMap} from './colormap';
@@ -602,5 +602,3 @@ export class Base {
 
 
 }
-
-

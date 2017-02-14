@@ -1,6 +1,6 @@
 import 'crossfilter';
-import 'd3';
-import 'moment';
+import * as d3 from 'd3';
+import * as moment from 'moment';
 
 
 import {ColorMap} from './colormap';
@@ -119,5 +119,3 @@ export class DateCircle extends DateRect {
 
 
 }
-
-

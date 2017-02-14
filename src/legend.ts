@@ -1,5 +1,5 @@
 
-import 'd3';
+import * as d3 from 'd3';
 
 import {Base} from './base';
 import {DateCircle} from './date-circle';
@@ -387,4 +387,3 @@ export class Legend {
     }
 
 }
-
