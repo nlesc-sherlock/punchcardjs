@@ -3,7 +3,7 @@
  * Associates a point in the domain space to a color
  * @type {Object}
  */
-type ColorTableItem = {
+export type ColorTableItem = {
     at   : number;
     color: [number, number, number];
 }
@@ -12,7 +12,7 @@ type ColorTableItem = {
  * An array of ColorTableItems
  * @type {[type]}
  */
-type ColorTable = Array<ColorTableItem>;
+export type ColorTable = Array<ColorTableItem>;
 
 /**
  * ColorMap helps you associate values from the domain to rgba color values,

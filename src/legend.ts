@@ -10,7 +10,7 @@ import {WeekdayRect} from './weekday-rect';
 /**
  * Convenience type/collection of various punchcards
   */
-type PunchcardVisualization = Base|DateCircle|DateRect|
+export type PunchcardVisualization = Base|DateCircle|DateRect|
                                     WeekdayCircle|WeekdayRect;
 
 /**
