@@ -1,6 +1,6 @@
 
-import 'crossfilter';
-import 'd3';
+import * as CrossFilter from 'crossfilter';
+import * as d3 from 'd3';
 
 import {ColorMap} from './colormap';
 import {WeekdayRect} from './weekday-rect';

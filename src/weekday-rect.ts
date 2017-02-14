@@ -1,5 +1,5 @@
 
-import 'crossfilter';
+import * as CrossFilter from 'crossfilter';
 import * as d3 from 'd3';
 import * as moment from 'moment';
 
