@@ -70,7 +70,7 @@
     "tsify": "^1.0.3",
     "tslint": "^3.9.0",
     "typedoc": "^0.5.5",
-    "typescript": "^2.0.3",
+    "typescript": "^2.0.10",
     "uglify-js": "^2.7.3",
     "uglifycss": "0.0.21"
   },
