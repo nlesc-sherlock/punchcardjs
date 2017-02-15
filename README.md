@@ -138,13 +138,12 @@ cd punchcardjs
 
 After getting the source, three things need to be done: `npm` needs to install
 local copies of the development tools as well as of client-side dependencies of
-our code, and `typings` needs to get the typescript annotations for those. You can
-do all of these in one go using:
+our code:
 
 ```bash
-# Assuming you already have ``npm`` and ``typings`` installed globally
+# Assuming you already have ``npm`` installed globally
 # on your system, install with:
-npm install && typings install
+npm install
 ```
 
 We use ``npm`` for the various build tasks (see ``scripts`` in ``packages.json`` for the complete list and their definitions). Here's a summary of the most relevant tasks (see also below for the dependency graph):
@@ -199,20 +198,19 @@ npm run cover
 ├── README.md                          # this file
 ├── src                                # this directory contains all the sources (css, ts) for the punchcards library
 │   ├── base.css                       # the CSS for the Base class
-│   ├── base.ts                        # the TypeScript for the Base class
+│   ├── Base.ts                        # the TypeScript for the Base class
 │   ├── colormap.ts                    # the TypeScript for the ColorMap class
 │   ├── date-circle.css                # the CSS for the DateCircle class
-│   ├── date-circle.ts                 # the TypeScript for the DateCircle class
+│   ├── DateCircle.ts                  # the TypeScript for the DateCircle class
 │   ├── date-rect.css                  # the CSS for the DateRect class
-│   ├── date-rect.ts                   # the TypeScript for the DateRect class
-│   ├── idatarow.ts                    # the TypeScript for the IDataRow interface
+│   ├── DateRect.ts                    # the TypeScript for the DateRect class
 │   ├── legend.css                     # the CSS for the Legend class
 │   ├── legend.ts                      # the TypeScript for the Legend class
 │   ├── punchcards.ts                  # the TypeScript for the punchcards module
 │   ├── weekday-circle.css             # the CSS for the WeekdayCircle class
-│   ├── weekday-circle.ts              # the TypeScript for the WeekdayCircle class
+│   ├── WeekdayCircle.ts               # the TypeScript for the WeekdayCircle class
 │   ├── weekday-rect.css               # the CSS for the WeekdayRect class
-│   └── weekday-rect.ts                # the TypeScript for the WeekdayRect class
+│   └── WeekdayRect.ts                 # the TypeScript for the WeekdayRect class
 ├── test                               # this directory contains all the sources (*.dom.js, *.unit.js, *.fixture.html, *.fixture.json) for testing the code from src/
 │   ├── base.dom.js                    # DOM test of the Base class
 │   ├── base.fixture.html              # HTML fixture for the DOM test of the Base class
@@ -229,10 +227,8 @@ npm run cover
 │   ├── weekday-rect.dom.js            # DOM test of the WeekdayRect class
 │   └── weekday-rect.fixture.html      # HTML fixture for the DOM test of the WeekdayRect class
 ├── tsconfig.json                      # configuration file for the TypeScript compiler
-├── tslint.json                        # configuration file for linting/static analysis of the TypeScript code
-└── typings.json                       # type information for the client-side libraries
+└── tslint.json                        # configuration file for linting/static analysis of the TypeScript code
 ```
-
 
 ## How it all fits together
 
