@@ -2,6 +2,10 @@
     "extends": "@nlesc/tslint-config-react-app",
     "rules": {
         "no-console": [false],
-        "max-func-body-length": false
+        "max-func-body-length": false,
+        "trailing-comma": [true, {
+            "multiline": "never",
+            "singleline": "never"
+        }]
     }
 }
