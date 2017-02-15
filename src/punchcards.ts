@@ -7,5 +7,5 @@ export {ColorMap} from './colormap';
 export {DateCircle} from './date-circle';
 export {DateRect} from './date-rect';
 export {Legend} from './legend';
-export {WeekdayCircle} from './weekday-circle';
+export {WeekdayCircle} from './WeekdayCircle';
 export {WeekdayRect} from './WeekdayRect';

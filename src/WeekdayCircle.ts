@@ -1,17 +1,15 @@
 
 import * as CrossFilter from 'crossfilter';
-import * as d3 from 'd3';
 
 import {ColorMap} from './colormap';
-import {WeekdayRect} from './weekday-rect';
-
+import {WeekdayRect} from './WeekdayRect';
 
 /**
  * See <a href="https://nlesc-sherlock.github.io/punchcardjs-demo/sites/demo/">examples on GitHub</a>.
  */
 export class WeekdayCircle extends WeekdayRect {
 
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
+    constructor(cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         super(cf, domElemId, datekey);
         // ...but reset these properties
@@ -26,8 +24,6 @@ export class WeekdayCircle extends WeekdayRect {
         this.update();
     }
 
-
-
     /**
      * This method adds an SVG g element containing many SVG circle elements,
      * i.e. the 'symbols', to the DOM. Each symbol represents the count of how
@@ -35,37 +31,33 @@ export class WeekdayCircle extends WeekdayRect {
      * @return {WeekdayCircle} Returns a reference to the instance of
      * WeekdayCircle
      */
-    protected drawSymbols():WeekdayCircle {
+    protected drawSymbols(): WeekdayCircle {
 
-        // capture the this object
-        let that:WeekdayCircle = this;
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft;
+        const dy: number = this.marginTop + h;
+        const symbolMargin = {left: 2, right: 2, top: 2, bottom: 2}; // pixels
+        const symbolWidth: number = w / 7 - symbolMargin.left - symbolMargin.right;
+        const symbolHeight: number = h / 24 - symbolMargin.top - symbolMargin.bottom;
 
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft;
-        let dy:number = this.marginTop + h;
-        let symbolMargin = {left:2, right: 2, top: 2, bottom: 2}; // pixels
-        let symbolWidth :number = w / 7 - symbolMargin.left - symbolMargin.right;
-        let symbolHeight:number = h / 24 - symbolMargin.top - symbolMargin.bottom;
-
-        let r:number = Math.min(symbolWidth, symbolHeight) / 2 - 2;
+        const r: number = Math.min(symbolWidth, symbolHeight) / 2 - 2;
 
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
         // forEach method could be very expensive on write.
-        let group = this.dim.weekdayAndHourOfDay.group();
-        group.all().forEach(function(d:any) {
-            //parse the json string created above
+        const group = this.dim.weekdayAndHourOfDay.group();
+        group.all().forEach((d: any) => {
+            // parse the json string created above
             d.key = JSON.parse(d.key);
         });
-        let data:any = group.all();
-
+        const data: any = group.all();
 
         // determine the min and max in the count in order to set the color
         // limits on the colormap later
         let lowest = Number.POSITIVE_INFINITY;
         let highest = Number.NEGATIVE_INFINITY;
-        for (let elem of data) {
+        for (const elem of data) {
             if (elem.value < lowest) {
                 lowest = elem.value;
             }
@@ -75,7 +67,6 @@ export class WeekdayCircle extends WeekdayRect {
         }
         this.colormap.cLimLow = lowest;
         this.colormap.cLimHigh = highest;
-
 
         // draw the circles
         this.svg
@@ -87,38 +78,35 @@ export class WeekdayCircle extends WeekdayRect {
                 .enter()
                 .append('circle')
                     .attr('class', 'symbol')
-                    .attr('cx', function(d:any){
-                        return that.dayOfWeekScale(d.key['weekday']) + symbolMargin.left;
+                    .attr('cx', (d: any) => {
+                        return this.dayOfWeekScale(d.key.weekday) + symbolMargin.left;
                     })
-                    .attr('cy', function(d:any){
-                        return that.todScale(d.key['hourOfDay']) + symbolHeight / 2 + symbolMargin.top;
+                    .attr('cy', (d: any) => {
+                        return this.todScale(d.key.hourOfDay) + symbolHeight / 2 + symbolMargin.top;
                     })
-                    .attr('r', function(d:any){
-                        let numer:number = d.value - that.colormap.cLimLow;
-                        let denom:number = that.colormap.cLimHigh - that.colormap.cLimLow;
+                    .attr('r', (d: any) => {
+                        const numer: number = d.value - this.colormap.cLimLow;
+                        const denom: number = this.colormap.cLimHigh - this.colormap.cLimLow;
                         if (denom === 0) {
                             return Math.max(r, 1);
                         } else {
                             return Math.max(r * numer / denom, 1);
                         }
                     })
-                    .attr('fill', function(d:any){
-                        return that.colormap.getColorRGB(d.value);
+                    .attr('fill', (d: any) => {
+                        return this.colormap.getColorRGB(d.value);
                     })
-                    .on('click', function(d:any){
-                        that.onClick(d);
+                    .on('click', (d: any) => {
+                        this.onClick(d);
                     })
-                    .on('mouseover', function(d:any){
-                        that.onMouseOver(d);
+                    .on('mouseover', (d: any) => {
+                        this.onMouseOver(d);
                     })
-                    .on('mouseout', function(){
-                        that.onMouseOut();
+                    .on('mouseout', () => {
+                        this.onMouseOut();
                     });
-
 
         return this;
     }
-
-
 
 }
