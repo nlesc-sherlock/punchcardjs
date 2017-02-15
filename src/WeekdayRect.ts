@@ -12,8 +12,8 @@ import {ColorMap} from './colormap';
 export class WeekdayRect extends Base {
 
     protected dayOfWeekScale: d3.scale.Ordinal<any, any>;
-    protected xFrom         : number;
-    protected xTo           : number;
+    protected xFrom: number;
+    protected xTo: number;
 
     /**
      * Constructor method for making a punchcard visualization with the day of
@@ -25,7 +25,7 @@ export class WeekdayRect extends Base {
      * @param  {string} domElemId Name of the DOM element in which to draw.
      * @return {[type]} A reference to the instance of WeekdayRect.
      */
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
+    constructor(cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         super(cf, domElemId, datekey);
 
@@ -39,29 +39,23 @@ export class WeekdayRect extends Base {
 
     }
 
-
-
-
     /**
      * define the crossfilter dimensions as used by this class
      * @return {WeekdayRect} A reference to the instance of WeekdayRect
      */
-    protected defineDimensions():WeekdayRect {
-
-        // store a reference to the instance
-        let that:WeekdayRect = this;
+    protected defineDimensions(): WeekdayRect {
 
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
 
-        this.dim.weekdayAndHourOfDay = this.cf.dimension(function (d:any) {
-            //stringify() and later, parse() to get keyed objects
-            let m:moment.Moment;
-            if (d.hasOwnProperty(that.datekey)) {
-                m = moment(d[that.datekey]);
-                let obj:any = {};
-                obj['weekday'] = m.format('ddd');
-                obj['hourOfDay'] = m.hour();
+        this.dim.weekdayAndHourOfDay = this.cf.dimension((d: any) => {
+            // stringify() and later, parse() to get keyed objects
+            let m: moment.Moment;
+            if (d.hasOwnProperty(this.datekey)) {
+                m = moment(d[this.datekey]);
+                const obj: any = {};
+                obj.weekday = m.format('ddd');
+                obj.hourOfDay = m.hour();
                 return JSON.stringify(obj);
             } else {
                 throw new Error('datekey undefined');
@@ -71,9 +65,6 @@ export class WeekdayRect extends Base {
 
         return this;
     }
-
-
-
 
     /**
      * This method defines which other methods to call in order to create
@@ -90,7 +81,7 @@ export class WeekdayRect extends Base {
      *
      * @return {WeekdayRect} A reference to an instance of WeekdayRect.
      */
-    protected draw():WeekdayRect {
+    protected draw(): WeekdayRect {
 
         if (this.domElem.classList.contains('hidden')) {
             // div is hidden
@@ -116,23 +107,113 @@ export class WeekdayRect extends Base {
         }
     }
 
+    /**
+     * This method adds an SVG g element with many SVG rects in it. Each rect
+     * represents the count of how many data rows fall within the area covered
+     * by the rect, where the horizontal boundaries dictate the day-of-week and
+     * the vertical boundaries dictate the time of day range.
+     * @return {WeekdayRect} A reference to the instance of WeekdayRect.
+     */
+    protected drawSymbols(): WeekdayRect {
 
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft;
+        const dy: number = this.marginTop + h;
+        const symbolMargin = {left: 0, right: 0, top: 0, bottom: 0}; // pixels
+        const symbolWidth: number = w / 7 - symbolMargin.left - symbolMargin.right;
+        const symbolHeight: number = h / 24 - symbolMargin.top - symbolMargin.bottom;
 
+        // based on example from
+        // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
+        // forEach method could be very expensive on write.
+        const group = this.dim.weekdayAndHourOfDay.group();
+        group.all().forEach((d: any) => {
+            // parse the json string created above
+            d.key = JSON.parse(d.key);
+        });
+        const data: any = group.all();
+
+        // determine the min and max in the count in order to set the color
+        // limits on the colormap later
+        let lowest = Number.POSITIVE_INFINITY;
+        let highest = Number.NEGATIVE_INFINITY;
+        for (const elem of data) {
+            if (elem.value < lowest) {
+                lowest = elem.value;
+            }
+            if (elem.value > highest) {
+                highest = elem.value;
+            }
+        }
+        this.colormap.cLimLow = lowest;
+        this.colormap.cLimHigh = highest;
+
+        // draw the rects
+        this.svg
+            .append('g')
+            .attr('class', 'symbol')
+            .attr('transform', 'translate(' + dx + ',' + dy + ')')
+            .selectAll('rect.symbol')
+                .data(data)
+                .enter()
+                .append('rect')
+                    .attr('class', 'symbol')
+                    .attr('x', (d: any) => {
+                        return this.dayOfWeekScale(d.key.weekday) - symbolWidth / 2;
+                    })
+                    .attr('y', (d: any) => {
+                        return this.todScale(d.key.hourOfDay);
+                    })
+                    .attr('width', symbolWidth)
+                    .attr('height', symbolHeight)
+                    .attr('fill', (d: any) => {
+                        return this.colormap.getColorRGB(d.value);
+                    })
+                    .on('click', (d: any) => {
+                        this.onClick(d);
+                    })
+                    .on('mouseover', (d: any) => {
+                        this.onMouseOver(d);
+                    })
+                    .on('mouseout', () => {
+                        this.onMouseOut();
+                    });
+
+        return this;
+    }
+
+    /*
+     * overrides method from Base
+     */
+    protected onMouseOver(d: any): WeekdayRect {
+
+        const str: string = 'x:' + d.key.weekday +
+            ', y:' + d.key.hourOfDay +
+            ', count:' + d.value;
+        this.svg.select('g.footer').select('text').text(str);
+        return this;
+    }
+
+    protected onMouseOut(): WeekdayRect {
+        this.svg.select('g.footer').select('text').text('');
+        return this;
+    }
 
     /**
      * Adds an SVG g element containing a d3.scale.ordinal for plotting
      * the day of the week on the horizontal axis of the punchcard graph.
      * @return {WeekdayRect} A reference to the instance of WeekdayRect.
      */
-    private drawHorizontalAxis():WeekdayRect {
+    private drawHorizontalAxis(): WeekdayRect {
 
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let dx:number = this.marginLeft;
-        let dy:number = this.domElem.clientHeight - this.marginBottom;
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const dx: number = this.marginLeft;
+        const dy: number = this.domElem.clientHeight - this.marginBottom;
 
-        let range:Array<number> = [];
-        let ndays:number = 7.0;
-        for (let r of [0, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.0]) {
+        const range: number[] = [];
+        const ndays: number = 7.0;
+        for (const r of [0, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.0]) {
             range.push(w * r / ndays);
         }
 
@@ -140,7 +221,7 @@ export class WeekdayRect extends Base {
             .range(range)
             .domain(['', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', '']);
 
-        let xAxis = d3.svg.axis()
+        const xAxis = d3.svg.axis()
             .orient('bottom')
             .scale(this.dayOfWeekScale)
             .tickValues(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
@@ -155,111 +236,5 @@ export class WeekdayRect extends Base {
         return this;
 
     }
-
-
-
-    /**
-     * This method adds an SVG g element with many SVG rects in it. Each rect
-     * represents the count of how many data rows fall within the area covered
-     * by the rect, where the horizontal boundaries dictate the day-of-week and
-     * the vertical boundaries dictate the time of day range.
-     * @return {WeekdayRect} A reference to the instance of WeekdayRect.
-     */
-    protected drawSymbols():WeekdayRect {
-
-        // capture the this object
-        let that:WeekdayRect = this;
-
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft;
-        let dy:number = this.marginTop + h;
-        let symbolMargin = {left:0, right: 0, top: 0, bottom: 0}; // pixels
-        let symbolWidth :number = w / 7 - symbolMargin.left - symbolMargin.right;
-        let symbolHeight:number = h / 24 - symbolMargin.top - symbolMargin.bottom;
-
-        // based on example from
-        // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
-        // forEach method could be very expensive on write.
-        let group = this.dim.weekdayAndHourOfDay.group();
-        group.all().forEach(function(d:any) {
-            //parse the json string created above
-            d.key = JSON.parse(d.key);
-        });
-        let data:any = group.all();
-
-
-        // determine the min and max in the count in order to set the color
-        // limits on the colormap later
-        let lowest = Number.POSITIVE_INFINITY;
-        let highest = Number.NEGATIVE_INFINITY;
-        for (let elem of data) {
-            if (elem.value < lowest) {
-                lowest = elem.value;
-            }
-            if (elem.value > highest) {
-                highest = elem.value;
-            }
-        }
-        this.colormap.cLimLow = lowest;
-        this.colormap.cLimHigh = highest;
-
-
-        // draw the rects
-        this.svg
-            .append('g')
-            .attr('class', 'symbol')
-            .attr('transform', 'translate(' + dx + ',' + dy + ')')
-            .selectAll('rect.symbol')
-                .data(data)
-                .enter()
-                .append('rect')
-                    .attr('class', 'symbol')
-                    .attr('x', function(d:any){
-                        return that.dayOfWeekScale(d.key['weekday']) - symbolWidth / 2;
-                    })
-                    .attr('y', function(d:any){
-                        return that.todScale(d.key['hourOfDay']);
-                    })
-                    .attr('width', symbolWidth)
-                    .attr('height', symbolHeight)
-                    .attr('fill', function(d:any){
-                        return that.colormap.getColorRGB(d.value);
-                    })
-                    .on('click', function(d:any){
-                        that.onClick(d);
-                    })
-                    .on('mouseover', function(d:any){
-                        that.onMouseOver(d);
-                    })
-                    .on('mouseout', function(){
-                        that.onMouseOut();
-                    });
-
-        return this;
-    }
-
-
-
-    /*
-     * overrides method from Base
-     */
-    protected onMouseOver(d: any): WeekdayRect {
-
-        let str: string = 'x:' + d.key['weekday'] +
-            ', y:' + d.key['hourOfDay'] +
-            ', count:' + d.value;
-        this.svg.select('g.footer').select('text').text(str);
-        return this;
-    }
-
-
-
-    protected onMouseOut(): WeekdayRect {
-        this.svg.select('g.footer').select('text').text('');
-        return this;
-    }
-
-
 
 }
