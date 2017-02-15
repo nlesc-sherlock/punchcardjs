@@ -1,18 +1,6 @@
 ---
-addons:
-  apt:
-    packages:
-      - g++-4.8
-    sources:
-      - ubuntu-toolchain-r-test
-env:
-  - CXX=g++-4.8
 language: node_js
 node_js:
-  - "4.5.0"
-before_script:
-  - "npm install"
-  - "npm install typings --global"
-  - "typings install"
+  - "7.0.0"
 script:
   - "npm run everything"

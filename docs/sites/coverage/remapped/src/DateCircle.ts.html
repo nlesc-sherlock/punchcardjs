@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/date-circle.ts</title>
+    <title>Code coverage report for src/DateCircle.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> date-circle.ts
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> DateCircle.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.74% </span>
+        <span class="strong">94.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>54/57</span>
+        <span class='fraction'>51/54</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>9/12</span>
+        <span class='fraction'>8/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">72.73% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>8/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.44% </span>
+        <span class="strong">94% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>51/54</span>
+        <span class='fraction'>47/50</span>
       </div>
     </div>
   </div>
@@ -152,24 +152,8 @@
 107
 108
 109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+110</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -177,30 +161,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8×</span>
-<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">53×</span>
@@ -225,7 +201,6 @@
 <span class="cline-any cline-yes">2820×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">53×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -241,7 +216,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">53×</span>
 <span class="cline-any cline-yes">53×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">53×</span>
@@ -285,28 +259,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import 'crossfilter';<span class="branch-1 cbranch-no" title="branch not covered" ></span>
-import 'd3';<span class="branch-1 cbranch-no" title="branch not covered" ></span>
-import 'moment';<span class="branch-1 cbranch-no" title="branch not covered" ></span>
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as CrossFilter from 'crossfilter';
+import * as moment from 'moment';<span class="branch-1 cbranch-no" title="branch not covered" ></span>
 &nbsp;
 import {ColorMap} from './colormap';
-import {DateRect} from './date-rect';
-&nbsp;
+import {DateRect} from './DateRect';
 &nbsp;
 /**
  * See &lt;a href="https://nlesc-sherlock.github.io/punchcardjs-demo/sites/demo/"&gt;examples on GitHub&lt;/a&gt;.
  */
 export class DateCircle extends DateRect {
 &nbsp;
+    constructor(cf: CrossFilter.CrossFilter&lt;any&gt;, domElemId: string, datekey: string) {
 &nbsp;
-    constructor (cf: CrossFilter.CrossFilter&lt;any&gt;, domElemId: string, datekey: string) {
-&nbsp;
-        super(cf, domElemId, datekey);
+        super(cf, domElemId, datekey)<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
         // ...but reset these properties
         this.domElem.classList.remove('punchcard-date-rect');
         this.canDraw = false;
@@ -320,41 +288,34 @@ export class DateCircle extends DateRect {
 &nbsp;
     }
 &nbsp;
+    protected drawSymbols(): DateCircle {
 &nbsp;
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft;
+        const dy: number = this.marginTop + h;
+        const symbolMargin = {left: 0, right: 0, top: 0, bottom: 0}; // pixels
+        const wDays: number = moment(this.dateTo).diff(moment(this.dateFrom), 'days', true);
 &nbsp;
-&nbsp;
-    protected drawSymbols():DateCircle {
-&nbsp;
-        // capture the this object
-        let that:DateCircle = this;
-&nbsp;
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft;
-        let dy:number = this.marginTop + h;
-        let symbolMargin = {left:0, right: 0, top: 0, bottom: 0}; // pixels
-        let wDays:number = moment(this.dateTo).diff(moment(this.dateFrom), 'days', true);
-&nbsp;
-        let symbolWidth :number = w / wDays - symbolMargin.left - symbolMargin.right;
-        let symbolHeight:number = h / 24.0 - symbolMargin.top - symbolMargin.bottom;
-        let r:number = Math.min(symbolWidth, symbolHeight) / 2 - 2;
+        const symbolWidth: number = w / wDays - symbolMargin.left - symbolMargin.right;
+        const symbolHeight: number = h / 24.0 - symbolMargin.top - symbolMargin.bottom;
+        const r: number = Math.min(symbolWidth, symbolHeight) / 2 - 2;
 &nbsp;
         // based on example from
         // http://stackoverflow.com/questions/16766986/is-it-possible-to-group-by-multiple-dimensions-in-crossfilter
         // forEach method could be very expensive on write.
-        let group = this.dim.dateAndHourOfDay.group();
-        group.all().forEach(function(d:any) {
-            //parse the json string created above
+        const group = this.dim.dateAndHourOfDay.group();
+        group.all().forEach((d: any) =&gt; {
+            // parse the json string created above
             d.key = JSON.parse(d.key);
         });
-        let data:any = group.all();
-&nbsp;
+        const data: any = group.all();
 &nbsp;
         // determine the min and max in the count in order to set the color
         // limits on the colormap later
         let lowest = Number.POSITIVE_INFINITY;
         let highest = Number.NEGATIVE_INFINITY;
-        for (let elem of data) {
+        for (const elem of data) {
             if (elem.value &lt; lowest) {
                 lowest = elem.value;
             }
@@ -364,7 +325,6 @@ export class DateCircle extends DateRect {
         }
         this.colormap.cLimLow = lowest;
         this.colormap.cLimHigh = highest;
-&nbsp;
 &nbsp;
         // draw the circles
         this.svg
@@ -376,41 +336,39 @@ export class DateCircle extends DateRect {
                 .enter()
                 .append('circle')
                     .attr('class', 'symbol')
-                    .attr('cx', function(d:any){
-                        return that.dateScale(new Date(d.key[that.datekey]));
+                    .attr('cx', (d: any) =&gt; {
+                        return this.dateScale(new Date(d.key[this.datekey]));
                         })
-                    .attr('cy', function(d:any){
-                        return that.todScale(parseInt(d.key.hourOfDay, 10)) + symbolMargin.top + symbolHeight / 2;
+                    .attr('cy', (d: any) =&gt; {
+                        return this.todScale(parseInt(d.key.hourOfDay, 10)) + symbolMargin.top + symbolHeight / 2;
                     })
-                    .attr('r', function(d:any) {
-                        let numer:number = d.value - that.colormap.cLimLow;
-                        let denom:number = that.colormap.cLimHigh - that.colormap.cLimLow;
+                    .attr('r', (d: any) =&gt; {
+                        const numer: number = d.value - this.colormap.cLimLow;
+                        const denom: number = this.colormap.cLimHigh - this.colormap.cLimLow;
                         if (denom === 0) {
                             return Math.max(r, 1);
                         } else {
                             return Math.max(r * numer / denom, 1);
                         }
                     })
-                    .attr('fill', function(d:any){
-                        return that.colormap.getColorRGB(d.value);
+                    .attr('fill', (d: any) =&gt; {
+                        return this.colormap.getColorRGB(d.value);
                     })
-                    .on('click', <span class="fstat-no" title="function not covered" >function(d:any)</span>{
-<span class="cstat-no" title="statement not covered" >                        that.onClick(d);</span>
+                    .on('click', <span class="fstat-no" title="function not covered" >(d: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                        this.onClick(d);</span>
                     })
-                    .on('mouseover', <span class="fstat-no" title="function not covered" >function(d:any)</span>{
-<span class="cstat-no" title="statement not covered" >                        that.onMouseOver(d);</span>
+                    .on('mouseover', <span class="fstat-no" title="function not covered" >(d: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                        this.onMouseOver(d);</span>
                     })
-                    .on('mouseout', <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >                        that.onMouseOut();</span>
+                    .on('mouseout', <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        this.onMouseOut();</span>
                     });
 &nbsp;
         return this;
 &nbsp;
     }
 &nbsp;
-&nbsp;
 }
-&nbsp;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -418,7 +376,7 @@ export class DateCircle extends DateRect {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 03 2016 13:43:12 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Feb 15 2017 14:19:55 GMT+0100 (CET)
 </div>
 </div>
 <script src="../prettify.js"></script>

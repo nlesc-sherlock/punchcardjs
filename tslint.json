@@ -1,51 +1,42 @@
 {
-  "rules": {
-    "class-name": true,
-    "curly": true,
-    "eofline": false,
-    "forin": true,
-    "indent": [true, 4],
-    "label-position": true,
-    "label-undefined": true,
-    "max-line-length": [true, 140],
-    "no-arg": true,
-    "no-bitwise": true,
-    "no-console": [true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
+    "extends": [
+        "tslint-microsoft-contrib",
+        "tslint-react",
+        "tslint:latest"
     ],
-    "no-construct": true,
-    "no-debugger": true,
-    "no-duplicate-key": true,
-    "no-duplicate-variable": true,
-    "no-empty": true,
-    "no-eval": true,
-    "no-string-literal": false,
-    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
-    "no-require-imports": false,
-    "no-trailing-whitespace": true,
-    "no-unused-variable": false,
-    "no-unreachable": true,
-    "no-use-before-declare": true,
-    "one-line": [true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
-    "quotemark": [true, "single"],
-    "radix": true,
-    "semicolon": true,
-    "triple-equals": [true, "allow-null-check"],
-    "variable-name": false,
-    "whitespace": [true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator"
-    ]
-  }
+    "rules": {
+        "no-console": [false],
+        "max-func-body-length": false,
+        "trailing-comma": [true, {
+            "multiline": "never",
+            "singleline": "never"
+        }],
+        "no-angle-bracket-type-assertion": true,
+        "prefer-type-cast": false,
+        "no-suspicious-comment": false,
+
+        "import-name": false,
+        "jsx-alignment": true,
+        "jsx-no-lambda": true,
+        "jsx-no-string-ref": true,
+        "jsx-no-multiline-js": true,
+        "jsx-self-close": true,
+        "member-access": false,
+        "missing-jsdoc": false,
+        "no-any": false,
+        "no-relative-imports": false,
+        "no-for-in-array": false,
+        "no-reserved-keywords": false,
+        "restrict-plus-operands": false,
+        "quotemark": [
+            true,
+            "single",
+            "jsx-double",
+            "avoid-escape"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ]
+    }
 }
