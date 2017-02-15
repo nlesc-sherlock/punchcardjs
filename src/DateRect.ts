@@ -2,7 +2,7 @@ import * as CrossFilter from 'crossfilter';
 import * as d3 from 'd3';
 import * as moment from 'moment';
 
-import {Base} from './base';
+import {Base} from './Base';
 import {ColorMap} from './colormap';
 
 /**

@@ -1,9 +1,9 @@
 
 import * as d3 from 'd3';
 
-import {Base} from './base';
-import {DateCircle} from './date-circle';
-import {DateRect} from './date-rect';
+import {Base} from './Base';
+import {DateCircle} from './DateCircle';
+import {DateRect} from './DateRect';
 import {WeekdayCircle} from './WeekdayCircle';
 import {WeekdayRect} from './WeekdayRect';
 
