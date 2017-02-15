@@ -1,6 +1,7 @@
 {
     "extends": "@nlesc/tslint-config-react-app",
     "rules": {
-        "no-console": [false]
+        "no-console": [false],
+        "max-func-body-length": false
     }
 }
