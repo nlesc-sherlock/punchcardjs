@@ -2,7 +2,7 @@
 /**
  * This is the Punchcards module
  */
-export {Base} from './base';
+export {Base} from './Base';
 export {ColorMap} from './colormap';
 export {DateCircle} from './date-circle';
 export {DateRect} from './date-rect';

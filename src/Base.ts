@@ -1,10 +1,8 @@
 import * as CrossFilter from 'crossfilter';
 import * as d3 from 'd3';
 
-
 import {ColorMap} from './colormap';
 import {Legend} from './legend';
-
 
 /**
  * This is the base class for all punchcards. It provides the methods that are
@@ -18,58 +16,39 @@ export class Base {
      * The crossfilter that contains the data which needs to be visualized.
      * @type {CrossFilter.CrossFilter<any>}
      */
-    protected cf: CrossFilter.CrossFilter<any>;
-    /**
-     * The colormap: i.e. the element that determines what color is used to
-     * display a certain value.
-     * @type {ColorMap}
-     */
     public colormap: ColorMap;
     /**
      * The user-defined dimensions that are used to manipulate the crossfilter
      * data.
      * @type {any}
      */
-    protected dim: any;
-    /**
-     * The element of the DOM where the punchcard should be visualized.
-     * @type {HTMLElement}
-     */
     public domElem: HTMLElement;
     /**
      * The element ID of the this._domElem object.
      * @type {string}
+     */
+    public svg: any;
+    /**
+     * Whether or not there is enough data defined to be able to draw anything.
+     * @type {boolean}
+     */
+    public canDraw: boolean;
+    protected cf: CrossFilter.CrossFilter<any>;
+    /**
+     * The colormap: i.e. the element that determines what color is used to
+     * display a certain value.
+     * @type {ColorMap}
+     */
+    protected dim: any;
+    /**
+     * The element of the DOM where the punchcard should be visualized.
+     * @type {HTMLElement}
      */
     protected domElemId: string;
     /**
      * The SVG DOM element that is used to draw a punchcard in.
      * @type {any}
      */
-    public svg: any;
-    /**
-     * The space in pixels between the left side of the axis background and
-     * edge of the SVG element.
-     * @type {number}
-     */
-    private _marginLeft: number;
-    /**
-     * The space in pixels between the right side of the  axis background and
-     * edge of the SVG element.
-     * @type {number}
-     */
-    private _marginRight: number;
-    /**
-     * The space in pixels between the top side of axis background and edge of
-     * the SVG element.
-     * @type {number}
-     */
-    private _marginTop: number;
-    /**
-     * The space in pixels between the bottom side of axis background and edge
-     * of the SVG element.
-     * @type {number}
-     */
-    private _marginBottom: number;
     /**
      * Text to use as title for the graph
      * @type {string}
@@ -96,22 +75,41 @@ export class Base {
      */
     protected height: number;
     /**
-     * width in pixels that is occupied by the legend
-     * @type {number}
-     */
-    private _legendWidth: number;
-    /**
-     * Whether or not there is enough data defined to be able to draw anything.
-     * @type {boolean}
-     */
-    public canDraw: boolean;
-    /**
      * Defines which key of your input data contains the datetime information
      * based on which you want to create the symbols in the punchcard's body.
      * The default value is 'datestr'
      * @type {string}
      */
-    protected datekey:string;
+    protected datekey: string;
+    /**
+     * The space in pixels between the left side of the axis background and
+     * edge of the SVG element.
+     * @type {number}
+     */
+    private _marginLeft: number;
+    /**
+     * The space in pixels between the right side of the  axis background and
+     * edge of the SVG element.
+     * @type {number}
+     */
+    private _marginRight: number;
+    /**
+     * The space in pixels between the top side of axis background and edge of
+     * the SVG element.
+     * @type {number}
+     */
+    private _marginTop: number;
+    /**
+     * The space in pixels between the bottom side of axis background and edge
+     * of the SVG element.
+     * @type {number}
+     */
+    private _marginBottom: number;
+    /**
+     * width in pixels that is occupied by the legend
+     * @type {number}
+     */
+    private _legendWidth: number;
 
     /**
      * Constructs an instance of Base when given a crossfilter object and the
@@ -122,7 +120,7 @@ export class Base {
      * draw the punchcard graph
      * @return {[type]} Returns an instance of Base class
      */
-    constructor (cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
+    constructor(cf: CrossFilter.CrossFilter<any>, domElemId: string, datekey: string) {
 
         // the crossfilter object
         this.cf = cf;
@@ -155,41 +153,32 @@ export class Base {
 
         this.domElem.classList.add('punchcard-common');
 
-        // beware: JavaScript magic happens here
-        let that:Base = this;
-        window.addEventListener('resize', function() {
-            that.onResize();
+        window.addEventListener('resize', () => {
+            this.onResize();
         });
 
     }
-
-
-
 
     /**
      * Placeholder method that does not do anything but needs to be here because
      * it's called by .update().
      * @return {Base} return the (unchanged) instance of Base
      */
-    protected draw():Base {
+    protected draw(): Base {
         // placeholder method to be overridden in classes that inherit from this class
         return this;
     }
-
-
-
     /**
      * Adds an SVG g element containing an SVG rect element with which to draw a
      * border around the punchcard graph.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawBox():Base {
+    protected drawBox(): Base {
         //
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft;
-        let dy:number = this.marginTop;
-
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft;
+        const dy: number = this.marginTop;
 
         this.svg.append('g')
             .attr('class', 'chartbody-box')
@@ -202,8 +191,6 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Appends an SVG g element containing an SVG rect, the size of which is
      * determined by the size of the SVG element minus the margins on 4 sides,
@@ -211,13 +198,12 @@ export class Base {
      * background of the punchcard's axes.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawChartBody():Base {
+    protected drawChartBody(): Base {
         //
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft;
-        let dy:number = this.marginTop;
-
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft;
+        const dy: number = this.marginTop;
 
         this.svg.append('g')
             .attr('class', 'chartbody')
@@ -230,12 +216,10 @@ export class Base {
         return this;
     }
 
+    protected drawFooter(): Base {
 
-
-    protected drawFooter():Base {
-
-        let dx = this.domElem.clientWidth - this.marginRight - this.legendWidth;
-        let dy = this.domElem.clientHeight - this.marginBottom;
+        const dx: number = this.domElem.clientWidth - this.marginRight - this.legendWidth;
+        const dy: number = this.domElem.clientHeight - this.marginBottom;
         this.svg.append('g')
             .attr('class', 'footer')
             .append('text')
@@ -247,19 +231,17 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Adds an SVG g element containing an SVG text element with which to label
      * the horizontal axis.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawHorizontalAxisLabel():Base {
+    protected drawHorizontalAxisLabel(): Base {
 
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = this.marginLeft + 0.5 * w;
-        let dy:number = this.marginTop + h + 0.8 * this.marginBottom;
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = this.marginLeft + 0.5 * w;
+        const dy: number = this.marginTop + h + 0.8 * this.marginBottom;
 
         this.svg.append('g')
             .attr('class', 'horizontal-axis-label')
@@ -271,30 +253,25 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Adds a Legend to the plot, while resizing the punchcard as necessary.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawLegend():Base {
+    protected drawLegend(): Base {
         // draw the legend
 
-        let legend:Legend = new Legend(this);
+        const legend: Legend = new Legend(this);
         legend.draw();
-
 
         return this;
     }
-
-
 
     /**
      * Adds an SVG element to the DOM, so that other methods you can do d3
      * things with it later.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawSvg():Base {
+    protected drawSvg(): Base {
 
         this.svg = d3.select(this.domElem).append('svg')
             .attr('width', this.domElem.clientWidth)
@@ -303,18 +280,16 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Adds an SVG g element containing an SVG text element representing the
      * title of the punchcard graph.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawTitle():Base {
+    protected drawTitle(): Base {
 
-        let w :number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
-        let dx:number = this.marginLeft + 0.5 * w;
-        let dy:number = 0.5 * this.marginTop;
+        const w: number = this.domElem.clientWidth - this.marginLeft - this.marginRight - this.legendWidth;
+        const dx: number = this.marginLeft + 0.5 * w;
+        const dy: number = 0.5 * this.marginTop;
 
         this.svg.append('g')
             .attr('class', 'title')
@@ -326,25 +301,22 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Adds an SVG g element containing a d3.linear.axis representing the hour
      * of day.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawVerticalAxis():Base {
+    protected drawVerticalAxis(): Base {
         //
-        let dx:number = this.marginLeft;
-        let dy:number = this.domElem.clientHeight - this.marginBottom;
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-
+        const dx: number = this.marginLeft;
+        const dy: number = this.domElem.clientHeight - this.marginBottom;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
 
         this.todScale = d3.scale.linear()
             .range([-h, 0])
             .domain([0.0, 24.0]);
 
-        let todAxis = d3.svg.axis()
+        const todAxis = d3.svg.axis()
             .orient('left')
             .scale(this.todScale)
             .tickValues([0, 3, 6, 9, 12, 15, 18, 21, 24])
@@ -360,18 +332,16 @@ export class Base {
 
     }
 
-
-
     /**
      * Adds an SVG g element containing an SVG text element with which to label
      * the vertical axis.
      * @return {Base} returns a reference to the instance of Base
      */
-    protected drawVerticalAxisLabel():Base {
+    protected drawVerticalAxisLabel(): Base {
         //
-        let h :number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
-        let dx:number = 0.3 * this.marginLeft;
-        let dy:number = this.marginTop + 0.5 * h;
+        const h: number = this.domElem.clientHeight - this.marginTop - this.marginBottom;
+        const dx: number = 0.3 * this.marginLeft;
+        const dy: number = this.marginTop + 0.5 * h;
 
         this.svg.append('g')
             .attr('class', 'vertical-axis-label')
@@ -384,14 +354,11 @@ export class Base {
 
     }
 
-
-
-
     protected update() {
 
         if (this.canDraw) {
             // get the div element that we want to redraw
-            let div = this.domElem;
+            const div = this.domElem;
 
             // delete the contents of the div
             while (div.firstChild) {
@@ -401,9 +368,6 @@ export class Base {
         }
     }
 
-
-
-
     /**
      * When the window is resized, redraw the punchcard graph in its entirety.
      * @return {[type]} [description]
@@ -412,19 +376,13 @@ export class Base {
         this.update();
     }
 
-
-
-    protected onMouseOver(d:any) {
+    protected onMouseOver(d: any) {
         console.log(d);
     }
 
-
-
-    protected onClick(d:any) {
+    protected onClick(d: any) {
         console.log(d);
     }
-
-
 
     /**
      * Sets the CSS style min-height such that the body of the punchcard graph
@@ -432,16 +390,16 @@ export class Base {
      * margins on the top and bottom of the graph.
      * @return {Base} returns a reference to the instance of Base
      */
-    private updateMinHeight():Base {
+    private updateMinHeight(): Base {
 
-        let top:number = this.marginTop;
-        let bottom:number = this.marginBottom;
+        let top: number = this.marginTop;
+        let bottom: number = this.marginBottom;
 
-        if (typeof top === 'undefined' || top < 0) {
+        if (top === undefined || top < 0) {
             top = 0;
         }
 
-        if (typeof bottom === 'undefined' || bottom < 0) {
+        if (bottom === undefined || bottom < 0) {
             bottom = 0;
         }
 
@@ -450,24 +408,22 @@ export class Base {
         return this;
     }
 
-
-
     /**
      * Sets the CSS style min-width such that the body of the punchcard graph
      * cannot become narrower than 100px, while taking into account the
      * margins on the left and right of the graph.
      * @return {Base} returns a reference to the instance of Base
      */
-    private updateMinWidth():Base {
+    private updateMinWidth(): Base {
 
-        let left:number = this.marginLeft;
-        let right:number = this.marginRight;
+        let left: number = this.marginLeft;
+        let right: number = this.marginRight;
 
-        if (typeof left === 'undefined' || left < 0) {
+        if (left === undefined || left < 0) {
             left = 0;
         }
 
-        if (typeof right === 'undefined' || right < 0) {
+        if (right === undefined || right < 0) {
             right = 0;
         }
 
@@ -476,13 +432,12 @@ export class Base {
         return this;
     }
 
-
     /**
      * [marginLeft description]
      * @param  {number} marginLeft [description]
      * @return {[type]}            [description]
      */
-    public set marginLeft(marginLeft:number) {
+    public set marginLeft(marginLeft: number) {
         this._marginLeft = marginLeft;
         this.updateMinWidth();
         this.update();
@@ -492,7 +447,7 @@ export class Base {
      * [marginLeft description]
      * @return {number} [description]
      */
-    public get marginLeft():number {
+    public get marginLeft(): number {
         return this._marginLeft;
     }
 
@@ -501,7 +456,7 @@ export class Base {
      * @param  {number} marginRight [description]
      * @return {[type]}             [description]
      */
-    public set marginRight(marginRight:number) {
+    public set marginRight(marginRight: number) {
         this._marginRight = marginRight;
         this.updateMinWidth();
         this.update();
@@ -511,7 +466,7 @@ export class Base {
      * [marginRight description]
      * @return {number} [description]
      */
-    public get marginRight():number {
+    public get marginRight(): number {
         return this._marginRight;
     }
 
@@ -520,7 +475,7 @@ export class Base {
      * @param  {number} marginTop [description]
      * @return {[type]}           [description]
      */
-    public set marginTop(marginTop:number) {
+    public set marginTop(marginTop: number) {
         this._marginTop = marginTop;
         this.updateMinHeight();
         this.update();
@@ -530,7 +485,7 @@ export class Base {
      * [marginTop description]
      * @return {number} [description]
      */
-    public get marginTop():number {
+    public get marginTop(): number {
         return this._marginTop;
     }
 
@@ -539,7 +494,7 @@ export class Base {
      * @param  {number} marginBottom [description]
      * @return {[type]}              [description]
      */
-    public set marginBottom(marginBottom:number) {
+    public set marginBottom(marginBottom: number) {
         this._marginBottom = marginBottom;
         this.updateMinHeight();
         this.update();
@@ -549,7 +504,7 @@ export class Base {
      * [marginBottom description]
      * @return {number} [description]
      */
-    public get marginBottom():number {
+    public get marginBottom(): number {
         return this._marginBottom;
     }
 
@@ -558,9 +513,9 @@ export class Base {
      * @param  {number} legendWidth [description]
      * @return {[type]}             [description]
      */
-    public set legendWidth(legendWidth:number) {
-        let minimumWidth:number = 50;
-        this._legendWidth = Math.max(legendWidth, 50);
+    public set legendWidth(legendWidth: number) {
+        const minimumWidth: number = 50;
+        this._legendWidth = Math.max(legendWidth, minimumWidth);
         this.update();
     }
 
@@ -568,37 +523,35 @@ export class Base {
      * [legendWidth description]
      * @return {number} [description]
      */
-    public get legendWidth():number {
+    public get legendWidth(): number {
         return this._legendWidth;
     }
 
-    public set title(title:string) {
+    public set title(title: string) {
         this._title = title;
         this.update();
     }
 
-    public get title():string {
+    public get title(): string {
         return this._title;
     }
 
-    public set xlabel(xlabel:string) {
+    public set xlabel(xlabel: string) {
         this._xlabel = xlabel;
         this.update();
     }
 
-    public get xlabel():string {
+    public get xlabel(): string {
         return this._xlabel;
     }
 
-    public set ylabel(ylabel:string) {
+    public set ylabel(ylabel: string) {
         this._ylabel = ylabel;
         this.update();
     }
 
-    public get ylabel():string {
+    public get ylabel(): string {
         return this._ylabel;
     }
-
-
 
 }
