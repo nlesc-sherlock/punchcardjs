@@ -6,6 +6,7 @@
 - [![bitHound Dependencies](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/dependencies.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/master/dependencies/npm)
 - [![bitHound Dev Dependencies](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/devDependencies.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/master/dependencies/npm)
 - [![bitHound Code](https://www.bithound.io/github/nlesc-sherlock/punchcardjs/badges/code.svg)](https://www.bithound.io/github/nlesc-sherlock/punchcardjs)
+- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 _this library is still a work in progress_
 
