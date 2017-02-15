@@ -1,3 +1,4 @@
+- [![npm version](https://badge.fury.io/js/punchcardjs.svg)](https://badge.fury.io/js/punchcardjs)
 - [![dependencies Status](https://david-dm.org/nlesc-sherlock/punchcardjs/status.svg)](https://david-dm.org/nlesc-sherlock/punchcardjs)
 - [![devDependencies Status](https://david-dm.org/nlesc-sherlock/punchcardjs/dev-status.svg)](https://david-dm.org/nlesc-sherlock/punchcardjs?type=dev)
 - [![Build Status](https://travis-ci.org/nlesc-sherlock/punchcardjs.svg?branch=master)](https://travis-ci.org/nlesc-sherlock/punchcardjs)
