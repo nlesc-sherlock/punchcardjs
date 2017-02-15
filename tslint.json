@@ -6,6 +6,8 @@
         "trailing-comma": [true, {
             "multiline": "never",
             "singleline": "never"
-        }]
+        }],
+        "no-angle-bracket-type-assertion": true,
+        "prefer-type-cast": false
     }
 }
